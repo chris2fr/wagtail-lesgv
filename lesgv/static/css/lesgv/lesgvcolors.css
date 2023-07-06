@@ -1,0 +1,9 @@
+:root {
+  --title-font-family: serif;
+  --body-font-family: sans-serif;
+  --body-width: 80%;
+  --body-background: lightgrey;
+  --content-background: white;
+  --menu-background: blue;
+  --menu-foreground: white;
+}

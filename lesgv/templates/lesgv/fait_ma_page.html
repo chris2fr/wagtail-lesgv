@@ -5,12 +5,36 @@
 
 {% block extra_css %}
 
-
+<link rel="stylesheet" type="text/css"  href="{% static 'fonts/lack/stylesheet.css' %}" />
+<link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardoneue/font.css' %}" />
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/lesgvcolors.css' %}" />
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/faitmapage.css' %}" />
 <link rel="stylesheet" href="{% static 'css/lesgv.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
+<body>
+  <div class="enclosing-grid">
+    <img src="{% static 'images/faitmapage/lesartsvoisins_TR.svg' %}" class="TR">
+    <img src="{% static 'images/faitmapage/lesartsvoisins_TL.svg' %}" class="TL">
+    <img src="{% static 'images/faitmapage/lesartsvoisins_ML.svg' %}" class="ML">
+    <a class="BL" href="https://blog.lesgrandsvoisins.com/tag/lesartsvoisins/"><img src="{% static 'images/faitmapage/lesgrandsvoisins_BL.svg' %}" ></a>
+    <img src="{% static 'images/faitmapage/lesgrandsvoisins_BC.svg' %}" class="BC">
+    <img src="{% static 'images/faitmapage/lesgrandsvoisins_BR.svg' %}" class="BR">
+    <img src="{% static 'images/faitmapage/lesgrandsvoisins_MR.svg' %}" class="MR">
+    <a href="https://blog.lesgrandsvoisins.com"  class="HH"><img src="{% static 'images/faitmapage/lesgrandsvoisinscom.svg' %}" height="60"></a>
+      
+  <div class="CT">
+    <h1>{{ page.title }} </h1>
+      {{ page.body|richtext }} 
+  </div>
 
-{{ page.body|richtext }}
+  <div class="FT FL">
+    {{ page.footer1|richtext }} 
+  </div>
+  <div class="FT FR">
+    {{ page.footer2|richtext }} 
+  </div>
 
+</div>
 {% endblock content %}

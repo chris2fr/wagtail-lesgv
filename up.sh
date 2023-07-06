@@ -1,4 +1,4 @@
-for i in "home/static/" "home/templates/" "lesgv/settings/" "lesgv/static/" "lesgv/templates/" "search"
+for i in "home/static/" "home/templates/" "lesgv/settings/" "lesgv/static/" "lesgv/templates/" "search/"
 do
   echo $i
   rsync -a /mnt/d/work/wagtail/lesgv/$i /home/mannchri/wagtail/lesgv/$i

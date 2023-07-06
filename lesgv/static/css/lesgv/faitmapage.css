@@ -1,0 +1,142 @@
+:root {
+  --color-lesartsvoisins: #f0494d;
+}
+body {
+  font-family: fengardoneue;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+h1, h2, h3, h4, h5, h6, nav {
+font-family: lack;
+}
+
+div.enclosing-grid {
+  display: grid;
+  grid-template-areas: "TL  TL  TLC TRC TR  TR "
+                       "TL  TL  TLC  HH  TR  TR "
+                       "TLR CT  CT  CT  CT  TRR"
+                       "ML  CT  CT  CT  CT  MR "
+                       "BL  CT  CT  CT  CT  BR "
+                       "BL  LG  FL  FR  FR  BR "
+                       "BL  BLR BC  BC  BRR BR ";
+  /* align-items: end; */
+}
+.TL {
+grid-area: TL-start / TL-start / TL-end / TC-end;
+z-index: 2;
+justify-self: left;
+align-self: end;
+}
+.TR {
+grid-area: TL-start / TL-start / TR-end / TR-end;
+z-index: 3;
+justify-self: right;
+align-self: end;
+}
+.CT {
+  grid-area: CT;
+  align-self: baseline;
+  padding: 1rem;
+  background-color: #ffffffaa;
+  z-index: 60;
+}
+
+div.CT h1 {
+  text-align: center;
+}
+
+.FT {
+  align-self: baseline;
+  padding: 1rem 0.25rem;
+  background-color: #ffffffaa;
+  z-index: 55;
+}
+.FL {
+  grid-area: FL;
+}
+.FR {
+  grid-area: FR;
+}
+
+.HH {
+  grid-area: HH-start / CT-start / HH-end / CT-end;
+  z-index: 55;
+  justify-self: center;
+  margin-bottom: -0.5rem;
+}
+.HH img {
+  z-index: 55;
+}
+/* .HH {
+  grid-area: HH-start / CT-start / HH-end / CT-end;
+  z-index: 55;
+  justify-self: center;
+  background-color: #ffffff88;
+  text-align: center;
+} */
+.ML {
+  grid-area: TL-start / ML-start / BL-end / BL-end;
+  z-index: 3;
+  align-self: center;
+  margin-top: -20rem;
+}
+.BL {
+  grid-area: BL-start / BL-start / BL-end / BC-end;
+  z-index: 4;
+  align-self: end;
+}
+.BC {
+  grid-area: BC-start / CT-start / BC-end /CT-end;
+  z-index: 5;
+  justify-self: center;
+  margin-left: -9rem;
+}
+.BR {
+  grid-area: BR-start / BC-start / BR-end /BR-end;
+  z-index: 6;
+  justify-self: right;
+  align-self: end;
+}
+.MR {
+  grid-area: TR-start / MR-start / BR-end / BR-end;
+  z-index: 7;
+  align-self: center;
+  margin-top: -20rem;
+}
+@media(max-width: 600px) { 
+  img {
+    width: 50%;
+    height: auto;
+  }
+  .HH {
+    grid-area: TL-start / TL-start / TLR-end / TRR-end;
+  }
+  img.MR, img.ML {
+    display: none;
+  }
+  .BL, .BR {
+    align-self: center;
+  }
+  .CT {
+    background-color: white;
+    z-index: 55;
+  }
+  /* .TL, .ML, .TR, .MR, .BR, .BC {
+    display: none;
+  }
+  div.enclosing-grid {
+  grid-template-areas: 
+                       "HH"
+                       "CT"
+                       "FL"
+                       "FR"
+                       "TL"
+                       "BL"
+                       "LG"
+                       "ML"
+                       "BC"
+                       "TR" 
+                       "BR"
+                       "MR";
+  } */
+} 
