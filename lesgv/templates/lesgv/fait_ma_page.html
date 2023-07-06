@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags  %}
+
+{% block body_class %}fait-ma-page{% endblock %}
+
+{% block extra_css %}
+
+
+<link rel="stylesheet" href="{% static 'css/lesgv.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+{{ page.body|richtext }}
+
+{% endblock content %}
