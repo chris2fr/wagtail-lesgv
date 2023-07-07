@@ -11,6 +11,12 @@ DATABASES = {
     }
 }
 
+STATIC_ROOT = '/var/www/wagtail/static/'
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = '/var/www/wagtail/media/'
+MEDIA_URL = '/media/'
+
 try:
     from .local import *
 except ImportError:

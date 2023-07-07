@@ -35,3 +35,4 @@ coverage/
 
 #up.sh
 db.sqlite3
+/static/
