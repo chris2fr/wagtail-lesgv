@@ -30,3 +30,8 @@ coverage/
 .vscode
 
 *.db
+
+### Chris2fr
+
+#up.sh
+db.sqlite3
