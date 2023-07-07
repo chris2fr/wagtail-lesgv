@@ -15,29 +15,41 @@
 {% block content %}
 <body>
   <div class="enclosing-grid">
-    <img src="{% static 'images/faitmapage/lesartsvoisins_TL.svg' %}" class="TL">
-    <a href="https://blog.lesgrandsvoisins.com"  class="HH"><img src="{% static 'images/faitmapage/lesgrandsvoisinscom.svg' %}" height="60"></a>
-    <img src="{% static 'images/faitmapage/lesgrandsvoisins_MR.svg' %}" class="MR">
+    <div class="TL">
+      <img src="{% static 'images/faitmapage/lesartsvoisins_TL.svg' %}">
+    </div>
+  <div class="HH">
+    <a href="https://blog.lesgrandsvoisins.com"><img src="{% static 'images/faitmapage/lesgrandsvoisinscom.svg' %}" height="60"></a>
+  </div>
+  <div class="MR">
+    <img src="{% static 'images/faitmapage/lesgrandsvoisins_MR.svg' %}">
+  </div>
     <div class="CT">
       <h1>{{ page.title }} </h1>
         {{ page.body|richtext }} 
-    </div>
-    <img src="{% static 'images/faitmapage/lesartsvoisins_TR.svg' %}" class="TR">
-
+      </div>
+  <div class="TR">
+    <img src="{% static 'images/faitmapage/lesartsvoisins_TR.svg' %}">
+  </div>
     <div class="FL">
       {{ page.footer1|richtext }} 
     </div>
-    <a class="BL" href="https://blog.lesgrandsvoisins.com/tag/lesartsvoisins/"><img src="{% static 'images/faitmapage/lesgrandsvoisins_BL.svg' %}" ></a>
+    <div class="BL">
+    <a href="https://blog.lesgrandsvoisins.com/tag/lesartsvoisins/"><img src="{% static 'images/faitmapage/lesgrandsvoisins_BL.svg' %}" ></a>
+    </div>
     <div class="FR">
       {{ page.footer2|richtext }} 
     </div>
-    <img src="{% static 'images/faitmapage/lesgrandsvoisins_BR.svg' %}" class="BR">
+    <div class="BR">
+    <img src="{% static 'images/faitmapage/lesgrandsvoisins_BR.svg' %}">
+    </div>
 
-
-    <img src="{% static 'images/faitmapage/lesartsvoisins_ML.svg' %}" class="ML">
-
+    <div class="ML">
+    <img src="{% static 'images/faitmapage/lesartsvoisins_ML.svg' %}">
+    </div>
+    <div class="BC">
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_BC.svg' %}" class="BC">
-
+   </div>
 
       
 
