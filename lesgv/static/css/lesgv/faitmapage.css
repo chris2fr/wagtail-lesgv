@@ -21,6 +21,11 @@ div.enclosing-grid {
                        "BL  BLR BC  BC  BRR BR ";
   /* align-items: end; */
 }
+
+div.enclosing-grid img {
+  scale: 80%;
+}
+
 .TL {
 grid-area: TL-start / TL-start / TL-end / TC-end;
 z-index: 2;
@@ -52,9 +57,11 @@ div.CT h1 {
   background-color: #ffffffaa;
   z-index: 55;
 }
+/*
 .FL {
   grid-area: FL;
 }
+*/
 .FR {
   grid-area: FR;
 }
@@ -104,16 +111,61 @@ div.CT h1 {
   align-self: center;
   margin-top: -20rem;
 }
-@media(max-width: 600px) { 
-  img {
-    width: 50%;
-    height: auto;
+@media(max-width: 1200px) { 
+  div.enclosing-grid img {
+    scale: 80%;
   }
+}
+@media(max-width: 800px) { 
+  div.enclosing-grid img {
+    scale: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+  /*
   .HH {
     grid-area: TL-start / TL-start / TLR-end / TRR-end;
   }
+  
   img.MR, img.ML {
     display: none;
+  }
+  */
+  .HH {
+    grid-area: HH;
+  }
+  .TL {
+    grid-area: TL;
+  }
+  .ML {
+    grid-area: ML;
+  }
+  .BL {
+    grid-area: BL;
+  }
+  .BC {
+    grid-area: BC;
+  }
+  .BR {
+    grid-area: BR;
+  }
+  .TLC {
+    grid-area: TLC;
+  }
+  .TLR {
+    grid-area: TLC;
+  }
+  .TR {
+    grid-area: TR;
+  }
+  .MR {
+    grid-area: MR;
+  }
+  .TRR {
+    grid-area: TRR;
+  }
+  .BRR {
+    grid-area: BRR;
   }
   .BL, .BR {
     align-self: center;
@@ -121,23 +173,70 @@ div.CT h1 {
   .CT {
     background-color: white;
     z-index: 55;
-  }
-  /* .TL, .ML, .TR, .MR, .BR, .BC {
-    display: none;
+    grid-area: CT;
   }
   div.enclosing-grid {
-  grid-template-areas: 
-                       "HH"
-                       "CT"
-                       "FL"
-                       "FR"
-                       "TL"
-                       "BL"
-                       "LG"
-                       "ML"
-                       "BC"
-                       "TR" 
-                       "BR"
-                       "MR";
-  } */
+    grid-template-areas:  "TL TL"
+    "HH MR "
+    "CT TR "
+    "ML FL "
+    "FR MR "
+    "BC BC "
+    "BR BL "
+    "BLR BRR";
+
+
+  /*
+      grid-template-areas:  "TL TL"
+                          "HH MR"
+                          "CT TR"
+                          "ML FL"
+                          "FR MR"
+                          "BC BC"
+                          "BR BL"
+                          "BLR BRR"
+  div.enclosing-grid {
+  
+        grid-template-areas: "TL  TL TL  TL"
+                          "HH HH HH HH"
+                           "TR TR TR TR"
+                         "TLR TLC  TLC TRR"
+                         "CT  CT  CT  MR"
+                         "ML  FL  FL FL "
+                         "FR  FR  FR  BR "
+                         "BLR BC  BC  BRR ";
+    grid-template-areas: "TL  TL TR  TR"
+                         "TLR TLC  TLC TRR"
+                         "HH HH HH HH" 
+                         "CT  CT  CT  CT"
+                         "ML  ML  MR MR "
+                         "BL  FL  FL  FL "
+                         "FR  FR  FR  BR "
+                         "BLR BC  BC  BRR ";
+                         */
+    /* align-items: end; */
+    }
+    /* .TL, .ML, .TR, .MR, .BR, .BC {
+      display: none;
+    }
+    div.enclosing-grid {
+    grid-template-areas: 
+                         "HH"
+                         "CT"
+                         "FL"
+                         "FR"
+                         "TL"
+                         "BL"
+                         "LG"
+                         "ML"
+                         "BC"
+                         "TR" 
+                         "BR"
+                         "MR";
+    } */
 } 
+@media(max-width: 800px) { 
+  div.enclosing-grid img {
+    scale: 30%;
+  }
+}
