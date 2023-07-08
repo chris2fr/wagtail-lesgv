@@ -76,14 +76,14 @@ div.enclosing-grid img {
   position: relative;
 }
 .FL {
-  grid-area: 5 / 3 / 8 / 4;
+  grid-area: 5 / 3 / 9 / 4;
   z-index: 28;
   background-color: #ffffffcc;
   max-width: 86vw;
   padding: 1rem;
 }
 .FR {
-  grid-area: 5 / 4 / 8 / 5;
+  grid-area: 5 / 4 / 9 / 5;
   z-index: 29;
   background-color: #ffffffcc;
   padding: 1rem;
