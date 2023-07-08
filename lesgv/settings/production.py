@@ -1,4 +1,5 @@
 from .base import *
+from .websites import *
 
 DEBUG = False
 #DEBUG = True
@@ -21,35 +22,13 @@ MEDIA_URL = '/media/'
 ALLOWED_HOSTS = [
   'localhost',
   '127.0.0.1',
-  'www.l-g-v.com',
   'wagtail.l-g-v.com',
-  'gvois.in',
-  'www.gvois.in',
-  'gvcoop.org',
-  'www.gvcoop.org',
-  'gvcoop.com',
-  'www.gvcoop.com',
-  'coopgv.org',
-  'www.coopgv.org',
-  'coopgv.com',
-  'www.coopgv.com',
-]
+] + allowed_hosts()
 CSRF_TRUSTED_ORIGINS = [
   'http://localhost',
   'http://127.0.0.1',
   'https://www.l-g-v.com',
-  'https://wagtail.l-g-v.com',
-  'https://gvcoop.org',
-  'https://www.gvcoop.org',
-  'https://gvcoop.com',
-  'https://www.gvcoop.com',
-  'https://coopgv.org',
-  'https://www.coopgv.org',
-  'https://coopgv.com',
-  'https://www.coopgv.com',
-  'https://gvois.in',
-  'https://www.gvois.in',
-]
+] + csrf_trusted_origins()
 try:
     from .local import *
 except ImportError:
