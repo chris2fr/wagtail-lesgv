@@ -54,9 +54,6 @@ div.enclosing-grid img {
 .ML {
   grid-area: 2 / 1 / 7 / 2;
   z-index: 20;
-  display: flex;
-  align-content: unset;
-  justify-content: flex-end;
 }
 .CT {
   grid-area: 3 / 2 / 5 / 5;
@@ -102,6 +99,7 @@ div.enclosing-grid img {
 .BC {
   grid-area: 7 / 1 / 8 / 6;
   z-index: 14;
+  margin-top: 6rem;
   text-align: center;
 }
 .BR {
