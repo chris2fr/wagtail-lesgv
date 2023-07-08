@@ -8,7 +8,7 @@ if __name__ == "__main__":
     else:
         wagtailenv = "lesgv.settings.dev" 
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lesgv.settings.dev")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", wagtailenv)
 
     from django.core.management import execute_from_command_line
 
