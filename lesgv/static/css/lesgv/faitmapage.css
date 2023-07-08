@@ -37,7 +37,7 @@ div.enclosing-grid img {
   align-self: flex-start;
 }
 .HH {
-  grid-area: 2 / 1 / 4 / 7;
+  grid-area: 2 / 1 / 3 / 7;
   z-index: 15;
   /* max-width: 100vw; */
   display: flex;
@@ -52,11 +52,14 @@ div.enclosing-grid img {
 }
 
 .ML {
-  grid-area: 2 / 1 / 5 / 3;
+  grid-area: 2 / 1 / 6 / 2;
   z-index: 20;
 }
+.ML img {
+  margin-top: -75%;
+}
 .CT {
-  grid-area: 4 / 2 / 5 / 5;
+  grid-area: 3 / 2 / 5 / 5;
   z-index: 36;
   max-width: 86vw;
   background-color: #ffffffcc;
@@ -73,14 +76,14 @@ div.enclosing-grid img {
   position: relative;
 }
 .FL {
-  grid-area: 5 / 2 / 6 / 4;
+  grid-area: 5 / 3 / 8 / 4;
   z-index: 28;
   background-color: #ffffffcc;
   max-width: 86vw;
   padding: 1rem;
 }
 .FR {
-  grid-area: 5 / 4 / 7 / 5;
+  grid-area: 5 / 4 / 8 / 5;
   z-index: 29;
   background-color: #ffffffcc;
   padding: 1rem;
