@@ -9,6 +9,49 @@ from wagtail.contrib.settings.models import (
     register_setting,
 )
 
+# from django.urls import reverse
+# from django.contrib.syndication.views import Feed
+# from django.template.defaultfilters import truncatewords
+# from django.contrib.auth import get_user_model
+
+# from puput.models import EntryPage, BlogPage
+
+
+# class FeedMeModel(models.Model):
+#     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+#     title = models.CharField(max_length=200)
+#     description = models.CharField(max_length=200)
+#     slug = models.SlugField(null=False, unique=True)
+#     content = models.TextField()
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+#     is_live = models.BooleanField(default=False)
+
+#     def __str__(self):
+#         return self.title
+
+#     def get_absolute_url(self):
+#         return reverse('feed_me_detail', kwargs={'slug': self.slug})
+
+#     class Meta:
+#         ordering = ['-updated_at']
+
+# class RssFeedMeFeeds(Feed):
+#     title = "Feed Me"
+#     link = "/feedme/"
+#     description = "Recent free tutorials on LearnDjango.com."
+
+#     def items(self):
+#         return FeedMeModel.objects.order_by("-updated_at")[:100]
+
+#     def item_title(self, item):
+#         return item.title
+
+#     def item_description(self, item):
+#         return truncatewords(item.content, 30)
+
+#     def item_lastupdated(self, item):
+#         return item.updated_at
 
 @register_setting
 class WagtailSettings(BaseGenericSetting):

@@ -16,7 +16,7 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-
+ 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -48,6 +48,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "wagtail_transfer",
     'wagtail.contrib.settings',
+    'wagtail.contrib.sitemaps',
+    'wagtail.contrib.routable_page',
+    'django_social_share',
+    'puput',
+    'colorful',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +86,10 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.template.context_processors.request',
+)
 
 WSGI_APPLICATION = "lesgv.wsgi.application"
 
@@ -176,3 +185,9 @@ WAGTAILADMIN_BASE_URL = "http://wagtail.l-g-v.com"
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
+
+# FEEDS_USER_AGENT = "Wagtail-CoopGV.org/0.1"
+# FEEDS_SERVER = "https://www.coopgv.org"
+
+# PUPUT_ENTRY_MODEL = 'lesgv.models.BlogArticle'
+PUPUT_AS_PLUGIN = True
