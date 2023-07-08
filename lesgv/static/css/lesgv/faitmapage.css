@@ -76,21 +76,21 @@ div.enclosing-grid img {
   position: relative;
 }
 .FL {
-  grid-area: 5 / 3 / 9 / 4;
+  grid-area: 5 / 3 / 8 / 4;
   z-index: 28;
   background-color: #ffffffcc;
   max-width: 86vw;
   padding: 1rem;
 }
 .FR {
-  grid-area: 5 / 4 / 9 / 5;
+  grid-area: 5 / 4 / 8 / 5;
   z-index: 29;
   background-color: #ffffffcc;
   padding: 1rem;
   max-width: 86vw;
 }
 .BL {
-  grid-area: 5 / 1 / 8 / 4;
+  grid-area: 5 / 1 / 9 / 4;
   z-index: 12;
   text-align: left;
   display: flex;
@@ -100,13 +100,13 @@ div.enclosing-grid img {
   align-self: flex-end;
 }
 .BC {
-  grid-area: 7 / 1 / 8 / 6;
+  grid-area: 7 / 1 / 9 / 6;
   z-index: 14;
   margin-top: 6rem;
   text-align: center;
 }
 .BR {
-  grid-area: 5 / 1 / 8 / 8;
+  grid-area: 5 / 1 / 9 / 8;
   z-index: 13;
   display: flex;
   justify-content: flex-end;
