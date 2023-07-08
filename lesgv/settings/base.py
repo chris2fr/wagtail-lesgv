@@ -175,3 +175,4 @@ WAGTAILADMIN_BASE_URL = "http://wagtail.l-g-v.com"
 # https://koenwoortman.com/python-django-auto-created-primary-key-used-when-not-defining-primary-key-type/
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
