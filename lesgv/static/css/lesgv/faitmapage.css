@@ -17,20 +17,22 @@ div.enclosing-grid img {
   scale: 90%;
 }
 .TL {
-  grid-area: 1 / 1 / 3 / 4;
+  grid-area: 1 / 1 / 2 / 4;
   display: flex;
   justify-content: flex-start;
+  margin-bottom: -4rem;
 }
 .TL img {
   display: inline-block;
   align-self: flex-start;
 }
 .TR {
-  grid-area: 1 / 2 / 3 / 8;
+  grid-area: 1 / 2 / 2 / 8;
   z-index: 11;
   display: flex;
   width: 100%;
   justify-content: flex-end;
+  margin-bottom: -4rem;
 }
 .TR img {
   display: inline-block;
@@ -42,6 +44,7 @@ div.enclosing-grid img {
   /* max-width: 100vw; */
   display: flex;
   justify-content: center;
+  height: fit-content;
 }
 .HH a {
   align-self: flex-end;
@@ -59,7 +62,7 @@ div.enclosing-grid img {
   margin-top: -75%;
 }
 .CT {
-  grid-area: 3 / 2 / 5 / 5;
+  grid-area: 3 / 2 / 6 / 5;
   z-index: 36;
   max-width: 86vw;
   background-color: #ffffffcc;
@@ -69,21 +72,21 @@ div.enclosing-grid img {
   text-align: center;
 }
 .MR {
-  grid-area: 4 / 5 / 7 / 8;
+  grid-area: 2 / 5 / 9 / 8;
   z-index: 17;
 }
 .MR img {
   position: relative;
 }
 .FL {
-  grid-area: 5 / 3 / 8 / 4;
+  grid-area: 6 / 3 / 8 / 4;
   z-index: 28;
   background-color: #ffffffcc;
   max-width: 86vw;
   padding: 1rem;
 }
 .FR {
-  grid-area: 5 / 4 / 8 / 5;
+  grid-area: 6 / 4 / 8 / 5;
   z-index: 29;
   background-color: #ffffffcc;
   padding: 1rem;
@@ -118,11 +121,15 @@ div.enclosing-grid img {
 
 
 @media(max-width: 1200px) { 
+  .CT {
+    grid-area: 3 / 2 / 6 / 5;
+  }
+  
   .FL {
-    grid-area: 5 / 2 / 6 / 5;
+    grid-area: 6 / 2 / 7 / 5;
   }
   .FR {
-    grid-area: 6 / 2 / 7 / 5;  
+    grid-area: 7 / 3 / 8 / 5;  
   }
 } 
 
