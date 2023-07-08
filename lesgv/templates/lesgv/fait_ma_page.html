@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags  %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}fait-ma-page{% endblock %}
 
@@ -19,7 +19,7 @@
       <img src="{% static 'images/faitmapage/lesartsvoisins_TL.svg' %}">
     </div>
   <div class="HH">
-    <a href="https://blog.lesgrandsvoisins.com"><img src="{% static 'images/faitmapage/lesgrandsvoisinscom.svg' %}" height="60"></a>
+    <a href="{{ homepage_link }}">{% image site_logo max-1000x400 %}</a>
   </div>
   <div class="MR">
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_MR.svg' %}">

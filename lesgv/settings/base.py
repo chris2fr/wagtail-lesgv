@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "wagtail_transfer",
+    'wagtail.contrib.settings',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'wagtail.contrib.settings.context_processors.settings',
             ],
         },
     },
@@ -169,3 +171,7 @@ WAGTAILTRANSFER_SECRET_KEY = 'a16a98a3d773c8df5817365a81d528bd'
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://wagtail.l-g-v.com"
+
+# https://koenwoortman.com/python-django-auto-created-primary-key-used-when-not-defining-primary-key-type/
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
