@@ -5,3 +5,4 @@ gunicorn
 wagtail-transfer
 django-debug-toolbar
 pillow
+wagtail-themes
