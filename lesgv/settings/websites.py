@@ -9,9 +9,9 @@ domains = [
 
 def allowed_hosts():
   output = []
-  for dom in domains:
-    output += [domains]
-    output += ["www.{}".format(dom)]
+  for domain in domains:
+    output += [domain]
+    output += ["www.{}".format(domain)]
   return output
   
 def csrf_trusted_origins():
