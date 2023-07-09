@@ -139,7 +139,7 @@ class FaitMaHomePageBlog(FaitMaPage):
     ghost_limit = models.CharField(blank=True, null=True, max_length=8)
     ghost_include = models.CharField(blank=True, null=True, max_length=32)
 
-    content_panels = Page.content_panels + [
+    content_panels = FaitMaPage.content_panels + [
         FieldPanel('ghost_filter'),
         FieldPanel('ghost_order'),
         FieldPanel('ghost_limit'),
