@@ -148,6 +148,6 @@ class FaitMaHomePageBlog(FaitMaPage):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        params = {'ghost_limit':self.ghost_limit, 'ghost_include':self.ghost_include,'ghost_order':self.ghost_order,'ghost_filter':self.ghost_filter,'ghost_page':request.GET.get('page', 1) }
+        params = {'ghost_limit':request.GET.get('limit', self.ghost_limit) or 15, 'ghost_include':request.GET.get('include', self.ghost_include) or 'tags,authors','ghost_order':request.GET.get('order',self.ghost_order),'ghost_filter':request.GET.get('filter',self.ghost_filter),'ghost_page':request.GET.get('page', 1) }
         context['posts'] = lesgv.services.get_blog_posts(params)
         return context
