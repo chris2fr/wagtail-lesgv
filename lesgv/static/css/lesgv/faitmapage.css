@@ -163,6 +163,7 @@ div.enclosing-grid img {
   }
   div.enclosing-grid div.HH,
   div.enclosing-grid div.CT,
+  div.enclosing-grid div.CT div,
   div.enclosing-grid div.FL,
   div.enclosing-grid div.FR{
     scale: unset;

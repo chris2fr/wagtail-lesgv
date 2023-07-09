@@ -21,10 +21,11 @@
     </div>
     {% endcomment %}
     <div class="card">
-        <a href="{{ item.url }}"><div class="card-header">
-          <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}"  />
-        </div></a>
         <div class="card-body">
+            <a href="{{ item.url }}"><div class="card-header">
+                <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}"  />
+              </div></a>
+        <div class="article">
         {% for tag in item.tags %}
           <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}" >{{ tag.name }}</span></a>
         {% endfor %} 
@@ -33,7 +34,10 @@
           </h3>
           <p>{{ item.excerpt }}</p>
           <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
-          <div class="user">
+        </div>
+          
+        </div>
+        <div class="author">
             {% for author in item.authors %}
             <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user" /></a>
             <div class="user-info">
@@ -41,10 +45,12 @@
             </div>
             {% endfor %} 
             <div class="user-info">
-              <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
+                {% comment %}
+                <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
+                {% endcomment %}
+                <p><small>{{item.published_at|truncatechars:11}}</small></p>
             </div>
           </div>
-        </div>
       </div>
     {% endfor %}    
 </div>
