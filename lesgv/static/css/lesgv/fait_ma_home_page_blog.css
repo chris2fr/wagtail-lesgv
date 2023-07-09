@@ -14,10 +14,11 @@ div.posts {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 } */
-div.container {
+div.container,
+div.posts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
 }
 .card {
   overflow: hidden;
@@ -35,11 +36,17 @@ div.container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
+  align-items: center;
   min-height: 250px;
   height: --webkit-fill-available;
 
+}
+
+.card-body {
+  text-align: left;
+}
+.article h3 {
+  text-align: center;
 }
 .author {
   float:right;
@@ -67,7 +74,7 @@ div.container {
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
 }
 .user-info p {
   margin: 0;
@@ -85,4 +92,8 @@ div.container {
 
 div.author {
   text-align: right;
+}
+div.tags {
+  width: 100%;
+  text-align: left;
 }

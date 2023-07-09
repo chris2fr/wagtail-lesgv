@@ -26,18 +26,19 @@
                 <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}"  />
               </div></a>
         <div class="article">
-        {% for tag in item.tags %}
-          <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}" >{{ tag.name }}</span></a>
-        {% endfor %} 
           <h3>
             <a href="{{ item.url }}">{{ item.title }}</a>
           </h3>
           <p>{{ item.excerpt }}</p>
-          <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
         </div>
-          
         </div>
         <div class="author">
+            <div class="tags">
+                {% for tag in item.tags %}
+                <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}" >{{ tag.name }}</span></a>
+                {% endfor %} 
+            </div>
+            <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
             {% for author in item.authors %}
             <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user" /></a>
             <div class="user-info">
