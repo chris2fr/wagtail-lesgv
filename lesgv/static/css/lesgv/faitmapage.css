@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   max-width: 1200px;
+  overflow-x: hidden;
 }
 div.enclosing-grid {
   display: grid;
