@@ -133,7 +133,21 @@ class FaitMaPage(Page):
         return context
 
 class FaitMaHomePageBlog(FaitMaPage):
+    ghost_filter = models.CharField(blank=True, null=True, max_length=32)
+    ghost_order = models.CharField(blank=True, null=True, max_length=32)
+    # ghost_formats = models.CharField(blank=True, null=True, max_length=32)
+    ghost_limit = models.CharField(blank=True, null=True, max_length=8)
+    ghost_include = models.CharField(blank=True, null=True, max_length=32)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('ghost_filter'),
+        FieldPanel('ghost_order'),
+        FieldPanel('ghost_limit'),
+        FieldPanel('ghost_include'),
+    ]
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context['posts'] = lesgv.services.get_blog_posts()
+        params = {'ghost_limit':self.ghost_limit, 'ghost_include':self.ghost_include,'ghost_order':self.ghost_order,'ghost_filter':self.ghost_filter,'ghost_page':request.GET.get('page', 1) }
+        context['posts'] = lesgv.services.get_blog_posts(params)
         return context
