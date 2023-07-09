@@ -24,11 +24,32 @@ ALLOWED_HOSTS = [
   '127.0.0.1',
   'wagtail.l-g-v.com',
 ] + allowed_hosts()
+
 CSRF_TRUSTED_ORIGINS = [
   'http://localhost',
   'http://127.0.0.1',
   'https://www.l-g-v.com',
 ] + csrf_trusted_origins()
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'django-debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
 try:
     from .local import *
 except ImportError:
