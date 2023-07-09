@@ -12,10 +12,11 @@
     {% for item in posts %}
     <div class="post-item">
         <div class="post-image">
-            <img src="{{ item.feature_image }}" alt="{{ item.title }}" class="post-feature">
+            <a href="{{ item.url }}"><img src="{{ item.feature_image }}" alt="{{ item.title }}" class="post-feature"></a>
         </div>
         <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
         <p>{{ item.excerpt }}</p>
+        <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
     </div>
     {% endfor %}    
 </div>
