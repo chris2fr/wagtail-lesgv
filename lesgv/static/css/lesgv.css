@@ -4,10 +4,17 @@
 body {
   font-family: fengardoneue;
   color: var(--color-text);
+  background-color: var(--color-background);
 }
 a {
   color: var(--color-link);
 }
 h1, h2, h3, h4, h5, h6, nav {
   font-family: lack;
+}
+
+button.toggle-darkmode {
+  position: fixed;
+  top: 0;
+  left:0;
 }

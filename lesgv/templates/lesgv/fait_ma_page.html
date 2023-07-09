@@ -12,13 +12,13 @@
 {% block content %}
 <body>
   <div class="enclosing-grid">
-    <div class="TL">
+    <div class="TL cadre">
       <img src="{% static 'images/faitmapage/lesartsvoisins_TL.svg' %}">
     </div>
   <div class="HH">
     <a href="{{ homepage_link }}">{% image site_logo max-1000x100 %}</a>
   </div>
-  <div class="MR">
+  <div class="MR cadre">
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_MR.svg' %}">
   </div>
     <div class="CT">
@@ -43,7 +43,7 @@
 {% endblock CT %}
       </div>
 
-  <div class="TR">
+  <div class="TR cadre">
     <img src="{% static 'images/faitmapage/lesartsvoisins_TR.svg' %}">
   </div>
     <div class="FL">
@@ -51,22 +51,22 @@
       {{ footer1|richtext }} 
       {% endblock FL %}
     </div>
-    <div class="BL">
+    <div class="BL cadre">
     <a href="https://blog.lesgrandsvoisins.com/tag/lesartsvoisins/"><img src="{% static 'images/faitmapage/lesgrandsvoisins_BL.svg' %}" ></a>
     </div>
-    <div class="FR">
+    <div class="FR cadre">
       {% block FR %}
       {{ footer2|richtext }} 
       {% endblock FR %}
     </div>
-    <div class="BR">
+    <div class="BR cadre">
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_BR.svg' %}">
     </div>
 
-    <div class="ML">
+    <div class="ML cadre">
     <img src="{% static 'images/faitmapage/lesartsvoisins_ML.svg' %}">
     </div>
-    <div class="BC">
+    <div class="BC cadre">
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_BC.svg' %}" class="BC">
    </div>
 

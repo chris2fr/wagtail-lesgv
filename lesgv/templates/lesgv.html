@@ -35,14 +35,14 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-
+        <button class="toggle-darkmode">J/N</button>
         {% block content %}{% endblock %}
-
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/lesgv.js' %}"></script>
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
+
     </body>
 </html>

@@ -42,6 +42,32 @@
   --gv-background-opacity: 0.9;
 }
 
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-primary-dark);
+    --color-text: var(--white);
+    --color-text-inverted: var(--black);
+    --color-link: var(--color-primary-light);
+    --color-link-inverted: var(--color-primary-dark);
+    --gv-highlight-color: var(--color-primary-dark);
+    --gv-background-opacity: 0.9;
+  }
+} */
+
+.darkmode {
+    --color-background: var(--color-primary-dark);
+    --color-text: var(--white);
+    --color-text-inverted: var(--black);
+    --color-link: var(--color-primary-light);
+    --color-link-inverted: var(--color-primary-dark);
+    --gv-highlight-color: var(--color-primary-dark);
+    --gv-background-opacity: 0.9;
+}
+
+.darkmode div.cadre img {
+  filter: sepia(1);
+}
+
 
 /* 
 :root {
