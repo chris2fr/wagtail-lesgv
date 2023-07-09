@@ -8,16 +8,44 @@
 {% endblock extra_extra_css %}
 
 {% block extra_CT %}
-<div class="posts">
+<div class="posts container">
     {% for item in posts %}
+    {% comment %}
     <div class="post-item">
-        <div class="post-image">
-            <a href="{{ item.url }}"><img src="{{ item.feature_image }}" alt="{{ item.title }}" class="post-feature"></a>
-        </div>
+        <a href="{{ item.url }}"><div class="post-image">
+            <img src="{{ item.feature_image }}" alt="{{ item.title }}" class="post-feature">
+        </div></a>
         <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
         <p>{{ item.excerpt }}</p>
         <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
     </div>
+    {% endcomment %}
+    <div class="card">
+        <a href="{{ item.url }}"><div class="card-header">
+          <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}"  />
+        </div></a>
+        <div class="card-body">
+        {% for tag in item.tags %}
+          <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}" >{{ tag.name }}</span></a>
+        {% endfor %} 
+          <h3>
+            <a href="{{ item.url }}">{{ item.title }}</a>
+          </h3>
+          <p>{{ item.excerpt }}</p>
+          <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
+          <div class="user">
+            {% for author in item.authors %}
+            <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user" /></a>
+            <div class="user-info">
+                <p><a href="{{item.primary_author.url}}">{{item.primary_author.name}}</a></p>
+            </div>
+            {% endfor %} 
+            <div class="user-info">
+              <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
     {% endfor %}    
 </div>
     <h2 style="text-align: center;"><a href="https://blog.lesgrandsvoisins.com/">Voir tous les articles du blog</a></h2>
