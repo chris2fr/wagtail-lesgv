@@ -5,6 +5,8 @@ domains = [
   'coopgv.org',
   'coopgv.com',
   'l-g-v.com',
+  'lesgrandsvoisins.com',
+  'lesgrandsvoisins.fr',
 ]
 
 def allowed_hosts():
