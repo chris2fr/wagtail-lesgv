@@ -1,15 +1,12 @@
-{% extends "base.html" %}
+{% extends "lesgv.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}fait-ma-page{% endblock %}
 
 {% block extra_css %}
-
-<link rel="stylesheet" type="text/css"  href="{% static 'fonts/lack/stylesheet.css' %}" />
-<link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardoneue/font.css' %}" />
-<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/lesgvcolors.css' %}" />
 <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/faitmapage.css' %}" />
-<link rel="stylesheet" href="{% static 'css/lesgv.css' %}">
+{% block extra_extra_css %}
+{% endblock extra_extra_css %}
 {% endblock extra_css %}
 
 {% block content %}
@@ -25,9 +22,12 @@
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_MR.svg' %}">
   </div>
     <div class="CT">
+      {% block CT %}
       <h1>{{ page.title }} </h1>
         {{ page.body|richtext }} 
-        
+        {% block extra_CT %}
+        {# METTRE EXTRA CONTENU ICI #}
+        {% endblock extra_CT %}
 <div class="breadcrumb-content">
   {% if self.get_ancestors|length > 1 %}
       <ul class="breadcrumb">
@@ -40,18 +40,24 @@
       </ul>
   {% endif %}
 </div>
+{% endblock CT %}
       </div>
+
   <div class="TR">
     <img src="{% static 'images/faitmapage/lesartsvoisins_TR.svg' %}">
   </div>
     <div class="FL">
-      {{ page.footer1|richtext }} 
+      {% block FL %}
+      {{ footer1|richtext }} 
+      {% endblock FL %}
     </div>
     <div class="BL">
     <a href="https://blog.lesgrandsvoisins.com/tag/lesartsvoisins/"><img src="{% static 'images/faitmapage/lesgrandsvoisins_BL.svg' %}" ></a>
     </div>
     <div class="FR">
-      {{ page.footer2|richtext }} 
+      {% block FR %}
+      {{ footer2|richtext }} 
+      {% endblock FR %}
     </div>
     <div class="BR">
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_BR.svg' %}">
@@ -63,11 +69,6 @@
     <div class="BC">
     <img src="{% static 'images/faitmapage/lesgrandsvoisins_BC.svg' %}" class="BC">
    </div>
-
-      
-
-
-
 
 </div>
 

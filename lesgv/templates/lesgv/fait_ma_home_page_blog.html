@@ -1,0 +1,22 @@
+{% extends "lesgv/fait_ma_page.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}fait-ma-page{% endblock %}
+
+{% block extra_extra_css %}
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/fait_ma_home_page_blog.css' %}" />
+{% endblock extra_extra_css %}
+
+{% block extra_CT %}
+<div class="posts">
+    {% for item in posts %}
+    <div class="post-item">
+        <div class="post-image">
+            <img src="{{ item.feature_image }}" alt="{{ item.title }}" class="post-feature">
+        </div>
+        <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+        <p>{{ item.excerpt }}</p>
+    </div>
+    {% endfor %}    
+</div>
+{% endblock extra_CT %}

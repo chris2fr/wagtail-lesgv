@@ -1,0 +1,16 @@
+div.post-image {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  vertical-align: middle;
+}
+img.post-feature {
+  max-width: 100%;
+  object-fit: cover;
+  height: 8rem;
+}
+div.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}

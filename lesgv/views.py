@@ -1,14 +1,20 @@
-from django.views.generic import ListView, DetailView
+from django.shortcuts import render
+from django.http import HttpResponse
 
-from .models import Tutorial
+import requests
+import lesgv.services
 
-class FeedMeListView(ListView):
-    model = Tutorial
-    context_object_name = 'tutorial_list'
-    template_name = 'tutorials/tutorial_list.html'
+# Create your views here.
+def items(request):
+    #pull data from third party rest api
+    response = requests.get('https://jsonplaceholder.typicode.com/users')
+    #convert reponse data into json
+    items = response.json()
+    #print(users)
+    return render(request, "items.html", {'items': items})
 
 
-class FeedMeDetailView(DetailView): 
-    model = Tutorial
-    context_object_name = 'tutorial'
-    template_name = 'tutorials/tutorial_detail.html'
+def posts(request):
+    return render(request, "lesgv/fait_ma_home_page_blog.html", {'posts': lesgv.services.get_blog_posts()})
+
+

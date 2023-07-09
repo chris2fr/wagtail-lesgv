@@ -8,7 +8,7 @@ from wagtail.contrib.settings.models import (
     BaseSiteSetting,
     register_setting,
 )
-
+import lesgv.services
 # from django.urls import reverse
 # from django.contrib.syndication.views import Feed
 # from django.template.defaultfilters import truncatewords
@@ -66,9 +66,13 @@ class WagtailSettings(BaseGenericSetting):
         null=True,
         blank=True,
     );
+    footer1 = RichTextField(blank=True, null=True)
+    footer2 = RichTextField(blank=True, null=True)
     panels = [
         FieldPanel('site_logo'),
         FieldPanel('homepage_link'),
+        FieldPanel('footer1'),
+        FieldPanel('footer2'),
     ]
     class Meta:
         verbose_name = "Default Settings for All Websites"
@@ -86,15 +90,26 @@ class WebsiteSettings(BaseSiteSetting):
         null=True,
         blank=True,
     );
+    footer1 = RichTextField(blank=True, null=True)
+    footer2 = RichTextField(blank=True, null=True)
     panels = [
         FieldPanel('site_logo'),
         FieldPanel('homepage_link'),
+        FieldPanel('footer1'),
+        FieldPanel('footer2'),
     ]
     class Meta:
         verbose_name = "Settings Per Website"
 
+def notanytest(val):
+    return (any([
+        val is None,
+        val == '',
+        val == '<p></p>',
+    ]))
+
 class FaitMaPage(Page):
-    body = RichTextField()
+    body = RichTextField(blank=True, null=True)
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     content_panels = Page.content_panels + [
@@ -106,13 +121,19 @@ class FaitMaPage(Page):
         context = super().get_context(request, *args, **kwargs)
         context['website_settings'] = WebsiteSettings.for_request(request=request)
         context['wagtail_settings'] = WagtailSettings.load(request_or_site=request)
-        for item in ['site_logo','homepage_link']:
-            print(item)
+        for item in ['site_logo','homepage_link','footer1','footer2']:
+            # print(item)
             context[item] = getattr(context['website_settings'],item)
-            print(context[item])
-            if ((not context[item]) or context[item] is None):
+            # print(context[item])
+            if (notanytest(context[item])):
                 context[item] = getattr(context['wagtail_settings'],item)
-            print(context[item])
-            
-                
+            elif (notanytest(context[item]) and hasattr(self,item)):
+                context[item] = getattr(self,item)
+            # print(context[item])
+        return context
+
+class FaitMaHomePageBlog(FaitMaPage):
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['posts'] = lesgv.services.get_blog_posts()
         return context

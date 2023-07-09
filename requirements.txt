@@ -8,3 +8,4 @@ pillow
 wagtail-themes
 puput
 wagtail-markdown
+requests

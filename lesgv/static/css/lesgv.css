@@ -1,0 +1,9 @@
+:root {
+  --color-lesartsvoisins: #f0494d;
+}
+body {
+  font-family: fengardoneue;
+}
+h1, h2, h3, h4, h5, h6, nav {
+font-family: lack;
+}
