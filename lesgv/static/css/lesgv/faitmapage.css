@@ -226,3 +226,10 @@ ul.breadcrumb li a:hover {
   color: var(--color-background);
   text-decoration: underline;
 }
+
+
+.darkmode div.cadre img,
+.darkmode div.HH img {
+  /* filter: brightness(1.5) saturate(0.5) contrast(0.5); */
+  filter: sepia(0.25) brightness(1.25) contrast(0.75);
+}

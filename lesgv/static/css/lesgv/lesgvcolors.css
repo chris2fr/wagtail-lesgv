@@ -64,10 +64,7 @@
     --gv-background-opacity: 0.9;
 }
 
-.darkmode div.cadre img,
-.darkmode div.HH img {
-  filter: sepia(1);
-}
+
 
 
 /* 

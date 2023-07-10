@@ -1,6 +1,6 @@
 from django.db import models
 from wagtail.models import Page
-from wagtail.fields import RichTextField
+from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import  FieldPanel, MultiFieldPanel, InlinePanel
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.settings.models import (
@@ -9,6 +9,8 @@ from wagtail.contrib.settings.models import (
     register_setting,
 )
 import lesgv.services
+from lesgv.blocks import GhostIndexBlock
+
 # from django.urls import reverse
 # from django.contrib.syndication.views import Feed
 # from django.template.defaultfilters import truncatewords
@@ -110,13 +112,19 @@ def notanytest(val):
 
 class FaitMaPage(Page):
     body = RichTextField(blank=True, null=True)
+    posts_index = StreamField([
+        ('ghost_index_blog',GhostIndexBlock(required=False))
+        ], use_json_field=True, blank=True, null=True
+        , max_num=1)
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     content_panels = Page.content_panels + [
         FieldPanel('body'),
+        FieldPanel('posts_index'),
         FieldPanel('footer1'),
         FieldPanel('footer2'),
     ]
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context['website_settings'] = WebsiteSettings.for_request(request=request)
@@ -133,21 +141,22 @@ class FaitMaPage(Page):
         return context
 
 class FaitMaHomePageBlog(FaitMaPage):
-    ghost_filter = models.CharField(blank=True, null=True, max_length=32)
-    ghost_order = models.CharField(blank=True, null=True, max_length=32)
-    # ghost_formats = models.CharField(blank=True, null=True, max_length=32)
-    ghost_limit = models.CharField(blank=True, null=True, max_length=8)
-    ghost_include = models.CharField(blank=True, null=True, max_length=32)
+    pass
+    # ghost_filter = models.CharField(blank=True, null=True, max_length=32)
+    # ghost_order = models.CharField(blank=True, null=True, max_length=32)
+    # # ghost_formats = models.CharField(blank=True, null=True, max_length=32)
+    # ghost_limit = models.CharField(blank=True, null=True, max_length=8)
+    # ghost_include = models.CharField(blank=True, null=True, max_length=32)
 
-    content_panels = FaitMaPage.content_panels + [
-        FieldPanel('ghost_filter'),
-        FieldPanel('ghost_order'),
-        FieldPanel('ghost_limit'),
-        FieldPanel('ghost_include'),
-    ]
+    # content_panels = FaitMaPage.content_panels + [
+    #     FieldPanel('ghost_filter'),
+    #     FieldPanel('ghost_order'),
+    #     FieldPanel('ghost_limit'),
+    #     FieldPanel('ghost_include'),
+    # ]
 
-    def get_context(self, request, *args, **kwargs):
-        context = super().get_context(request, *args, **kwargs)
-        params = {'ghost_limit':request.GET.get('limit', self.ghost_limit) or 15, 'ghost_include':request.GET.get('include', self.ghost_include) or 'tags,authors','ghost_order':request.GET.get('order',self.ghost_order),'ghost_filter':request.GET.get('filter',self.ghost_filter),'ghost_page':request.GET.get('page', 1) }
-        context['posts'] = lesgv.services.get_blog_posts(params)
-        return context
+    # def get_context(self, request, *args, **kwargs):
+    #     context = super().get_context(request, *args, **kwargs)
+    #     params = {'ghost_limit':request.GET.get('limit', self.ghost_limit) or 15, 'ghost_include':request.GET.get('include', self.ghost_include) or 'tags,authors','ghost_order':request.GET.get('order',self.ghost_order),'ghost_filter':request.GET.get('filter',self.ghost_filter),'ghost_page':request.GET.get('page', 1) }
+    #     context['posts'] = lesgv.services.get_blog_posts(params)
+    #     return context

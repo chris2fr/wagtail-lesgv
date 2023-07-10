@@ -8,6 +8,9 @@
 {% endblock extra_extra_css %}
 
 {% block extra_CT %}
+
+{% include_block page.posts_index %}
+
 <div class="posts container">
     {% for item in posts %}
     {% comment %}
