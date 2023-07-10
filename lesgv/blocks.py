@@ -12,8 +12,8 @@ class GhostIndexBlock(blocks.StructBlock):
 
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
-        post_filter = value.get('post_filter')
-        if "{}".format(post_filter) != '' and value.get('ghost_tag'):
+        post_filter = value.get('post_filter') or ''
+        if post_filter != '' and value.get('ghost_tag'):
             post_filter += ","
         if value.get('ghost_tag'):
             post_filter += "primary_tag:{}".format(value.get('ghost_tag'))
