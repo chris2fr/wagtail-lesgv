@@ -8,7 +8,7 @@ def get_blog_posts(params={}):
         if params.get("ghost_{}".format(i),False):
             url += "&{}={}".format(i,urllib.parse.quote("{}".format(params.get("ghost_{}".format(i)))))
     response = requests.get(url)
-    print(url)
+    # print(url)
     ret = response.json()['posts']
     return ret
 
