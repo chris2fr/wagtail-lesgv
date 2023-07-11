@@ -54,20 +54,22 @@
             <div class="agenda">
                 <p><a
                         href="https://www.laressourceriecreative.com/la-guinguette" target="_blank">
-                        La Guinguette des la Ressourcerie créative</a></p>
-                <p>En partenariat avec les acteurs associatifs de
+                        La Guinguette des la Ressourcerie créative</a><br/>Jusqu'en août</BR>
+                En partenariat avec les acteurs associatifs de
                     La Porte d'Orléans et de Vanves</p>
-
-                        <br/>Jusqu'en août</p>
+                        {% comment %}
                 <div class="agenda-info">
                     <p><a href="https://www.laressourceriecreative.com/">La Ressourcerie Créative</a></p>
                 </div>
+                {% endcomment %}
+                {% comment %}
                 <div class="agenda-info">
-                    {% comment %}
+                   
                     <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
-                    {% endcomment %}
+                   
                     <p>Jusqu'en août</p>
                 </div>
+                {% endcomment %}
             </div>
         </div>
     </div>
