@@ -6,11 +6,11 @@ if (localStorage.getItem('darkmode')) {
   document.body.classList.add('darkmode');
   toggle.innerText = 'Nuit';
 } 
-// else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-//     document.body.classList.add('darkmode');
-//     localStorage.setItem('darkmode', true);
-//     toggle.innerText = 'Nuit';
-// }
+else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('darkmode');
+    localStorage.setItem('darkmode', true);
+    toggle.innerText = 'Nuit';
+}
 
 toggle.addEventListener('click', function(e) {
   e.preventDefault();

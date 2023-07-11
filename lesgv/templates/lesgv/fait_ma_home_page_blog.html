@@ -1,62 +1,81 @@
 {% extends "lesgv/fait_ma_page.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-{% block body_class %}fait-ma-page{% endblock %}
+{% block body_class %}fait-ma-page-home{% endblock %}
 
 {% block extra_extra_css %}
-<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/fait_ma_home_page_blog.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesgv/fait_ma_home_page_blog.css' %}" />
 {% endblock extra_extra_css %}
 
-{% block extra_CT %}
+{% block content %}
 
-{% include_block page.posts_index %}
+<div class="HH">
+    <a href="{{ homepage_link }}">{% image site_logo max-1000x100 %}</a>
+</div>
 
 <div class="posts container">
-    {% for item in posts %}
-    {% comment %}
-    <div class="post-item">
-        <a href="{{ item.url }}"><div class="post-image">
-            <img src="{{ item.feature_image }}" alt="{{ item.title }}" class="post-feature">
-        </div></a>
-        <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
-        <p>{{ item.excerpt }}</p>
-        <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
-    </div>
-    {% endcomment %}
     <div class="card">
         <div class="card-body">
-            <a href="{{ item.url }}"><div class="card-header">
-                <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}"  />
-              </div></a>
-        <div class="article">
-          <h3>
-            <a href="{{ item.url }}">{{ item.title }}</a>
-          </h3>
-          <p>{{ item.excerpt }}</p>
+            {% comment %}
+            <div class="card-header">
+                <a href="{{ homepage_link }}">{% image site_logo max-600x600 %}</a>
+            </div>
+            {% endcomment %}
+            <div class="article">
+                <p data-block-key="72zxg"><a href="https://www.lesgrandsvoisins.com/"><b>Les Grands Voisins</b></a>
+                    est une <a href="/coop/">association coopérative</a> créée à partir d'un <a
+                        href="/mission/manifeste/">manifeste rédigé par plus de 100</a> personnes à un lieu
+                    parisien, dans des circonstances uniques. Nous proposons un voisinage complémentaire à vos
+                    voisinages existants, un voisinage qui complète les interactions <i>entre individus et leurs
+                        différentes entités</i> économiques, culturelles, artistiques, artisanales,
+                    professionnelles, associatives, sociales, internationales et publiques.</p>
+                <ul>
+                    <li data-block-key="fcpaq">Voir nos <a href="/resdigita/">actions en numérique</a></li>
+                    <li data-block-key="9mtv3">Voir nos actions en <a href="/arts/">arts</a></li>
+                    <li data-block-key="2u9me">Participer à nos <a href="/coop/">coopérations</a></li>
+                    <li data-block-key="d3e7f"><a href="/mission/">Apprendre sur Les Grands Voisins</a>, notre
+                        association coopérative d'intérêt général</li>
+                    <li data-block-key="cpon8">Contribuer en dons, en temps, en expertise ou en nature</li>
+                </ul>
+            </div>
         </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="article">
+                <h2>
+                    Agenda
+                </h2>
+            </div>
+            <div class="card-header">
+                <a href="https://www.laressourceriecreative.com/la-guinguette" target="_blank"><img src="https://ooo.lesgrandsvoisins.com/web/image/1617-7efe3ad8/guinguette-2022-PANO_20220714_172238%20%28Large%29.jpg"
+                    alt="user" />
+            </div>
+            <div class="agenda">
+                <p><a
+                        href="https://www.laressourceriecreative.com/la-guinguette" target="_blank">
+                        La Guinguette des la Ressourcerie créative</a></p>
+                <p>En partenariat avec les acteurs associatifs de
+                    La Porte d'Orléans et de Vanves</p>
+
+                        <br/>Jusqu'en août</p>
+                <div class="agenda-info">
+                    <p><a href="https://www.laressourceriecreative.com/">La Ressourcerie Créative</a></p>
+                </div>
+                <div class="agenda-info">
+                    {% comment %}
+                    <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
+                    {% endcomment %}
+                    <p>Jusqu'en août</p>
+                </div>
+            </div>
         </div>
-        <div class="author">
-            <div class="tags">
-                {% for tag in item.tags %}
-                <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}" >{{ tag.name }}</span></a>
-                {% endfor %} 
-            </div>
-            <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
-            {% for author in item.authors %}
-            <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user" /></a>
-            <div class="user-info">
-                <p><a href="{{item.primary_author.url}}">{{item.primary_author.name}}</a></p>
-            </div>
-            {% endfor %} 
-            <div class="user-info">
-                {% comment %}
-                <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
-                {% endcomment %}
-                <p><small>{{item.published_at|truncatechars:11}}</small></p>
-            </div>
-          </div>
-      </div>
-    {% endfor %}    
+    </div>
+    {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
 </div>
-    <h2 style="text-align: center;"><a href="https://blog.lesgrandsvoisins.com/">Voir tous les articles du blog</a></h2>
-{% endblock extra_CT %}
+<div class="lesgv-footer">
+    {{ footer1|richtext }} 
+    {{ footer2|richtext }} 
+</div>
+
+{% endblock content %}

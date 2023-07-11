@@ -12,20 +12,8 @@ class GhostIndexBlock(blocks.StructBlock):
 
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
-        post_filter = value.get('post_filter') or ''
-        if post_filter != '' and value.get('ghost_tag'):
-            post_filter += ","
-        if value.get('ghost_tag'):
-            post_filter += "primary_tag:{}".format(value.get('ghost_tag'))
-        params = {
-            'ghost_limit':value.get('ghost_limit') or  15, 
-            'ghost_include':value.get('ghost_include') or 'tags,authors',
-            'ghost_order':value.get('ghost_order') or "",
-            'ghost_filter':post_filter,
-            'ghost_page':"{}".format(value.get('ghost_page') or 1)
-        }
         # print(params)
-        context['posts'] = lesgv.services.get_blog_posts(params)
+        context['posts'] = lesgv.services.get_blog_posts(lesgv.services.ProcessGhostParams(value))
         return context
 
     class Meta:

@@ -1,0 +1,35 @@
+div.container,
+div.posts {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+body {
+  margin: 1rem;
+}
+
+.card {
+  min-width: unset;
+}
+
+div.lesgv-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 800px) {
+  div.posts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+  div.posts {
+    grid-template-columns: 1fr;
+  }
+  div.lesgv-footer {
+    grid-template-columns: 1fr;
+  }
+}
