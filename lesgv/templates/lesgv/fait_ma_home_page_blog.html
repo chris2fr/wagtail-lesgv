@@ -45,7 +45,6 @@
                 {% for item in related_agenda %}
                 <div class="agenda-item">
                    <h3><a href="{{ item.agenda_item.url }}">{{ item.agenda_item.title }}</a></h3> 
-                   <a href="{{ item.agenda_item.url }}" class='{% if forloop.counter|divisibleby:"2" %}left{% else %}right{% endif %}'></a>
                    <ul class="agenda-item-date-lieu">
                     {% if item.agenda_item.start %}
                     <li>{{ item.agenda_item.start }}</li>
@@ -61,9 +60,9 @@
                         {% endif %}
                     {% endif %}
                    </ul>
+                   <a href="{{ item.agenda_item.url }}" class='{% if forloop.counter|divisibleby:"2" %}left{% else %}right{% endif %}'>
                    {% image item.agenda_item.image width-600 %}</a>
                    {{ item.agenda_item.body|richtext }} 
-
                 </div>
                 {% endfor %}
 
