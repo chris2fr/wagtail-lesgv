@@ -1,14 +1,14 @@
 div.container,
 div.posts {
   grid-template-columns: 1fr 1fr 1fr;
-  margin 1rem 1rem;
+  margin: 1rem 1rem;
   gap: 1rem;
 }
 
 
 
 body {
-  margin: 1rem 1rem;
+  margin: 1rem auto;
 }
 
 .card {
