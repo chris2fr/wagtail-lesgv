@@ -21,10 +21,58 @@ div.lesgv-footer {
   grid-template-columns: 1fr 1fr;
 }
 
-.agenda img {
+div.agenda-item {
+  overflow: hidden;
+}
+
+
+
+.agenda-item img {
   width: 100%;
-  height: 14rem;
+  max-height: 14rem;
   object-fit: cover;
+}
+
+.agenda-item a.left img {
+  width: 50%;
+  float: left;
+  padding: 0 1rem 0 0;
+}
+
+.agenda-item a.right img {
+  width: 50%;
+  float: right;
+  padding: 0 0 0 1rem;
+}
+
+.agenda-item p {
+  margin-block-end: 0.25rem;
+}
+
+ul.agenda-item-date-lieu {
+  padding-left: 0;
+  padding-top:0;
+  margin-top: -0.5rem;
+}
+ul.agenda-item-date-lieu li {
+  padding: 0 1rem 0 0;
+  display: inline;
+  font-size: small;
+
+}
+.apropos {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.agenda {
+  grid-row-end: 3;
+  grid-row-start: 1;
+  border: var(--color-text);
+  border-style: solid;
+  border-width: 1px;
+  padding: 0 0.5rem;
+}
+
 }
 
 @media (max-width: 800px) {

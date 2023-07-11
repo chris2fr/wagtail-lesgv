@@ -1,7 +1,7 @@
 from django.db import models
-from wagtail.models import Page
+from wagtail.models import Page, Orderable
 from wagtail.fields import RichTextField, StreamField
-from wagtail.admin.panels import  FieldPanel, MultiFieldPanel, InlinePanel
+from wagtail.admin.panels import  FieldPanel, MultiFieldPanel, InlinePanel, PageChooserPanel
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.settings.models import (
     BaseGenericSetting,
@@ -12,6 +12,7 @@ import lesgv.services
 from lesgv.blocks import GhostIndexBlock
 from wagtail.snippets.models import register_snippet
 # import lesgv.templatetags.lesgvtags
+from modelcluster.fields import ParentalKey
 
 from django import template
 register = template.Library()
@@ -162,9 +163,18 @@ class FaitMaPage(Page):
         , max_num=1)
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
     content_panels = Page.content_panels + [
         FieldPanel('body'),
         FieldPanel('posts_index'),
+        FieldPanel('image'),
         FieldPanel('footer1'),
         FieldPanel('footer2'),
     ]
@@ -184,6 +194,39 @@ class FaitMaPage(Page):
             # print(context[item])
         return context
 
+class RelatedAgendaItemHomePage(Orderable):
+    home_page = ParentalKey(
+        'FaitMaHomePageBlog',
+        related_name='agenda_home',
+    )
+    agenda_item = models.ForeignKey(
+        'FaitMaAgendaItemPage',
+        related_name="+",
+        on_delete=models.CASCADE,
+    )
+    panels = [
+        FieldPanel('agenda_item'),
+    ]
+
+
+class FaitMaAgendaItemPage(FaitMaPage):
+    url = models.URLField(blank=True, null=True)
+    start = models.DateField(blank=True, null=True)
+    end = models.DateField(blank=True, null=True)
+    place = models.CharField(blank=True, null=True, max_length=128)
+    place_url = models.URLField(blank=True, null=True)
+
+
+    content_panels = FaitMaPage.content_panels + [
+        FieldPanel('url'),
+        FieldPanel('start'),
+        FieldPanel('end'),
+        FieldPanel('place'),
+        FieldPanel('place_url'),
+    ] 
+
+
+
 class FaitMaHomePageBlog(FaitMaPage):
     # pass
     agenda = RichTextField(blank=True, null=True)
@@ -194,7 +237,9 @@ class FaitMaHomePageBlog(FaitMaPage):
     ghost_limit = models.CharField(blank=True, null=True, max_length=8)
     ghost_include = models.CharField(blank=True, null=True, max_length=32)
 
-    content_panels = FaitMaPage.content_panels + [
+    content_panels = [
+        InlinePanel('agenda_home',label="Items de l'agenda"),
+    ]  + FaitMaPage.content_panels + [
         FieldPanel('agenda'),
         FieldPanel('ghost_tag'),
         FieldPanel('ghost_filter'),
@@ -214,4 +259,5 @@ class FaitMaHomePageBlog(FaitMaPage):
             'ghost_page':  request.GET.get('page', 1)
         }
         context['posts'] = lesgv.services.get_blog_posts(lesgv.services.ProcessGhostParams(params))
-        return context
+        context['related_agenda'] = RelatedAgendaItemHomePage.objects.filter(home_page=self)
+        return context 

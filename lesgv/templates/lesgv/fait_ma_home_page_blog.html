@@ -14,7 +14,7 @@
 </div>
 
 <div class="posts container">
-    <div class="card">
+    <div class="card apropos">
         <div class="card-body">
             {% comment %}
             <div class="card-header">
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    <div class="card">
+    <div class="card agenda">
         <div class="card-body">
             {% comment %}
             <div class="article">
@@ -38,11 +38,36 @@
                     alt="user" />
             </div>
             {% endcomment %}
-            <div class="agenda">
+            <div class="agenda-home">
                 <h2>
                     Agenda
                 </h2>
-                {{ page.agenda|richtext }} 
+                {% for item in related_agenda %}
+                <div class="agenda-item">
+                   <h3><a href="{{ item.agenda_item.url }}">{{ item.agenda_item.title }}</a></h3> 
+                   <a href="{{ item.agenda_item.url }}" class='{% if forloop.counter|divisibleby:"2" %}left{% else %}right{% endif %}'></a>
+                   <ul class="agenda-item-date-lieu">
+                    {% if item.agenda_item.start %}
+                    <li>{{ item.agenda_item.start }}</li>
+                    {% endif %}
+                    {% if item.agenda_item.end %}
+                    <li>{{ item.agenda_item.end }}</li>
+                    {% endif %}
+                    {% if item.agenda_item.place %}
+                        {% if item.agenda_item.place_url %}
+                        <li><a href="{{ item.agenda_item.place_url }}">{{ item.agenda_item.place }}</a></li>
+                        {% else %}
+                        <li>{{ item.agenda_item.place }}</li>
+                        {% endif %}
+                    {% endif %}
+                   </ul>
+                   {% image item.agenda_item.image width-600 %}</a>
+                   {{ item.agenda_item.body|richtext }} 
+
+                </div>
+                {% endfor %}
+
+                
                 {% comment %}
                 <p><a
                         href="https://www.laressourceriecreative.com/la-guinguette" target="_blank">
