@@ -11,7 +11,6 @@ from wagtail.contrib.settings.models import (
 import lesgv.services
 from lesgv.blocks import GhostIndexBlock
 from wagtail.snippets.models import register_snippet
-# import lesgv.templatetags.lesgvtags
 from modelcluster.fields import ParentalKey
 
 from django import template
