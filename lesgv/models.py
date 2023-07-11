@@ -17,43 +17,43 @@ from modelcluster.fields import ParentalKey
 from django import template
 register = template.Library()
 
-@register_snippet
-class BlogPosts(models.Model):
-    ghost_tag = models.CharField(null=True,blank=True,max_length=32)
-    ghost_filter = models.CharField(null=True,blank=True,max_length=32)
-    ghost_order = models.CharField(null=True,blank=True,max_length=32)
-    # ghost_formats = models.CharField(null=True,blank=True,max_length=32)
-    ghost_limit = models.CharField(null=True,blank=True,max_length=32)
-    ghost_include = models.CharField(null=True,blank=True,max_length=32)
-    ghost_page = models.IntegerField(null=False)
+# @register_snippet
+# class BlogPosts(models.Model):
+#     ghost_tag = models.CharField(null=True,blank=True,max_length=32)
+#     ghost_filter = models.CharField(null=True,blank=True,max_length=32)
+#     ghost_order = models.CharField(null=True,blank=True,max_length=32)
+#     # ghost_formats = models.CharField(null=True,blank=True,max_length=32)
+#     ghost_limit = models.CharField(null=True,blank=True,max_length=32)
+#     ghost_include = models.CharField(null=True,blank=True,max_length=32)
+#     ghost_page = models.IntegerField(null=False)
 
-    panels = [
-        FieldPanel('ghost_tag'),
-        FieldPanel('ghost_filter'),
-        FieldPanel('ghost_order'),
-        FieldPanel('ghost_limit'),
-        FieldPanel('ghost_include'),
-        FieldPanel('ghost_page'),
-    ]
+#     panels = [
+#         FieldPanel('ghost_tag'),
+#         FieldPanel('ghost_filter'),
+#         FieldPanel('ghost_order'),
+#         FieldPanel('ghost_limit'),
+#         FieldPanel('ghost_include'),
+#         FieldPanel('ghost_page'),
+#     ]
 
-    def ToParams(self):
-        return {
-            'ghost_tag': self.ghost_tag,
-            'ghost_filter': self.ghost_filter,
-            'ghost_order': self.ghost_order,
-            'ghost_limit': self.ghost_limit,
-            'ghost_include': self.ghost_include,
-            'ghost_page': self.ghost_page,
-        }
+#     def ToParams(self):
+#         return {
+#             'ghost_tag': self.ghost_tag,
+#             'ghost_filter': self.ghost_filter,
+#             'ghost_order': self.ghost_order,
+#             'ghost_limit': self.ghost_limit,
+#             'ghost_include': self.ghost_include,
+#             'ghost_page': self.ghost_page,
+#         }
 
-    def __str__(self):
-        return self.text
+#     def __str__(self):
+#         return self.text
 
-@register.inclusion_tag('lesgv/tags/blog_posts.html')
-def blog_posts(params={}):
-    return {
-        'posts': lesgv.services.get_blog_posts(lesgv.services.ProcessGhostParams(params))
-    }
+# @register.inclusion_tag('lesgv/tags/blog_posts.html')
+# def blog_posts(params={}):
+#     return {
+#         'posts': lesgv.services.get_blog_posts(lesgv.services.ProcessGhostParams(params))
+#     }
 
 
 # from django.urls import reverse
@@ -174,7 +174,9 @@ class FaitMaPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('body'),
         FieldPanel('posts_index'),
-        FieldPanel('image'),
+        FieldPanel('image')
+    ]
+    settings_panels = [
         FieldPanel('footer1'),
         FieldPanel('footer2'),
     ]

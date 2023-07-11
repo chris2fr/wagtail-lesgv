@@ -58,7 +58,6 @@ ul.agenda-item-date-lieu li {
   padding: 0 1rem 0 0;
   display: inline-block;
   font-size: small;
-
 }
 .apropos {
   grid-row-start: 1;
@@ -73,19 +72,30 @@ ul.agenda-item-date-lieu li {
   padding: 0 0.5rem;
 }
 
-
-@media (max-width: 550px) {
+@media (max-width: 800px) {
   div.posts {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   div.lesgv-footer {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 550px) {
   div.posts {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
-
+  .apropos {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .agenda {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border: var(--color-text);
+    border-style: solid;
+    border-width: 1px;
+    padding: 0 0.5rem;
+  }
 }
+
