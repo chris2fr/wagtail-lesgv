@@ -56,7 +56,7 @@ ul.agenda-item-date-lieu {
 }
 ul.agenda-item-date-lieu li {
   padding: 0 1rem 0 0;
-  display: inline;
+  display: inline-block;
   font-size: small;
 
 }
