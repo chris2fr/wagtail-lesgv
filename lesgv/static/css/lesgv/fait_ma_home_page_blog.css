@@ -73,14 +73,6 @@ ul.agenda-item-date-lieu li {
   padding: 0 0.5rem;
 }
 
-}
-
-@media (max-width: 800px) {
-  div.posts {
-    grid-template-columns: 1fr 1fr;
-  }
-
-}
 
 @media (max-width: 550px) {
   div.posts {
@@ -91,3 +83,9 @@ ul.agenda-item-date-lieu li {
   }
 }
 
+@media (max-width: 800px) {
+  div.posts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
