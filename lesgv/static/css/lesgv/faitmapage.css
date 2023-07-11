@@ -239,7 +239,7 @@ div.posts */
 div.block-ghost_index_blog {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2rem;
 }
 .card {
   overflow: hidden;
