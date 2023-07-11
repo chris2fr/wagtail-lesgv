@@ -10,7 +10,7 @@ from wagtail.contrib.settings.models import (
 )
 import lesgv.services
 from lesgv.blocks import GhostIndexBlock
-from wagtail.snippets.models import register_snippet
+# from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey
 
 from django import template

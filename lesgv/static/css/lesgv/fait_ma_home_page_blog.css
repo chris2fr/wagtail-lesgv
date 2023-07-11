@@ -6,8 +6,6 @@ div.posts {
   gap: 1rem;
 }
 
-
-
 body {
   margin: 1rem auto;
 }
@@ -24,8 +22,6 @@ div.lesgv-footer {
 div.agenda-item {
   overflow: hidden;
 }
-
-
 
 .agenda-item img {
   width: 100%;

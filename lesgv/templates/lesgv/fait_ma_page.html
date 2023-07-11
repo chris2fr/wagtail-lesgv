@@ -40,7 +40,6 @@
     <div class="FL">
       {% block FL %}
       {{ footer1|richtext }} 
-      {{ footer2|richtext }} 
       {% endblock FL %}
     </div>
     <div class="BL cadre">
@@ -48,8 +47,8 @@
     </div>
     <div class="FR cadre">
       {% block FR %}
+      {{ footer2|richtext }} 
       {% endblock FR %}
-      <iframe width="400" height="280" src="https://www.youtube.com/embed/budyDXkH3r4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="BR cadre">
     <img src="{% static 'images/faitmapage/faitmapage_BR.svg' %}">
