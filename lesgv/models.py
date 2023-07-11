@@ -186,6 +186,7 @@ class FaitMaPage(Page):
 
 class FaitMaHomePageBlog(FaitMaPage):
     # pass
+    agenda = RichTextField(blank=True, null=True)
     ghost_tag = models.CharField(blank=True, null=True, max_length=32)
     ghost_filter = models.CharField(blank=True, null=True, max_length=32)
     ghost_order = models.CharField(blank=True, null=True, max_length=32)
@@ -194,6 +195,7 @@ class FaitMaHomePageBlog(FaitMaPage):
     ghost_include = models.CharField(blank=True, null=True, max_length=32)
 
     content_panels = FaitMaPage.content_panels + [
+        FieldPanel('agenda'),
         FieldPanel('ghost_tag'),
         FieldPanel('ghost_filter'),
         FieldPanel('ghost_order'),

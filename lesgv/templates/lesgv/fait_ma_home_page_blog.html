@@ -22,42 +22,34 @@
             </div>
             {% endcomment %}
             <div class="article">
-                <p data-block-key="72zxg"><a href="https://www.lesgrandsvoisins.com/"><b>Les Grands Voisins</b></a>
-                    est une <a href="/coop/">association coopérative</a> créée à partir d'un <a
-                        href="/mission/manifeste/">manifeste rédigé par plus de 100</a> personnes à un lieu
-                    parisien, dans des circonstances uniques. Nous proposons un voisinage complémentaire à vos
-                    voisinages existants, un voisinage qui complète les interactions <i>entre individus et leurs
-                        différentes entités</i> économiques, culturelles, artistiques, artisanales,
-                    professionnelles, associatives, sociales, internationales et publiques.</p>
-                <ul>
-                    <li data-block-key="fcpaq">Voir nos <a href="/resdigita/">actions en numérique</a></li>
-                    <li data-block-key="9mtv3">Voir nos actions en <a href="/arts/">arts</a></li>
-                    <li data-block-key="2u9me">Participer à nos <a href="/coop/">coopérations</a></li>
-                    <li data-block-key="d3e7f"><a href="/mission/">Apprendre sur Les Grands Voisins</a>, notre
-                        association coopérative d'intérêt général</li>
-                    <li data-block-key="cpon8">Contribuer en dons, en temps, en expertise ou en nature</li>
-                </ul>
+                {{ page.body|richtext }} 
             </div>
         </div>
     </div>
     <div class="card">
         <div class="card-body">
+            {% comment %}
             <div class="article">
-                <h2>
-                    Agenda
-                </h2>
+
             </div>
+
             <div class="card-header">
                 <a href="https://www.laressourceriecreative.com/la-guinguette" target="_blank"><img src="https://ooo.lesgrandsvoisins.com/web/image/1617-7efe3ad8/guinguette-2022-PANO_20220714_172238%20%28Large%29.jpg"
                     alt="user" />
             </div>
+            {% endcomment %}
             <div class="agenda">
+                <h2>
+                    Agenda
+                </h2>
+                {{ page.agenda|richtext }} 
+                {% comment %}
                 <p><a
                         href="https://www.laressourceriecreative.com/la-guinguette" target="_blank">
                         La Guinguette des la Ressourcerie créative</a><br/>Jusqu'en août</BR>
                 En partenariat avec les acteurs associatifs de
                     La Porte d'Orléans et de Vanves</p>
-                        {% comment %}
+                        
                 <div class="agenda-info">
                     <p><a href="https://www.laressourceriecreative.com/">La Ressourcerie Créative</a></p>
                 </div>

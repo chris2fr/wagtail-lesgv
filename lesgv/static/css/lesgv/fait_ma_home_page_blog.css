@@ -8,7 +8,7 @@ div.posts {
 
 
 body {
-  margin: 1rem auto;
+  margin: 1rem 1rem;
 }
 
 .card {
@@ -18,6 +18,12 @@ body {
 div.lesgv-footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.agenda img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
 }
 
 @media (max-width: 800px) {
@@ -35,3 +41,4 @@ div.lesgv-footer {
     grid-template-columns: 1fr;
   }
 }
+
