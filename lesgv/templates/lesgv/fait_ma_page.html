@@ -12,13 +12,13 @@
 {% block content %}
   <div class="enclosing-grid">
     <div class="TL cadre">
-      <img src="{% static 'images/faitmapage/faitmapage_TL.svg' %}">
+      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_TL.svg' %}"></a>
     </div>
   <div class="HH">
     <a href="{{ homepage_link }}">{% image site_logo max-1000x100 %}</a>
   </div>
   <div class="MR cadre">
-    <img src="{% static 'images/faitmapage/faitmapage_MR.svg' %}">
+    <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_MR.svg' %}"></a>
   </div>
     <div class="CT">
       {% block CT %}
@@ -35,7 +35,7 @@
   </div>
 
   <div class="TR cadre">
-    <img src="{% static 'images/faitmapage/faitmapage_TR.svg' %}">
+    <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_TR.svg' %}"></a>
   </div>
     <div class="FL">
       {% block FL %}
@@ -51,14 +51,14 @@
       {% endblock FR %}
     </div>
     <div class="BR cadre">
-    <img src="{% static 'images/faitmapage/faitmapage_BR.svg' %}">
+      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_BR.svg' %}"></a>
     </div>
 
     <div class="ML cadre">
-    <img src="{% static 'images/faitmapage/faitmapage_ML.svg' %}">
+      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_ML.svg' %}"></a>
     </div>
     <div class="BC cadre">
-    <img src="{% static 'images/faitmapage/faitmapage_BC.svg' %}" class="BC">
+      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_BC.svg' %}" class="BC"></a>
    </div>
 
 </div>
