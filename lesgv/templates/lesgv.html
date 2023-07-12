@@ -28,6 +28,7 @@
         <link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardoneue/font.css' %}" />
         <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/lesgvcolors.css' %}" />
         <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv.css' %}">
+        <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/burger.css' %}">
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
@@ -35,7 +36,8 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-        <button class="toggle-darkmode">J/N</button>
+        {% include "lesgv/fragments/burger_menu.html" %}
+        
         {% block content %}{% endblock %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/lesgv.js' %}"></script>

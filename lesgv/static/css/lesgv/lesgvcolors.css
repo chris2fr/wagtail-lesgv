@@ -14,7 +14,8 @@
   --french-sky-blue: #74b9ff;
   --skobeloff: #006266; 
   --white: white;
-  --black: black;
+  --color-whiteish: #eee;
+  --color-blackish: #222;
   --gradient-top: linear-gradient(0deg, #6c5ce7ff, #00b894ff, #e84393ff, #fdcb6eff, #1b1464ff);
   --gradient-right: linear-gradient(90deg, #6c5ce7ff, #00b894ff, #e84393ff, #fdcb6eff, #1b1464ff);
   --gradient-bottom: linear-gradient(180deg, #6c5ce7ff, #00b894ff, #e84393ff, #fdcb6eff, #1b1464ff);
@@ -27,19 +28,23 @@
   --color-primary: var(--slate-blue);
   --color-primary-light: var(--french-sky-blue);
   --color-primary-dark: var(--midnight-blue);
-  --color-secondary-light: var(--mountain-meadow);
-  --color-secondary-dark: var(--black);
-  --color-secondary: var(--skobeloff);
-  --color-tertiary-light: var(--white);
-  --color-tertiary: var(--maximum-yellow-red);
-  --color-tertiary-dark: var(--rose-bonbon);
-  --color-background: var(--white);
-  --color-text: var(--black);
-  --color-text-inverted: var(--white);
+  --color-secondary-light: var(--maximum-yellow-red);
+  --color-secondary-dark:  var(--maximum-yellow-red);
+  --color-secondary: var(--maximum-yellow-red);
+  --color-tertiary-light: var(--mountain-meadow);
+  --color-tertiary: var(--mountain-meadow);
+  --color-tertiary-dark: var(--skobeloff);
+  --color-background: var(--color-whiteish);
+  --color-background-inverted: var(--color-primary-dark);
+  --color-text: var(--color-primary-dark);
+  --color-text-inverted: var(--color-whiteish);
   --color-link: var(--color-primary);
   --color-link-inverted: var(--color-primary-light);
-  --gv-highlight-color: var(--color-primary-light);
+  --gv-highlight-color: var(--color-tertiary);
+  --color-highlight: var(--color-tertiary);
   --gv-background-opacity: 0.9;
+  --color-link-hover: var(--mountain-meadow);
+  --color-link-hover-inverted: var(--maximum-yellow-red);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -49,6 +54,7 @@
     --color-text-inverted: var(--black);
     --color-link: var(--color-primary-light);
     --color-link-inverted: var(--color-primary-dark);
+    
     --gv-highlight-color: var(--color-primary-dark);
     --gv-background-opacity: 0.9;
   }
@@ -56,12 +62,11 @@
 
 .darkmode {
     --color-background: var(--color-primary-dark);
-    --color-text: var(--white);
-    --color-text-inverted: var(--black);
-    --color-link: var(--color-primary-light);
-    --color-link-inverted: var(--color-primary-dark);
-    --gv-highlight-color: var(--color-primary-dark);
-    --gv-background-opacity: 0.9;
+    --color-text: var(--color-whiteish);
+    --color-text-inverted: var(--color-primary-dark);
+    --color-link: var(--color-link-inverted);
+    --color-link-inverted: var(--color-primary-light);
+    --color-link-hover: var(--maximum-yellow-red);
 }
 
 
