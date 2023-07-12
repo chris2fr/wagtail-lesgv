@@ -36,3 +36,6 @@ img.richtext-image.right {
   float: right;
   padding: 0 0 0 1rem ;
 }
+a:hover {
+  color: var(--color-link-hover);
+}

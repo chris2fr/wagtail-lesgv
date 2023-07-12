@@ -36,14 +36,14 @@
   --color-tertiary-dark: var(--skobeloff);
   --color-background: var(--color-whiteish);
   --color-background-inverted: var(--color-primary-dark);
-  --color-text: var(--color-primary-dark);
+  --color-text: var(--midnight-blue);
   --color-text-inverted: var(--color-whiteish);
-  --color-link: var(--color-primary);
-  --color-link-inverted: var(--color-primary-light);
+  --color-link: var(--midnight-blue);
+  --color-link-inverted: var(--rose-bonbon);
   --gv-highlight-color: var(--color-tertiary);
   --color-highlight: var(--color-tertiary);
   --gv-background-opacity: 0.9;
-  --color-link-hover: var(--mountain-meadow);
+  --color-link-hover: var(--rose-bonbon);
   --color-link-hover-inverted: var(--maximum-yellow-red);
 }
 
