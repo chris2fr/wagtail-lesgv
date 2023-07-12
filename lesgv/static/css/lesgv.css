@@ -24,15 +24,15 @@ button.toggle-darkmode {
 }
 
 img.richtext-image.full-width {
-  width: 100%;
+  max-width: 100%;
 }
 img.richtext-image.left {
-  width: 50%;
+  max-width: 50%;
   float: left;
   padding: 0 1rem 0 0 ;
 }
 img.richtext-image.right {
-  width: 50%;
+  max-width: 50%;
   float: right;
   padding: 0 0 0 1rem ;
 }
