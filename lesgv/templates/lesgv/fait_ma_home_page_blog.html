@@ -8,7 +8,7 @@
 {% endblock extra_extra_css %}
 
 {% block content %}
-
+{% include "lesgv/fragments/burger_menu.html" with menuitems=menuitems %}
 <div class="HH">
     <a href="{{ homepage_link }}">{% image site_logo max-1000x100 %}</a>
 </div>
