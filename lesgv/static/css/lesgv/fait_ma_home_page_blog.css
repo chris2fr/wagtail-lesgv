@@ -69,6 +69,7 @@ ul.agenda-item-date-lieu li {
   padding: 0 0.5rem;
   border-top: unset;
   border-bottom: unset;
+  border-radius: 1rem;
 }
 
 @media (max-width: 800px) {
