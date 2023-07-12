@@ -36,7 +36,7 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-        {% include "lesgv/fragments/burger_menu.html" %}
+        {% include "lesgv/fragments/burger_menu.html" with menuitems=menuitems %}
         
         {% block content %}{% endblock %}
         {# Global javascript #}

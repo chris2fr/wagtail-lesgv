@@ -193,6 +193,7 @@ class FaitMaPage(Page):
             elif (notanytest(context[item]) and hasattr(self,item)):
                 context[item] = getattr(self,item)
             # print(context[item])
+        context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)
         return context
 
 class RelatedAgendaItemHomePage(Orderable):
