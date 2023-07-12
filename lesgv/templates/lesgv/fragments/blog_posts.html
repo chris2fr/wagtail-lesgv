@@ -5,7 +5,7 @@
   <div class="card-body">
     <a href="{{ item.url }}">
       <div class="card-header">
-        <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}" />
+        <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}"  loading="lazy" />
       </div>
     </a>
     <div class="article">
@@ -24,7 +24,7 @@
     <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
     {% comment %}
     {% for author in item.authors %}
-    <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user" /></a>
+    <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user"  loading="lazy" /></a>
     <div class="user-info">
       <p><a href="{{item.primary_author.url}}">{{item.primary_author.name}}</a></p>
     </div>

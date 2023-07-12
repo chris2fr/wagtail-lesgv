@@ -25,6 +25,9 @@
                 {{ page.body|richtext }} 
             </div>
         </div>
+        <div class="author">
+            <hr>
+        </div>
     </div>
     <div class="card agenda">
         <div class="card-body">
@@ -66,6 +69,9 @@
                 </div>
                 {% endfor %}
             </div>
+        </div>
+        <div class="author">
+            <hr>
         </div>
     </div>
     {% include "lesgv/fragments/blog_posts.html" with posts=posts %}

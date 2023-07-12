@@ -58,6 +58,7 @@ ul.agenda-item-date-lieu li {
 .apropos {
   grid-row-start: 1;
   grid-row-end: 2;
+  
 }
 .agenda {
   grid-row-end: 3;
@@ -66,6 +67,8 @@ ul.agenda-item-date-lieu li {
   border-style: solid;
   border-width: 1px;
   padding: 0 0.5rem;
+  border-top: unset;
+  border-bottom: unset;
 }
 
 @media (max-width: 800px) {
