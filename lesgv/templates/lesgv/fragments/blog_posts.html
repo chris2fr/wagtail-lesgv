@@ -12,13 +12,13 @@
       <h2>
         <a href="{{ item.url }}">{{ item.title }}</a>
       </h2>
-      <div class="tags">
-        {% for tag in item.tags %}
-        <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}">{{ tag.name }}</span></a>
-        {% endfor %}
-      </div>
       <p>{{ item.excerpt }}</p>
     </div>
+  </div>
+  <div class="tags">
+    {% for tag in item.tags %}
+    <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}">{{ tag.name }}</span></a>
+    {% endfor %}
   </div>
   <div class="author">
     <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
