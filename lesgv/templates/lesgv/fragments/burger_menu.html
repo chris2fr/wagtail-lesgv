@@ -24,12 +24,19 @@
     but hey, it's pure CSS magic.
     -->
     <ul id="menu">
-      <li><a href="/">Home</a></li>
-      {% for item in menuitems %}
-        <li><a href="{{  item.url }}">{{  item.title }}</a></li>
-      {% endfor %}
-      <li><a href="#" class="jour-nuit" id="jour-nuit" onclick="javascript:toggleDarkmode();">Jour et nuit</a></li>
-      <a href="/admin/"><li>Admin</li></a>
+      {% if self.get_ancestors|length > 1 %}
+      {% for p in self.get_ancestors %}
+        {% if p.is_root == False %}
+        <li><a href="{{ p.url }}">{{ p.title }}</a>&nbsp/&nbsp;</li>
+        {% endif %}
+        {% endfor %}
+      {% endif %}
+        <li class="active">{{ self.title }}</li>
+        {% for item in menuitems %}
+          <li>&nbsp|&nbsp;<a href="{{  item.url }}">{{  item.title }}</a></li>
+        {% endfor %}
+      <li> &nbsp;\&nbsp;<a href="#" class="jour-nuit" id="jour-nuit" onclick="javascript:toggleDarkmode();">Jour et nuit</a></li>
+      <li> &nbsp\&nbsp;<a href="/admin/">Admin</a> </li>
     </ul>
   </div>
 </nav>
