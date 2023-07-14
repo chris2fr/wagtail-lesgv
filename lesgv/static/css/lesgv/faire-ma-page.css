@@ -168,7 +168,7 @@ div.enclosing-grid iframe {
     padding-bottom: unset;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   body {
     overflow-x: hidden;
   }
