@@ -38,11 +38,11 @@ div.enclosing-grid img {
   align-self: flex-start;
 }
 .HH {
-  grid-area: 2 / 2 / 3 / 6  ;
+  grid-area: 2 / 2 / 3 / 5  ;
   z-index: 15;
   display: flex;
   justify-content: center;
-  height: fit-content;
+  height: 100%;
   padding-right: 6rem;
 }
 .HH a {
@@ -66,6 +66,7 @@ div.enclosing-grid img {
   max-width: 86vw;
   background-color: var(--color-background);
   padding: 1rem;
+  height: 100%;
 }
 .MR {
   grid-area: 2 / 5 / 10 / 8;
@@ -76,10 +77,12 @@ div.enclosing-grid img {
   grid-area: 6 / 2 / 8 / 4;
   z-index: 28;
   margin-left: 4rem;
+  height: 100%;
 }
 .FR {
   grid-area: 6 / 4 / 8 / 5;
   z-index: 29;
+  height: 100%;
 }
 .FR, .FL {
   margin-bottom: 4rem;
