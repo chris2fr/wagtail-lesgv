@@ -18,6 +18,7 @@ npm-debug.log*
 /.pytest_cache/
 /storybook-static
 */migrations/*
+*/settings/secret/*
 
 ### JetBrains
 .idea/

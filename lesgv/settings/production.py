@@ -1,10 +1,15 @@
 from .base import *
 from .websites import *
+from
 
 DEBUG = False
 #DEBUG = True
 
-SECRET_KEY = 'd1e60d2b9c50ebbc5c83bc452da16fae'
+INSTALLED_APPS += [
+    "django-redis"
+]
+
+SECRET_KEY = lesgv.settings.lesecret.SECRET_KEY
 
 DATABASES = {
     'default': {
@@ -29,6 +34,7 @@ CSRF_TRUSTED_ORIGINS = [
   'http://localhost',
   'http://127.0.0.1',
   'https://www.l-g-v.com',
+  'https://www.lesgrandsvoisins.com'
 ] + csrf_trusted_origins()
 
 

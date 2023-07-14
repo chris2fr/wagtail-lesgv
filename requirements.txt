@@ -9,3 +9,4 @@ wagtail-themes
 puput
 wagtail-markdown
 requests
+django-redis
