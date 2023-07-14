@@ -9,7 +9,7 @@ SECRET_KEY = 'd1e60d2b9c50ebbc5c83bc452da16fae'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wagtail'
+        'NAME': 'fairemain'
     }
 }
 

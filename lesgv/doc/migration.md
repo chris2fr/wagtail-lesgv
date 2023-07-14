@@ -56,4 +56,8 @@ CREATE TABLE IF NOT EXISTS "lesgv_fairemainhomepage" (
   "agenda" text NULL
 );
 
+insert into lesgv_fairemainpage select page_ptr_id, body, '{}' AS posts_index, footer1, footer2, image_id from lesgv_faitmapage ;
+insert into lesgv_fairemainhomepage select faitmapage_ptr_id, agenda, ghost_tag, ghost_filter, ghost_order, ghost_limit, ghost_include from lesgv_faitmahomepageblog ;
+insert into lesgv_fairemainagendaitempage select faitmapage_ptr_id, url, start, "end", place, place_url from lesgv_faitmaagendaitempage;
+
 ```
