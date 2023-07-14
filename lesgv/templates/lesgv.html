@@ -30,6 +30,9 @@
         <link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardoneue/font.css' %}" />
         <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/lesgv-colors.css' %}" />
         <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv.css' %}">
+        <style>
+            {{ website_settings.csscolors }}
+        </style>
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}

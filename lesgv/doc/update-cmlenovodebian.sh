@@ -3,7 +3,7 @@ source /home/mannchri/wagtail/venv/bin/activate
 startdir=`pwd`
 workdir=/home/mannchri/wagtail/wagtail-lesgv
 scriptdir=/home/mannchri/wagtail/wagtail-lesgv/lesgv/doc
-for command in $(seq -f "%03g" 1 8); do
+for command in $(seq -f "%03g" 1 8)
 do
   echo "----------------------------------------------------------------------------------------"
   echo " DO $command `cat $scriptdir/update-cmlenovodebian/$command.sh`"

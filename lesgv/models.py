@@ -54,11 +54,13 @@ class WebsiteSettings(BaseSiteSetting):
     );
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
+    csscolors = models.TextField(blank=True, null=True)
     panels = [
         FieldPanel('site_logo'),
         FieldPanel('homepage_link'),
         FieldPanel('footer1'),
         FieldPanel('footer2'),
+        FieldPanel('csscolors'),
     ]
     class Meta:
         verbose_name = "Settings Per Website"
