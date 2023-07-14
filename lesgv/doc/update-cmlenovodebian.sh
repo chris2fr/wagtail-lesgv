@@ -1,17 +1,19 @@
-for i in "lesgv/doc/" "lesgv/settings/" "lesgv/static/" "lesgv/templates/" "search/"
+# set -e
+source /home/mannchri/wagtail/venv/bin/activate
+startdir=`pwd`
+workdir=/home/mannchri/wagtail/wagtail-lesgv
+scriptdir=/home/mannchri/wagtail/wagtail-lesgv/lesgv/doc
+for command in 001 002 003 004 005 006 007
 do
-  echo $i
-  rsync -a /mnt/d/work/wagtail/wagtail-lesgv/$i /home/mannchri/wagtail/wagtail-lesgv/$i
+  echo "----------------------------------------------------------------------------------------"
+  echo " DO $command `cat $scriptdir/update-cmlenovodebian/$command.sh`"
+  echo "-' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' '--' "
+  cd $workdir
+  source $scriptdir/update-cmlenovodebian/$command.sh
+  echo "-. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. .--. "
+  echo "DONE update-cmlenovodebian/$command.sh"
+  echo "========================================================================================"
 done
-for i in "lesgv"
-do
-  echo $i
-  rm /home/mannchri/wagtail/wagtail-lesgv/$i/*.py
-  cp -a /mnt/d/work/wagtail/wagtail-lesgv/$i/*.py /home/mannchri/wagtail/wagtail-lesgv/$i/
-done
-cp /mnt/d/work/wagtail/wagtail-lesgv/* /home/mannchri/wagtail/wagtail-lesgv/
-# pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py collectstatic --no-input
-python manage.py runserver 0.0.0.0:8000
+cd $startdir
+
+
