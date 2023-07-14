@@ -24,19 +24,32 @@
     but hey, it's pure CSS magic.
     -->
     <ul id="menu">
+      {% comment %}
       {% if self.get_ancestors|length > 1 %}
       {% for p in self.get_ancestors %}
         {% if p.is_root == False %}
-        <li><a href="{{ p.url }}">{{ p.title }}</a>&nbsp/&nbsp;</li>
+        <li><a href="{{ p.url }}">{{ p.title }}</a>&nbsp&gt;&nbsp;</li>
         {% endif %}
         {% endfor %}
       {% endif %}
+      {% endcomment %}
+      {% for p in breadcrumbs %}
+      <li><a href="{{ p.url }}">{{ p.title }}</a>
+        {% if p.children %}
+        <ul class="submenu">
+          {% for c in p.children %}
+            <li><a href="{{ c.url }}">{{ c.title }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      &nbsp&gt;&nbsp;</li>
+      {% endfor %}
         <li class="active">{{ self.title }}</li>
         {% for item in menuitems %}
-          <li>&nbsp|&nbsp;<a href="{{  item.url }}">{{  item.title }}</a></li>
+          <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{  item.title }}</a></li>
         {% endfor %}
-      <li> &nbsp;\&nbsp;<a href="#" class="jour-nuit" id="jour-nuit" onclick="javascript:toggleDarkmode();">Jour et nuit</a></li>
-      <li> &nbsp\&nbsp;<a href="/admin/">Admin</a> </li>
+      <li> &nbsp;&lt;&nbsp;<a href="#" class="jour-nuit" id="jour-nuit" onclick="javascript:toggleDarkmode();">Jour et nuit</a></li>
+      <li> &nbsp&lt;&nbsp;<a href="/admin/">Admin</a> </li>
     </ul>
   </div>
 </nav>

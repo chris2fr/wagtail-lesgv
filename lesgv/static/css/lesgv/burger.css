@@ -28,6 +28,27 @@
   color: var(--color-link-hover);
 }
 
+#menu ul.submenu {
+  display: none;
+  position: absolute;
+  z-index: 50;
+  float: left;
+  background: var(--color-background);
+  list-style-type: none;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+
+#menu ul.submenu li {
+  text-align: left;
+}
+
+#menu li:hover ul.submenu {
+  display: block;
+}
+
 
 #menuToggle input
 {

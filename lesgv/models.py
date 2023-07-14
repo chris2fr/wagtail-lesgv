@@ -1,7 +1,7 @@
 from django.db import models
 from wagtail.models import Page, Orderable
 from wagtail.fields import RichTextField, StreamField
-from wagtail.admin.panels import  FieldPanel, MultiFieldPanel, InlinePanel, PageChooserPanel
+from wagtail.admin.panels import  FieldPanel, InlinePanel
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.settings.models import (
     BaseGenericSetting,
@@ -10,7 +10,6 @@ from wagtail.contrib.settings.models import (
 )
 import lesgv.services
 from lesgv.blocks import GhostIndexBlock
-# from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey
 
 from django import template
@@ -111,6 +110,20 @@ class FaireMainPage(Page):
                 context[item] = getattr(self,item)
             # print(context[item])
         context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)
+        context['breadcrumbs'] = []
+        for a in self.get_ancestors():
+            if (not a.is_root()):
+                breadcrumb = {
+                    "url": a.url,
+                    "title":a.title,
+                    "children":[]
+                }
+                for c in a.get_children().filter(live=True, show_in_menus=True):
+                    breadcrumb["children"] += [{
+                        "url": c.url,
+                        "title":c.title
+                    }]
+                context['breadcrumbs'] += [breadcrumb]
         return context
 
 class RelatedAgendaItemHomePage(Orderable):
