@@ -4,9 +4,12 @@
 {% block body_class %}fait-ma-page{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/faitmapage.css' %}" />
-{% block extra_extra_css %}
-{% endblock extra_extra_css %}
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/faire-ma-page.css' %}" />
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/burger.css' %}" />
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/breadcrumbs.css' %}" />
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/blog-post-card.css' %}" />
+{% block faire_ma_page_extra_css %}
+{% endblock faire_ma_page_extra_css %}
 {% endblock extra_css %}
 
 {% block content %}

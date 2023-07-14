@@ -3,9 +3,11 @@
 
 {% block body_class %}fait-ma-page-home{% endblock %}
 
-{% block extra_extra_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesgv/fait_ma_home_page_blog.css' %}" />
-{% endblock extra_extra_css %}
+{% block faire_ma_page_extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesgv/faire-ma-home-page.css' %}" />
+{% block faire_ma_home_page_extra_css %}
+{% endblock faire_ma_home_page_extra_css %}
+{% endblock faire_ma_page_extra_css %}
 
 {% block content %}
 <div class="HH">
