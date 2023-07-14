@@ -10,7 +10,7 @@ do
   cp -a /mnt/d/work/wagtail/wagtail-lesgv/$i/*.py /home/mannchri/wagtail/wagtail-lesgv/$i/
 done
 cp /mnt/d/work/wagtail/wagtail-lesgv/* /home/mannchri/wagtail/wagtail-lesgv/
-pip install -r requirements.txt
+# pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py collectstatic --no-input

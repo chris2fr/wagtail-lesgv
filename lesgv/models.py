@@ -85,7 +85,9 @@ class FaireMainPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-
+    page_description = "Faire Ma Page, Une page"
+    parent_page_types = ['wagtailcore.Page','lesgv.FaireMainHomePage','lesgv.FaireMainPage']
+    subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     content_panels = Page.content_panels + [
         FieldPanel('body'),
         # FieldPanel('posts_index'),
@@ -95,7 +97,6 @@ class FaireMainPage(Page):
         FieldPanel('footer1'),
         FieldPanel('footer2'),
     ]
-
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context['website_settings'] = WebsiteSettings.for_request(request=request)
@@ -140,14 +141,15 @@ class RelatedAgendaItemHomePage(Orderable):
         FieldPanel('agenda_item'),
     ]
 
-
 class FaireMainAgendaItemPage(FaireMainPage):
     url = models.URLField(blank=True, null=True)
     start = models.DateField(blank=True, null=True)
     end = models.DateField(blank=True, null=True)
     place = models.CharField(blank=True, null=True, max_length=128)
     place_url = models.URLField(blank=True, null=True)
-
+    page_description = "Faire Ma Agenda Item Page, Un évènement"
+    parent_page_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
+    subpage_types = ['lesgv.FaireMainAgendaItemPage']
     content_panels = FaireMainPage.content_panels + [
         FieldPanel('url'),
         FieldPanel('start'),
@@ -156,10 +158,7 @@ class FaireMainAgendaItemPage(FaireMainPage):
         FieldPanel('place_url'),
     ] 
 
-
-
 class FaireMainHomePage(FaireMainPage):
-    # pass
     agenda = RichTextField(blank=True, null=True)
     ghost_tag = models.CharField(blank=True, null=True, max_length=32)
     ghost_filter = models.CharField(blank=True, null=True, max_length=32)
@@ -167,7 +166,9 @@ class FaireMainHomePage(FaireMainPage):
     # ghost_formats = models.CharField(blank=True, null=True, max_length=32)
     ghost_limit = models.CharField(blank=True, null=True, max_length=8)
     ghost_include = models.CharField(blank=True, null=True, max_length=32)
-
+    page_description = "Faire Main Home Page: Une page home "
+    parent_page_types =['wagtailcore.Page']
+    subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     content_panels = [
         InlinePanel('agenda_home',label="Items de l'agenda"),
     ]  + FaireMainPage.content_panels + [
