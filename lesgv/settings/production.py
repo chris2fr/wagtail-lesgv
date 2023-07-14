@@ -1,13 +1,10 @@
 from .base import *
 from .websites import *
-from
+import lesgv.settings.secrets.lesecret
 
 DEBUG = False
 #DEBUG = True
 
-INSTALLED_APPS += [
-    "django-redis"
-]
 
 SECRET_KEY = lesgv.settings.lesecret.SECRET_KEY
 
