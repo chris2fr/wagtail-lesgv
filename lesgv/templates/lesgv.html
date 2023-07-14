@@ -47,7 +47,7 @@
         
         {% block content %}
         {% endblock %}
-        {% block_lesgv_content%}
+        {% block lesgv_content%}
         {% endblock %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/lesgv.js' %}"></script>
@@ -55,7 +55,7 @@
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
-        {% block_lesgv_extra_js%}
+        {% block lesgv_extra_js%}
         {% endblock %}
     </body>
 </html>
