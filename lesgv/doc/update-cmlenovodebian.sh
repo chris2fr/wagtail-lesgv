@@ -1,9 +1,9 @@
-# set -e
+set -e
 source /home/mannchri/wagtail/venv/bin/activate
 startdir=`pwd`
 workdir=/home/mannchri/wagtail/wagtail-lesgv
 scriptdir=/home/mannchri/wagtail/wagtail-lesgv/lesgv/doc
-for command in 001 002 003 004 005 006 007
+for command in $(seq -f "%03g" 1 8); do
 do
   echo "----------------------------------------------------------------------------------------"
   echo " DO $command `cat $scriptdir/update-cmlenovodebian/$command.sh`"
