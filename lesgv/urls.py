@@ -12,8 +12,8 @@ from wagtail_transfer import urls as wagtailtransfer_urls
 
 # from snotra_rss import urls as snotra_urls
 # from feedreader import urls as feedreader_urls
-from puput import urls as puput_urls 
-from lesgv import views as lesgv_views
+# from puput import urls as puput_urls 
+# from lesgv import views as lesgv_views
 
 from search import views as search_views
 
@@ -42,7 +42,7 @@ urlpatterns = urlpatterns + [
     # Wagtail's page serving mechanism. This should be the last pattern in
     # the list:
     path("", include(wagtail_urls)),
-    path(r'', include('puput.urls')),
+    # path(r'', include('puput.urls')),
 
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
@@ -53,6 +53,6 @@ urlpatterns = urlpatterns + [
     # path("", include(snotra_urls)),
     # url(r'', include(snotra_urls))
     # path('feedreader/', include(feedreader_urls)),
-    path('blog/items', lesgv_views.items, name = 'items'),
-    path('blog/posts', lesgv_views.posts, name = 'posts'),
+    # path('blog/items', lesgv_views.items, name = 'items'),
+    # path('blog/posts', lesgv_views.posts, name = 'posts'),
 ]

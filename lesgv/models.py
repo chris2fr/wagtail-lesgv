@@ -1,6 +1,6 @@
 from django.db import models
 from wagtail.models import Page, Orderable
-from wagtail.fields import RichTextField, StreamField
+from wagtail.fields import RichTextField #, StreamField
 from wagtail.admin.panels import  FieldPanel, InlinePanel
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.settings.models import (
@@ -9,7 +9,7 @@ from wagtail.contrib.settings.models import (
     register_setting,
 )
 import lesgv.services
-from lesgv.blocks import GhostIndexBlock
+# from lesgv.blocks import GhostIndexBlock
 from modelcluster.fields import ParentalKey
 
 from django import template
@@ -72,10 +72,10 @@ def notanytest(val):
 
 class FaireMainPage(Page):
     body = RichTextField(blank=True, null=True)
-    posts_index = StreamField([
-        ('ghost_index_blog',GhostIndexBlock(required=False))
-        ], use_json_field=True, blank=True, null=True
-        , max_num=1)
+    # posts_index = StreamField([
+    #     ('ghost_index_blog',GhostIndexBlock(required=False))
+    #     ], use_json_field=True, blank=True, null=True
+    #     , max_num=1)
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     image = models.ForeignKey(
@@ -88,7 +88,7 @@ class FaireMainPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('body'),
-        FieldPanel('posts_index'),
+        # FieldPanel('posts_index'),
         FieldPanel('image')
     ]
     settings_panels = [

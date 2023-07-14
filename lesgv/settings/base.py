@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.sitemaps',
     'wagtail.contrib.routable_page',
     'django_social_share',
-    'puput',
+    # 'puput',
     'colorful',
     "wagtailmarkdown",
 ]
@@ -180,7 +180,7 @@ WAGTAILTRANSFER_SECRET_KEY = 'a16a98a3d773c8df5817365a81d528bd'
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://wagtail.l-g-v.com"
+WAGTAILADMIN_BASE_URL = "http://www.lesgrandsvoisins.com"
 
 # https://koenwoortman.com/python-django-auto-created-primary-key-used-when-not-defining-primary-key-type/
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
@@ -191,7 +191,7 @@ WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
 # FEEDS_SERVER = "https://www.coopgv.org"
 
 # PUPUT_ENTRY_MODEL = 'lesgv.models.BlogArticle'
-PUPUT_AS_PLUGIN = True
+# PUPUT_AS_PLUGIN = True
 
 WAGTAILMARKDOWN = {
     "autodownload_fontawesome": False,

@@ -33,7 +33,6 @@ def ProcessGhostParams(value={}):
     }
     return params
 
-def get_events(params={}):
-    
-    info = xmlrpc.client.ServerProxy('https://ooo.lesgrandsvoisins.com.com/start').start()
-    url, db, username, password = info['host'], info['database'], info['user'], info['password']
+# def get_events(params={}):
+#     info = xmlrpc.client.ServerProxy('https://ooo.lesgrandsvoisins.com.com/start').start()
+#     url, db, username, password = info['host'], info['database'], info['user'], info['password']
