@@ -80,14 +80,13 @@ div.enclosing-grid img {
   grid-area: 6 / 2 / 8 / 4;
   z-index: 28;
   margin-left: 4rem;
-  height: 100%;
   border-radius: 0 0 0 1rem;
 }
 .FR {
   grid-area: 6 / 4 / 8 / 5;
   z-index: 29;
-  height: 100%;
-  border-radius: 0 0 0 1rem;
+  border-radius: 0 0 1rem 0;
+
 }
 .FR, .FL {
   margin-bottom: 4rem;
@@ -148,6 +147,7 @@ div.enclosing-grid iframe {
   .FL {
     grid-area: 6 / 2 / 7 / 6;
     margin-left: unset;
+    height: 100%;
   }
   .FR {
     grid-area: 7 / 3 / 8 / 6;  
