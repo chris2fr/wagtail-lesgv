@@ -6,7 +6,7 @@ DEBUG = False
 #DEBUG = True
 
 
-SECRET_KEY = lesgv.settings.lesecret.SECRET_KEY
+SECRET_KEY = lesgv.settings.secrets.lesecret.SECRET_KEY
 
 DATABASES = {
     'default': {
