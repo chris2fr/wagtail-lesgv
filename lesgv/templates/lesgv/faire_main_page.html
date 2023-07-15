@@ -20,13 +20,13 @@
 {% block content %}
   <div class="enclosing-grid">
     <div class="TL cadre">
-      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_TL.svg' %}"></a>
+      <a href="{{ homepage_link }}"><img src="{% static static_images.TL %}"></a>
     </div>
   <div class="HH">
     <a href="{{ homepage_link }}">{% image site_logo max-1000x100 %}</a>
   </div>
   <div class="MR cadre">
-    <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_MR.svg' %}"></a>
+    <a href="{{ homepage_link }}"><img src="{% static static_images.MR %}"></a>
   </div>
     <div class="CT">
       {% block CT %}
@@ -46,7 +46,7 @@
   </div>
 
   <div class="TR cadre">
-    <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_TR.svg' %}"></a>
+    <a href="{{ homepage_link }}"><img src="{% static static_images.TR %}"></a>
   </div>
     <div class="FL">
       {% block FL %}
@@ -54,7 +54,7 @@
       {% endblock FL %}
     </div>
     <div class="BL cadre">
-    <a href="https://blog.lesgrandsvoisins.com/tag/lesartsvoisins/"><img src="{% static 'images/faitmapage/faitmapage_BL.svg' %}" ></a>
+    <a href="https://blog.lesgrandsvoisins.com/tag/lesartsvoisins/"><img src="{% static static_images.BL %}"></a>
     </div>
     <div class="FR cadre">
       {% block FR %}
@@ -62,14 +62,14 @@
       {% endblock FR %}
     </div>
     <div class="BR cadre">
-      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_BR.svg' %}"></a>
+      <a href="{{ homepage_link }}"><img src="{% static static_images.BR %}"></a>
     </div>
 
     <div class="ML cadre">
-      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_ML.svg' %}"></a>
+      <a href="{{ homepage_link }}"><img src="{% static static_images.ML %}"></a>
     </div>
     <div class="BC cadre">
-      <a href="{{ homepage_link }}"><img src="{% static 'images/faitmapage/faitmapage_BC.svg' %}" class="BC"></a>
+      <a href="{{ homepage_link }}"><img src="{% static static_images.BC %}" class="BC"></a>
    </div>
 
 </div>

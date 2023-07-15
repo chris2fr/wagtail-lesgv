@@ -27,14 +27,16 @@ class WagtailSettings(BaseGenericSetting):
     homepage_link = models.URLField(
         null=True,
         blank=True,
-    );
+    )
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
+    theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
     panels = [
         FieldPanel('site_logo'),
         FieldPanel('homepage_link'),
         FieldPanel('footer1'),
         FieldPanel('footer2'),
+        FieldPanel('theme'),
     ]
     class Meta:
         verbose_name = "Default Settings for All Websites"
@@ -51,17 +53,13 @@ class WebsiteSettings(BaseSiteSetting):
     homepage_link = models.URLField(
         null=True,
         blank=True,
-    );
+    )
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
+    theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
     csscolors = models.TextField(blank=True, null=True)
-    panels = [
-        FieldPanel('site_logo'),
-        FieldPanel('homepage_link'),
-        FieldPanel('footer1'),
-        FieldPanel('footer2'),
-        FieldPanel('csscolors'),
-    ]
+    panels = WagtailSettings.panels
+    
     class Meta:
         verbose_name = "Settings Per Website"
 
@@ -103,15 +101,13 @@ class FaireMainPage(Page):
         context = super().get_context(request, *args, **kwargs)
         context['website_settings'] = WebsiteSettings.for_request(request=request)
         context['wagtail_settings'] = WagtailSettings.load(request_or_site=request)
-        for item in ['site_logo','homepage_link','footer1','footer2']:
-            # print(item)
+
+        for item in ['site_logo','homepage_link','footer1','footer2','theme']:
             context[item] = getattr(context['website_settings'],item)
-            # print(context[item])
             if (notanytest(context[item])):
                 context[item] = getattr(context['wagtail_settings'],item)
             elif (notanytest(context[item]) and hasattr(self,item)):
                 context[item] = getattr(self,item)
-            # print(context[item])
         context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)
         context['breadcrumbs'] = []
         for a in self.get_ancestors():
@@ -127,6 +123,11 @@ class FaireMainPage(Page):
                         "title":c.title
                     }]
                 context['breadcrumbs'] += [breadcrumb]
+        if (not context['theme']):
+            context['theme'] = "generique"
+        context['static_images'] = {}
+        for item in ['TL','TR','BL','BR','ML','MR','BC']:
+            context['static_images'][item] = "images/fairemain/{theme}/fairemain_{item}.svg".format(theme = context['theme'],item = item)
         return context
 
 class RelatedAgendaItemHomePage(Orderable):
