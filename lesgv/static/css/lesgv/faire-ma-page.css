@@ -53,6 +53,7 @@ div.enclosing-grid img {
 .HH a img {
   max-width: 100vw;
   height: auto;
+  padding: 0 1rem;
 }
 
 .ML {

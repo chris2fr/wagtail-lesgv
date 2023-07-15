@@ -58,7 +58,9 @@ class WebsiteSettings(BaseSiteSetting):
     footer2 = RichTextField(blank=True, null=True)
     theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
     csscolors = models.TextField(blank=True, null=True)
-    panels = WagtailSettings.panels
+    panels = WagtailSettings.panels + [
+        FieldPanel('csscolors'),
+    ]
     
     class Meta:
         verbose_name = "Settings Per Website"

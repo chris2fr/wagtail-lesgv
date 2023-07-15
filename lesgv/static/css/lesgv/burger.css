@@ -108,8 +108,12 @@
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: var(--color-secondary-light);
+  background: var(--color-secondary);
 }
+
+/* body.darkmode #menuToggle input:checked ~ span {
+  background: var(--color-secondary-dark);
+} */
 
 /*
  * But let's hide the middle one.
