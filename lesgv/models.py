@@ -12,6 +12,8 @@ import lesgv.services
 # from lesgv.blocks import GhostIndexBlock
 from modelcluster.fields import ParentalKey
 
+from django.http import HttpResponseRedirect
+
 from django import template
 register = template.Library()
 
@@ -80,6 +82,7 @@ class FaireMainPage(Page):
     #     , max_num=1)
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
+    redirect_url = models.URLField(blank=True, null=True)
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -98,7 +101,17 @@ class FaireMainPage(Page):
     settings_panels = [
         FieldPanel('footer1'),
         FieldPanel('footer2'),
+        FieldPanel('redirect_url'),
     ]
+    def serve(self, request):
+        if self.redirect_url:
+            # Perform the redirect
+            return HttpResponseRedirect(self.redirect_url)
+        else:
+            # Handle the case when redirect_url is empty or false
+            # For example, render a custom template or return a different response
+            return super().serve(request)
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context['website_settings'] = WebsiteSettings.for_request(request=request)
