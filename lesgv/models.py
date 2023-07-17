@@ -83,6 +83,7 @@ class FaireMainPage(Page):
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     redirect_url = models.URLField(blank=True, null=True)
+    ghost_post_tag = models.SlugField(blank=True, null=True)
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -95,7 +96,7 @@ class FaireMainPage(Page):
     subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     content_panels = Page.content_panels + [
         FieldPanel('body'),
-        # FieldPanel('posts_index'),
+        FieldPanel('ghost_post_tag'),
         FieldPanel('image')
     ]
     settings_panels = [
@@ -143,6 +144,9 @@ class FaireMainPage(Page):
         context['static_images'] = {}
         for item in ['TL','TR','BL','BR','ML','MR','BC']:
             context['static_images'][item] = "images/fairemain/{theme}/fairemain_{item}.svg".format(theme = context['theme'],item = item)
+        context["posts"] = []
+        if (self.ghost_post_tag):
+            context['posts'] = lesgv.services.get_blog_posts(lesgv.services.ProcessGhostParams({"ghost_tag": self.ghost_post_tag,"ghost_limit":8}))
         return context
 
 class RelatedAgendaItemHomePage(Orderable):

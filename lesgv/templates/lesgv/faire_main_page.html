@@ -43,6 +43,7 @@
       {% endblock extra_CT %}
       <div style="clear: both;"></div>
       {% include "lesgv/fragments/breadcrumbs.html" with pages=self.get_ancestors %}
+      {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
     {% endblock CT %}
   </div>
 
