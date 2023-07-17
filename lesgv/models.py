@@ -84,6 +84,8 @@ class FaireMainPage(Page):
     footer2 = RichTextField(blank=True, null=True)
     redirect_url = models.URLField(blank=True, null=True)
     ghost_post_tag = models.SlugField(blank=True, null=True)
+    theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
+
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -100,6 +102,7 @@ class FaireMainPage(Page):
         FieldPanel('image')
     ]
     settings_panels = [
+        FieldPanel('theme'),
         FieldPanel('footer1'),
         FieldPanel('footer2'),
         FieldPanel('redirect_url'),
@@ -120,10 +123,11 @@ class FaireMainPage(Page):
 
         for item in ['site_logo','homepage_link','footer1','footer2','theme']:
             context[item] = getattr(context['website_settings'],item)
-            if (notanytest(context[item])):
-                context[item] = getattr(context['wagtail_settings'],item)
-            elif (notanytest(context[item]) and hasattr(self,item)):
+            if (hasattr(self,item)):
                 context[item] = getattr(self,item)
+            elif (notanytest(context[item])):
+                context[item] = getattr(context['wagtail_settings'],item)
+                
         context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)
         context['breadcrumbs'] = []
         for a in self.get_ancestors():
