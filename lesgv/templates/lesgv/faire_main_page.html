@@ -16,6 +16,9 @@
 <link rel="stylesheet" type="text/css"  href="{% with 'css/lesgv/themes/'|add:theme|add:'.css' as css_static %}{% static css_static %}{% endwith %}" />
 {% block faire_ma_page_extra_css %}
 {% endblock faire_ma_page_extra_css %}
+{% if page.redirect_url  %}
+<meta http-equiv="Refresh" content="0; url='{{page.redirect_url}}'" />
+{% endif %}
 {% endblock extra_css %}
 
 {% block content %}

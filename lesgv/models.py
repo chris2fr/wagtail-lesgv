@@ -109,14 +109,14 @@ class FaireMainPage(Page):
         FieldPanel('footer2'),
         FieldPanel('redirect_url'),
     ]
-    def serve(self, request):
-        if self.redirect_url and not notanytest(self.redirect_url):
-            # Perform the redirect
-            return HttpResponseRedirect(self.redirect_url)
-        else:
-            # Handle the case when redirect_url is empty or false
-            # For example, render a custom template or return a different response
-            return super().serve(request)
+    # def serve(self, request):
+    #     if self.redirect_url and not notanytest(self.redirect_url):
+    #         # Perform the redirect
+    #         return HttpResponseRedirect(self.redirect_url)
+    #     else:
+    #         # Handle the case when redirect_url is empty or false
+    #         # For example, render a custom template or return a different response
+    #         return super().serve(request)
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
