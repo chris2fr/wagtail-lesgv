@@ -24,15 +24,6 @@
     but hey, it's pure CSS magic.
     -->
     <ul id="menu">
-      {% comment %}
-      {% if self.get_ancestors|length > 1 %}
-      {% for p in self.get_ancestors %}
-        {% if p.is_root == False %}
-        <li><a href="{{ p.url }}">{{ p.title }}</a>&nbsp&gt;&nbsp;</li>
-        {% endif %}
-        {% endfor %}
-      {% endif %}
-      {% endcomment %}
       {% for p in breadcrumbs %}
       <li><a href="{{ p.url }}">{{ p.title }}</a>
         {% if p.children %}
@@ -46,7 +37,15 @@
       {% endfor %}
         <li class="active">{{ self.title }}</li>
         {% for item in menuitems %}
-          <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{  item.title }}</a></li>
+          <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{  item.title }}</a>
+          <ul class="submenu">
+            {% for subitem in item.get_children.specific %}
+            {% if subitem.live %}
+              <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          </li>
         {% endfor %}
       <li> &nbsp;&lt;&nbsp;<a href="#" class="jour-nuit" id="jour-nuit" onclick="javascript:toggleDarkmode();">Jour et nuit</a></li>
       <li> &nbsp&lt;&nbsp;<a href="/admin/">Admin</a> </li>

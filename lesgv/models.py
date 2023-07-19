@@ -108,7 +108,7 @@ class FaireMainPage(Page):
         FieldPanel('redirect_url'),
     ]
     def serve(self, request):
-        if self.redirect_url:
+        if self.redirect_url and not notanytest(self.redirect_url):
             # Perform the redirect
             return HttpResponseRedirect(self.redirect_url)
         else:
