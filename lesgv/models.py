@@ -76,6 +76,7 @@ def notanytest(val):
 
 class FaireMainPage(Page):
     body = RichTextField(blank=True, null=True)
+    intro = RichTextField(blank=True, null=True)
     # posts_index = StreamField([
     #     ('ghost_index_blog',GhostIndexBlock(required=False))
     #     ], use_json_field=True, blank=True, null=True
@@ -98,6 +99,7 @@ class FaireMainPage(Page):
     subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     content_panels = Page.content_panels + [
         FieldPanel('body'),
+        FieldPanel('intro'),
         FieldPanel('ghost_post_tag'),
         FieldPanel('image')
     ]

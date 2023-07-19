@@ -32,16 +32,6 @@
     </div>
     <div class="card agenda">
         <div class="card-body">
-            {% comment %}
-            <div class="article">
-
-            </div>
-
-            <div class="card-header">
-                <a href="https://www.laressourceriecreative.com/la-guinguette" target="_blank"><img src="https://ooo.lesgrandsvoisins.com/web/image/1617-7efe3ad8/guinguette-2022-PANO_20220714_172238%20%28Large%29.jpg"
-                    alt="user" />
-            </div>
-            {% endcomment %}
             <div class="agenda-home">
                 <h2>
                     Agenda
@@ -66,7 +56,11 @@
                    </ul>
                    <a href="{{ item.agenda_item.url }}" class='{% if forloop.counter|divisibleby:"2" %}left{% else %}right{% endif %}'>
                    {% image item.agenda_item.image width-600 %}</a>
+                   {% if item.agenda_item.intro and item.agenda_item.intro != "" %}
+                   {{ item.agenda_item.intro|richtext }} 
+                   {% else %}
                    {{ item.agenda_item.body|richtext }} 
+                   {% endif %}
                 </div>
                 {% endfor %}
             </div>
