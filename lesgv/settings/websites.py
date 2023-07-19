@@ -9,6 +9,8 @@ domains = [
   'lesgrandsvoisins.fr',
   'resdigita.com',
   'resdigita.org',
+  'avmeet.com',
+  'www.avmeet.com',
 ]
 
 def allowed_hosts():
