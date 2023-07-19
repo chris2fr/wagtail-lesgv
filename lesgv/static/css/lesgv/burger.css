@@ -59,10 +59,11 @@
   /* top: -7px;
   left: -5px; */
   right: 3rem;
+  top: 1.25rem;
   cursor: pointer;
   
   opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  z-index: 800; /* and place it over the hamburger */
   
   -webkit-touch-callout: none;
 }

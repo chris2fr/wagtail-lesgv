@@ -11,6 +11,28 @@ if (localStorage.getItem('darkmode')) {
     toggle.innerText = 'Nuit';
 }
 
+
+// if (document.getElementById('menu-checkbox')) {
+//   ckBox = document.getElementById('menu-checkbox');
+//   if (localStorage.getItem('menuopen')) {
+//     ckBox.checked=true;
+//   }
+//   ckBox.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     console.log(ckBox.checked);
+//     // ckBox.checked = !ckBox.checked;
+//     if (ckBox.checked) {
+//       localStorage.setItem('menuopen', true);
+//     } else {
+//       localStorage.removeItem('menuopen');
+//     }
+//   });
+// }
+
+
+
+
+
 toggle.addEventListener('click', function(e) {
   e.preventDefault();
   if (document.body.classList.contains('darkmode')) {
