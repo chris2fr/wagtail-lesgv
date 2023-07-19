@@ -170,7 +170,6 @@ class RelatedAgendaItemHomePage(Orderable):
     ]
 
 class FaireMainAgendaItemPage(FaireMainPage):
-    url = models.URLField(blank=True, null=True)
     start = models.DateField(blank=True, null=True)
     end = models.DateField(blank=True, null=True)
     place = models.CharField(blank=True, null=True, max_length=128)
@@ -179,7 +178,6 @@ class FaireMainAgendaItemPage(FaireMainPage):
     parent_page_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     subpage_types = ['lesgv.FaireMainAgendaItemPage']
     content_panels = FaireMainPage.content_panels + [
-        FieldPanel('url'),
         FieldPanel('start'),
         FieldPanel('end'),
         FieldPanel('place'),

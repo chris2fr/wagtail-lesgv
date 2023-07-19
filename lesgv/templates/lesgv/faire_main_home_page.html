@@ -38,7 +38,11 @@
                 </h2>
                 {% for item in related_agenda %}
                 <div class="agenda-item">
+                    {% if item.agenda_item.redirect_url %}
+                   <h3><a href="{{ item.agenda_item.redirect_url }}">{{ item.agenda_item.title }}</a></h3> 
+                   {% else %}
                    <h3><a href="{{ item.agenda_item.url }}">{{ item.agenda_item.title }}</a></h3> 
+                   {% endif %}
                    <ul class="agenda-item-date-lieu">
                     {% if item.agenda_item.start %}
                     <li>{{ item.agenda_item.start }}</li>
