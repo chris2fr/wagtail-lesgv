@@ -15,9 +15,11 @@
     They are acting like a real hamburger,
     not that McDonalds stuff.
     -->
+    <div class="burger">
     <span></span>
     <span></span>
     <span></span>
+  </div>
     
     <!--
     Too bad the menu has to be inside of the button
@@ -40,7 +42,7 @@
           <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{  item.title }}</a>
           <ul class="submenu">
             {% for subitem in item.get_children.specific %}
-            {% if subitem.live %}
+            {% if subitem.live and subitem.show_in_menus %}
               <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
             {% endif %}
             {% endfor %}
