@@ -123,9 +123,9 @@ class FaireMainPage(Page):
 
         for item in ['site_logo','homepage_link','footer1','footer2','theme']:
             context[item] = getattr(context['website_settings'],item)
-            if (hasattr(self,item)):
+            if (hasattr(self,item) and getattr(self,item) != ""):
                 context[item] = getattr(self,item)
-            elif (notanytest(context[item])):
+            elif (notanytest(context[item]) and context[item] != ""):
                 context[item] = getattr(context['wagtail_settings'],item)
                 
         context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)
