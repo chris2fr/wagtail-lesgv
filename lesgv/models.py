@@ -208,27 +208,12 @@ class RelatedAgendaItemHomePage(Orderable):
     )
     agenda_item = models.ForeignKey(
         'FaireMainAgendaItemPage',
-        related_name="agenda_item",
+        related_name="+",
         on_delete=models.CASCADE,
     )
     panels = [
         FieldPanel('agenda_item'),
     ]
-
-class FaireMainAgendaItemPage(FaireMainPage):
-    start = models.DateField(blank=True, null=True)
-    end = models.DateField(blank=True, null=True)
-    place = models.CharField(blank=True, null=True, max_length=128)
-    place_url = models.URLField(blank=True, null=True)
-    page_description = "Faire Ma Agenda Item Page, Un évènement"
-    parent_page_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
-    subpage_types = ['lesgv.FaireMainAgendaItemPage']
-    content_panels = FaireMainPage.content_panels + [
-        FieldPanel('start'),
-        FieldPanel('end'),
-        FieldPanel('place'),
-        FieldPanel('place_url'),
-    ] 
 
 class FaireMainHomePage(FaireMainPage):
     agenda = RichTextField(blank=True, null=True)
@@ -242,7 +227,7 @@ class FaireMainHomePage(FaireMainPage):
     parent_page_types =['wagtailcore.Page']
     subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     content_panels = [
-        InlinePanel('agenda_item',label="Items de l'agenda"),
+        InlinePanel('agenda_home',label="Items de l'agenda"),
     ]  + FaireMainPage.content_panels + [
         FieldPanel('agenda'),
         FieldPanel('ghost_tag'),
@@ -265,3 +250,20 @@ class FaireMainHomePage(FaireMainPage):
         context['posts'] = lesgv.services.get_blog_posts(lesgv.services.ProcessGhostParams(params))
         context['related_agenda'] = RelatedAgendaItemHomePage.objects.filter(home_page=self)
         return context 
+    
+class FaireMainAgendaItemPage(FaireMainPage):
+    # home_page = ParentalKey(FaireMainHomePage, on_delete=models.CASCADE, related_name='agenda_home_item',null = True, blank = True)
+    start = models.DateField(blank=True, null=True)
+    end = models.DateField(blank=True, null=True)
+    place = models.CharField(blank=True, null=True, max_length=128)
+    place_url = models.URLField(blank=True, null=True)
+    page_description = "Faire Ma Agenda Item Page, Un évènement"
+    parent_page_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
+    subpage_types = ['lesgv.FaireMainAgendaItemPage']
+    content_panels = FaireMainPage.content_panels + [
+        FieldPanel('start'),
+        FieldPanel('end'),
+        FieldPanel('place'),
+        FieldPanel('place_url'),
+    ] 
+
