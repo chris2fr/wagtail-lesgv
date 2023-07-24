@@ -28,6 +28,7 @@
       <li><a href="{{ p.url }}">{{ p.title }}</a>
         {% if p.children %}
         <ul class="submenu">
+          <li><a href="{{ p.url }}">{{ p.title }}</a></li>
           {% for c in p.children %}
           <li><a href="{{ c.url }}">{{ c.title }}</a></li>
           {% endfor %}
@@ -40,8 +41,9 @@
       {% for item in menuitems %}
       <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{ item.title }}</a>
         <ul class="submenu">
-          {% for subitem in item.get_children.specific %}
-          {% if subitem.live and subitem.show_in_menus %}
+          <li><a href="{{  item.url }}">{{ item.title }}</a>
+            {% for subitem in item.get_children.specific %}
+            {% if subitem.live and subitem.show_in_menus %}
           <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
           {% endif %}
           {% endfor %}
@@ -49,14 +51,22 @@
       </li>
       {% endfor %}
       {% for item in extramenu %}
-      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a><ul class="submenu">{% for subitem in item.value.submenu %}
-        <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
-        {% endfor %}</ul></li>
+      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
+          class="submenu">
+          <li><a href="{{  item.value.url }}">{{ item.value.label }}</a></li>
+          {% for subitem in item.value.submenu %}
+          <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
+          {% endfor %}
+        </ul>{% endif %}</li>
       {% endfor %}
       {% for item in menu %}
-      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a><ul class="submenu">{% for subitem in item.value.submenu %}
-        <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
-        {% endfor %}</ul></li>
+      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
+          class="submenu">
+          <li><a href="{{  item.value.url }}">{{ item.value.label }}</a></li>
+          {% for subitem in item.value.submenu %}
+          <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
+          {% endfor %}
+        </ul>{% endif %}</li>
       {% endfor %}
       <li> &nbsp;&lt;&nbsp;<a href="#" class="jour-nuit" id="jour-nuit">Jour et nuit</a></li>
     </ul>
