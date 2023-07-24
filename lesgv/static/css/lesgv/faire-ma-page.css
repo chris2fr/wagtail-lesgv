@@ -38,7 +38,7 @@ div.enclosing-grid img {
   align-self: flex-start;
 }
 .HH {
-  grid-area: 2 / 1 / 3 / 7  ;
+  grid-area: 2 / 2 / 3 / 5  ;
   z-index: 15;
   display: flex;
   justify-content: center;
