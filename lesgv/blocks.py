@@ -2,6 +2,10 @@
 # import lesgv.services
 
 # class GhostIndexBlock(blocks.StructBlock):
+
+
+
+# class GhostIndexBlock(blocks.StructBlock):
 #     ghost_tag = blocks.CharBlock(required=False)
 #     ghost_filter = blocks.CharBlock(required=False)
 #     ghost_order = blocks.CharBlock(required=False)

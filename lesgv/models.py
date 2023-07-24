@@ -1,6 +1,6 @@
 from django.db import models
 from wagtail.models import Page, Orderable
-from wagtail.fields import RichTextField #, StreamField
+from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import  FieldPanel, InlinePanel
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.settings.models import (
@@ -8,6 +8,7 @@ from wagtail.contrib.settings.models import (
     BaseSiteSetting,
     register_setting,
 )
+from wagtail import blocks
 import lesgv.services
 # from lesgv.blocks import GhostIndexBlock
 from modelcluster.fields import ParentalKey
@@ -33,9 +34,18 @@ class WagtailSettings(BaseGenericSetting):
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
+    menu = StreamField([
+        ("menu", blocks.StructBlock([
+            ("label", blocks.CharBlock()),
+            ("url",blocks.URLBlock()),
+            ("submenu", blocks.RichTextBlock(features=['ul'],required=False)),
+        ]),
+    ),
+    ],use_json_field=True, blank=True, null=True)
     panels = [
         FieldPanel('site_logo'),
         FieldPanel('homepage_link'),
+        FieldPanel('menu'),
         FieldPanel('footer1'),
         FieldPanel('footer2'),
         FieldPanel('theme'),
@@ -58,6 +68,18 @@ class WebsiteSettings(BaseSiteSetting):
     )
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
+    menu =     menu = StreamField([
+        ("menu", blocks.StructBlock([
+            ("label", blocks.CharBlock()),
+            ("url",blocks.URLBlock()),
+            ("submenu", blocks.ListBlock(blocks.StructBlock([
+                ("label", blocks.CharBlock()),
+                ("url",blocks.URLBlock())
+            ]),required=False
+            )),
+        ]),
+    ),
+    ],use_json_field=True, blank=True, null=True)
     theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
     csscolors = models.TextField(blank=True, null=True)
     panels = WagtailSettings.panels + [
@@ -123,11 +145,11 @@ class FaireMainPage(Page):
         context['website_settings'] = WebsiteSettings.for_request(request=request)
         context['wagtail_settings'] = WagtailSettings.load(request_or_site=request)
 
-        for item in ['site_logo','homepage_link','footer1','footer2','theme']:
+        for item in ['site_logo','homepage_link','footer1','footer2','theme','menu']:
             context[item] = getattr(context['website_settings'],item)
             if (hasattr(self,item) and getattr(self,item) != ""):
                 context[item] = getattr(self,item)
-            elif (notanytest(context[item]) and context[item] != ""):
+            elif (notanytest(context[item])):
                 context[item] = getattr(context['wagtail_settings'],item)
                 
         context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)

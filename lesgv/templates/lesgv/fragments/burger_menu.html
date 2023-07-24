@@ -1,14 +1,12 @@
-<!--    Made by Erik Terwan    -->
-<!--   24th of November 2015   -->
-<!--        MIT License        -->
+{% load static wagtailcore_tags %}
 <nav role="navigation">
   <div id="menuToggle">
     <!--
     A fake / hidden checkbox is used as click reciever,
     so you can use the :checked selector on it.
     -->
-    <input type="checkbox" id="menu-checkbox"/>
-    
+    <input type="checkbox" id="menu-checkbox" />
+
     <!--
     Some spans to act as a hamburger.
     
@@ -16,11 +14,11 @@
     not that McDonalds stuff.
     -->
     <div class="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-    
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <!--
     Too bad the menu has to be inside of the button
     but hey, it's pure CSS magic.
@@ -31,24 +29,31 @@
         {% if p.children %}
         <ul class="submenu">
           {% for c in p.children %}
-            <li><a href="{{ c.url }}">{{ c.title }}</a></li>
+          <li><a href="{{ c.url }}">{{ c.title }}</a></li>
           {% endfor %}
         </ul>
         {% endif %}
-      &nbsp&gt;&nbsp;</li>
+        &nbsp&gt;&nbsp;
+      </li>
       {% endfor %}
-        <li class="active">{{ self.title }}</li>
-        {% for item in menuitems %}
-          <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{  item.title }}</a>
-          <ul class="submenu">
-            {% for subitem in item.get_children.specific %}
-            {% if subitem.live and subitem.show_in_menus %}
-              <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
-            {% endif %}
-            {% endfor %}
-          </ul>
-          </li>
-        {% endfor %}
+      <li class="active">{{ self.title }}</li>
+      {% for item in menuitems %}
+      <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{ item.title }}</a>
+        <ul class="submenu">
+          {% for subitem in item.get_children.specific %}
+          {% if subitem.live and subitem.show_in_menus %}
+          <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      {% for item in menu %}
+      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a><ul class="submenu">{% for subitem in item.value.submenu %}
+        <li>&nbsp&lt;&nbsp;<a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
+        {% endfor %}</ul></li>
+        
+      {% endfor %}
       <li> &nbsp;&lt;&nbsp;<a href="#" class="jour-nuit" id="jour-nuit">Jour et nuit</a></li>
     </ul>
   </div>
