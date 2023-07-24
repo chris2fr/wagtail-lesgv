@@ -34,14 +34,17 @@ class WagtailSettings(BaseGenericSetting):
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
-    menu = StreamField([
+    menu =     menu = StreamField([
         ("menu", blocks.StructBlock([
             ("label", blocks.CharBlock()),
             ("url",blocks.URLBlock()),
-            ("submenu", blocks.RichTextBlock(features=['ul'],required=False)),
+            ("submenu", blocks.ListBlock(blocks.StructBlock([
+                ("label", blocks.CharBlock()),
+                ("url",blocks.URLBlock())
+            ]),required=False
+            )),
         ]),
-    ),
-    ],use_json_field=True, blank=True, null=True)
+    )],use_json_field=True, blank=True, null=True)
     panels = [
         FieldPanel('site_logo'),
         FieldPanel('homepage_link'),
@@ -78,8 +81,7 @@ class WebsiteSettings(BaseSiteSetting):
             ]),required=False
             )),
         ]),
-    ),
-    ],use_json_field=True, blank=True, null=True)
+    )],use_json_field=True, blank=True, null=True)
     theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
     csscolors = models.TextField(blank=True, null=True)
     panels = WagtailSettings.panels + [
@@ -106,6 +108,17 @@ class FaireMainPage(Page):
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
     redirect_url = models.URLField(blank=True, null=True)
+    extramenu = StreamField([
+        ("menu", blocks.StructBlock([
+            ("label", blocks.CharBlock()),
+            ("url",blocks.URLBlock()),
+            ("submenu", blocks.ListBlock(blocks.StructBlock([
+                ("label", blocks.CharBlock()),
+                ("url",blocks.URLBlock())
+            ]),required=False
+            )),
+        ]),
+    )],use_json_field=True, blank=True, null=True)
     ghost_post_tag = models.SlugField(blank=True, null=True)
     theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
 
@@ -127,6 +140,7 @@ class FaireMainPage(Page):
     ]
     settings_panels = [
         FieldPanel('theme'),
+        FieldPanel('extramenu'),
         FieldPanel('footer1'),
         FieldPanel('footer2'),
         FieldPanel('redirect_url'),
@@ -147,11 +161,21 @@ class FaireMainPage(Page):
 
         for item in ['site_logo','homepage_link','footer1','footer2','theme','menu']:
             context[item] = getattr(context['website_settings'],item)
+            if (notanytest(context[item])):
+                context[item] = getattr(context['wagtail_settings'],item)
+
+
+        for item in ['site_logo','homepage_link','footer1','footer2','theme','menu']:
+            context[item] = getattr(context['website_settings'],item)
             if (hasattr(self,item) and getattr(self,item) != ""):
                 context[item] = getattr(self,item)
             elif (notanytest(context[item])):
-                context[item] = getattr(context['wagtail_settings'],item)
-                
+                context[item] = getattr(context['wagtail_settings'],item)    
+
+        if (hasattr(self,'extramenu') and getattr(self,'extramenu') != ""):
+            context['extramenu'] = getattr(self,'extramenu')
+        else:
+            context['extramenu'] = []
         context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)
         context['breadcrumbs'] = []
         for a in self.get_ancestors():
