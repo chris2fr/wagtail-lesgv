@@ -10,7 +10,7 @@ domains = [
   'resdigita.com',
   'resdigita.org',
   'avmeet.com',
-  'www.avmeet.com',
+  "gvoisin.org",
 ]
 
 def allowed_hosts():
