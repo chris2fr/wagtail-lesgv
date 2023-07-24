@@ -33,7 +33,10 @@ class WagtailSettings(BaseGenericSetting):
     )
     footer1 = RichTextField(blank=True, null=True)
     footer2 = RichTextField(blank=True, null=True)
-    theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
+    theme = models.CharField(max_length=32,choices=[('generique','generique'),
+                                                    ('boule','boule'),
+                                                    ('lesartsvoisins','lesartsvoisins'),],
+                                                    blank=True,null=True,default='generique')
     menu =     menu = StreamField([
         ("menu", blocks.StructBlock([
             ("label", blocks.CharBlock()),
@@ -82,7 +85,10 @@ class WebsiteSettings(BaseSiteSetting):
             )),
         ]),
     )],use_json_field=True, blank=True, null=True)
-    theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
+    theme = models.CharField(max_length=32,choices=[('generique','generique'),
+                                                    ('boule','boule'),
+                                                    ('lesartsvoisins','lesartsvoisins'),],
+                                                    blank=True,null=True,default='generique')
     csscolors = models.TextField(blank=True, null=True)
     panels = WagtailSettings.panels + [
         FieldPanel('csscolors'),
@@ -120,7 +126,10 @@ class FaireMainPage(Page):
         ]),
     )],use_json_field=True, blank=True, null=True)
     ghost_post_tag = models.SlugField(blank=True, null=True)
-    theme = models.CharField(max_length=32,choices=[('generique','generique'),('boule','boule'),('lesartsvoisins','lesartsvoisins'),],blank=True,null=True,default='generique')
+    theme = models.CharField(max_length=32,choices=[('generique','generique'),
+                                                    ('boule','boule'),
+                                                    ('lesartsvoisins','lesartsvoisins'),]
+                                                    ,blank=True,null=True,default='generique')
 
     image = models.ForeignKey(
         'wagtailimages.Image',

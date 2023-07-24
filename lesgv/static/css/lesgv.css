@@ -43,3 +43,11 @@ img.richtext-image.right {
 a:hover {
   color: var(--color-link-hover);
 }
+
+div.agenda-item h2,
+div.agenda-item h3,
+div.agenda-item h4,
+div.agenda-item h5,
+div.agenda-item h6 {
+  text-align: center;
+}
