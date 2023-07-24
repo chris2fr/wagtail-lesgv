@@ -55,7 +55,7 @@
       {% endfor %}
       {% for item in menu %}
       <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a><ul class="submenu">{% for subitem in item.value.submenu %}
-        <li>&<a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
+        <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
         {% endfor %}</ul></li>
       {% endfor %}
       <li> &nbsp;&lt;&nbsp;<a href="#" class="jour-nuit" id="jour-nuit">Jour et nuit</a></li>
