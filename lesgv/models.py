@@ -242,7 +242,7 @@ class FaireMainHomePage(FaireMainPage):
     parent_page_types =['wagtailcore.Page']
     subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     content_panels = [
-        InlinePanel('agenda_home',label="Items de l'agenda"),
+        InlinePanel('agenda_item',label="Items de l'agenda"),
     ]  + FaireMainPage.content_panels + [
         FieldPanel('agenda'),
         FieldPanel('ghost_tag'),
