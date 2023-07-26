@@ -11,6 +11,13 @@ domains = [
   'resdigita.org',
   'avmeet.com',
   "gvoisin.org",
+  "meet.lesgrandsvoisins.com",
+  "app.lesgrandsvoisins.com",
+  "auth.lesgrandsvoisins.com",
+  "biz.lesgrandsvoisins.com",
+  "forum.lesgrandsvoisins.com",
+  "mail.lesgrandsvoisins.com",
+  "wiki.lesgrandsvoisins.com",
 ]
 
 def allowed_hosts():

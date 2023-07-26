@@ -59,8 +59,8 @@
   position: absolute;
   /* top: -7px;
   left: -5px; */
-  right: 3rem;
-  top: 1.25rem;
+  right: 3.5rem;
+  top: 0.5rem;
   cursor: pointer;
   
   opacity: 0; /* hide this */
