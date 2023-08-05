@@ -18,6 +18,11 @@ domains = [
   "forum.lesgrandsvoisins.com",
   "mail.lesgrandsvoisins.com",
   "wiki.lesgrandsvoisins.com",
+  "www.gvoisins.org",
+  "meet.gvoisins.org",
+  "meet.gvoisins.com",
+  "gvoisins.org",
+  "www.gvoisins.com",
 ]
 
 def allowed_hosts():
