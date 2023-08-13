@@ -3,7 +3,8 @@ import urllib.parse
 import xmlrpc.client
 
 def get_blog_posts(params={}):
-    url = 'https://blog.lesgrandsvoisins.com/ghost/api/content/posts/?key=1c04bede3eb01bfb3fb106b902'
+    # url = 'https://blog.lesgrandsvoisins.com/ghost/api/content/posts/?key=1c04bede3eb01bfb3fb106b902'
+    url = 'https://blog.gvois.in/ghost/api/content/posts/?key=2c45719752e391ac90cbab9b91'
     # print(url)
     for i in ["limit","order","filter","page","formats","include"]:
         if params.get("ghost_{}".format(i),False):
