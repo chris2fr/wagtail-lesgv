@@ -1,14 +1,29 @@
 import requests
 import urllib.parse
-import xmlrpc.client
+import time
+import os
+import json
+# import xmlrpc.client
 
 def get_blog_posts(params={}):
     # url = 'https://blog.lesgrandsvoisins.com/ghost/api/content/posts/?key=1c04bede3eb01bfb3fb106b902'
     url = 'https://blog.gvois.in/ghost/api/content/posts/?key=2c45719752e391ac90cbab9b91'
     # print(url)
+    filenametime = "./cache/cache-blog.gvois.in-" +  time.strftime("%Y-%m-%d-%H")
+    filenamedate = "./cache/cache-blog.gvois.in-" +  time.strftime("%Y-%m-%d")
     for i in ["limit","order","filter","page","formats","include"]:
         if params.get("ghost_{}".format(i),False):
+            filenametime += "-{}_{}".format(i,urllib.parse.quote("{}".format(params.get("ghost_{}".format(i)))))
+            filenamedate += "-{}_{}".format(i,urllib.parse.quote("{}".format(params.get("ghost_{}".format(i)))))
             url += "&{}={}".format(i,urllib.parse.quote("{}".format(params.get("ghost_{}".format(i)))))
+    filenametime += ".json"
+    filenamedate += ".json"
+    if (os.path.isfile(filenametime)):
+        ret = json.load(open(filenametime))
+        return ret
+    if (os.path.isfile(filenamedate)):
+        ret = json.load(open(filenamedate))
+        return ret    
     response = requests.get(url)
     # print(url)
     ret = response.json()['posts']
@@ -17,6 +32,10 @@ def get_blog_posts(params={}):
             ret[i]['feature_image_1000'] = ret[i]['feature_image'].replace("/content/images/", "/content/images/size/w1000/")
             ret[i]['feature_image_300'] = ret[i]['feature_image'].replace("/content/images/", "/content/images/size/w300/")
             ret[i]['feature_image_600'] = ret[i]['feature_image'].replace("/content/images/", "/content/images/size/w600/")
+    with open(filenametime, "w") as outfile:
+      json.dump(ret, outfile)
+    with open(filenamedate, "w") as outfile:
+      json.dump(ret, outfile)
     return ret
 
 def ProcessGhostParams(value={}):
