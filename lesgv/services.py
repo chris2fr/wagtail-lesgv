@@ -3,6 +3,7 @@ import urllib.parse
 import time
 import os
 import json
+import asyncio
 # import xmlrpc.client
 
 def get_blog_posts(params={}):
@@ -23,6 +24,7 @@ def get_blog_posts(params={}):
         return ret
     if (os.path.isfile(filenamedate)):
         ret = json.load(open(filenamedate))
+        os.remove(filenamedate)
         return ret    
     response = requests.get(url)
     # print(url)
