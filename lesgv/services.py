@@ -18,12 +18,12 @@ def get_blog_posts(params={}):
             url += "&{}={}".format(i,urllib.parse.quote("{}".format(params.get("ghost_{}".format(i)))))
     filenametime += ".json"
     filenamedate += ".json"
-    # if (os.path.isfile(filenametime)):
-    #     ret = json.load(open(filenametime))
-    #     return ret
-    # if (os.path.isfile(filenamedate)):
-    #     ret = json.load(open(filenamedate))
-    #     return ret    
+    if (os.path.isfile(filenametime)):
+        ret = json.load(open(filenametime))
+        return ret
+    if (os.path.isfile(filenamedate)):
+        ret = json.load(open(filenamedate))
+        return ret    
     response = requests.get(url)
     # print(url)
     ret = response.json()['posts']
