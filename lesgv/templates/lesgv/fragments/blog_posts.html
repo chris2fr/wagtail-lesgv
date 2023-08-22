@@ -9,6 +9,12 @@
       <h2>
         <a href="{{ item.url }}">{{ item.title }}</a>
       </h2>
+      <div class="user-info">
+        {% comment %}
+        <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
+        {% endcomment %}
+        <p><small>{{item.published_at|truncatechars:11}}</small></p>
+      </div>
       <img src="{{ item.feature_image_600 }}" alt="{{ item.feature_image_alt }}"  loading="lazy" />
       <p>{{ item.excerpt }}</p>
     </div>
@@ -17,16 +23,11 @@
       
     </div>
     {% endcomment %}
-    <div class="user-info">
-      {% comment %}
-      <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
-      {% endcomment %}
-      <p><small>{{item.published_at|truncatechars:11}}</small></p>
-    </div>
+
   </div>
   <div class="tags">
     {% for tag in item.tags %}
-    {% if not "#IMPORT" in tag.name %}
+    {% if not "#Import 20" in tag.name %}
     <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}">{{ tag.name }}</span></a>
     {% endif %}
     {% endfor %}
