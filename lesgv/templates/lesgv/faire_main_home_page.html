@@ -76,12 +76,10 @@
     </div>
   </div>
 </div>
-    <h2 style="text-align: right;">
-      Actualités
-    </h2>
-    {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
-  <div class="posts container">
-  </div>
+{% include "lesgv/fragments/blog_posts.html" with posts=posts %}
+
+
+
   <div class="lesgv-footer">
     <div class="footer1">
       {{ footer1|richtext }}
