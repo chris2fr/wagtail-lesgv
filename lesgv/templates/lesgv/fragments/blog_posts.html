@@ -26,7 +26,7 @@
   </div>
   <div class="tags">
     {% for tag in item.tags %}
-    {% if not "#IMPORT 20" in tag.name %}
+    {% if not "#IMPORT" in tag.name %}
     <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}">{{ tag.name }}</span></a>
     {% endif %}
     {% endfor %}
