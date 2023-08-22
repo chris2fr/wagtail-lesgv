@@ -12,7 +12,7 @@
   border-radius: 1rem;
 }
 .card-body {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
