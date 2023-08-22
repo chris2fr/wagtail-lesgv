@@ -17,6 +17,7 @@ body {
   /* min-width: unset; */
   min-width: 15rem;
   max-width: 25rem;
+  float: left;
 }
 
 div.lesgv-footer {
@@ -162,3 +163,10 @@ div.posts div.card:nth-child(6) img {
   } */
 }
 
+div.mission {
+  float: left;
+}
+
+div.agenda {
+  float: left;
+}
