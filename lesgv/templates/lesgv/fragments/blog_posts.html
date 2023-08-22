@@ -9,11 +9,14 @@
       <h2>
         <a href="{{ item.url }}">{{ item.title }}</a>
       </h2>
+      <img src="{{ item.feature_image_600 }}" alt="{{ item.feature_image_alt }}"  loading="lazy" />
       <p>{{ item.excerpt }}</p>
     </div>
+    {% comment %}
     <div class="card-header">
-      <img src="{{ item.feature_image_600 }}" alt="{{ item.feature_image_alt }}"  loading="lazy" />
+      
     </div>
+    {% endcomment %}
     <div class="user-info">
       {% comment %}
       <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
