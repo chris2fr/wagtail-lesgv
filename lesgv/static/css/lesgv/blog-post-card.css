@@ -5,7 +5,7 @@
   justify-content: space-between;
   min-width: 20rem;
 }
-.card-header img {
+.card img {
   width: 100%;
   height: 14rem;
   object-fit: cover;
