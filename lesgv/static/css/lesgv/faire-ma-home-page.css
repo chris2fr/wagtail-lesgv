@@ -167,6 +167,9 @@ div.posts div.card:nth-child(6) img {
 div.mission {
   float: right;
 }
+div.mission h2 {
+  text-align: center;
+}
 
 div.agendas {
   padding: 1rem 0;
