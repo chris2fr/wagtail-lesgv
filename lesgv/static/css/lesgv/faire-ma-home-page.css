@@ -83,6 +83,11 @@ ul.agenda-item-date-lieu li {
   text-align: center;
 }
 
+.HH p.subtitle {
+  text-align: center;
+  margin: 0 auto;
+}
+
 /* 
 div.posts div.card:nth-child(3) {
   grid-area: 2 / 1 / 3 / 2;
@@ -109,7 +114,8 @@ div.posts div.card:nth-child(6) img {
 */
 
 @media (max-width: 800px) {
-  /* div.posts {
+  /* 
+  div.posts {
     grid-template-columns: 1fr 1fr;
   }
   .agenda {
@@ -144,7 +150,8 @@ div.posts div.card:nth-child(6) img {
     float: unset;
     padding: 0 0 0 0;
     border-radius: 1rem;
-  } */
+  } 
+  */
 
 }
 
