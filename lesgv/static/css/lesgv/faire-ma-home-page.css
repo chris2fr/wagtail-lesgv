@@ -168,9 +168,9 @@ div.mission {
   float: right;
 }
 
-/* div.agendas {
-  float: right;
-} */
+div.agendas {
+  padding: 1rem 0;
+}
 
 footer {
   width: 100%;
