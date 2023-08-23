@@ -14,11 +14,13 @@
   transition: filter 500ms ease;
 }
 .agenda-item:hover > a > img,
+.agenda-item:focus-within > a > img,
 .article:hover > img,
+.article:focus-within > img,
 .card img:hover {
   filter: grayscale(0) contrast(1);
-
 }
+
 .card-body {
   /* display: flex; */
   flex-direction: column;
