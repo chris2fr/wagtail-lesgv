@@ -10,6 +10,13 @@
   height: 14rem;
   object-fit: cover;
   border-radius: 1rem;
+  filter: grayscale(1) contrast(2);
+  transition: filter 500ms ease;
+}
+.article:hover > img,
+.card img:hover {
+  filter: grayscale(0) contrast(1);
+
 }
 .card-body {
   /* display: flex; */
