@@ -15,8 +15,8 @@
 }
 .agenda-item:hover > a > img,
 .agenda-item:focus-within > a > img,
-.article:hover > img,
-.article:focus-within > img,
+.card:hover > .card-body > .article > img,
+.card:focus-within > .card-body > .article > img,
 .card img:hover {
   filter: grayscale(0) contrast(1);
 }
