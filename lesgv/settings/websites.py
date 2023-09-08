@@ -78,3 +78,4 @@ def csrf_trusted_origins():
     output += ["https://{}".format(domain)]
     output += ["https://www.{}".format(domain)]
   return output
+
