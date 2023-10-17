@@ -64,7 +64,9 @@ domains = [
   "iciwowcom.gvois.in",
   "mann.fr",
   "shitmuststop.org",
-  "shitmuststop.com"
+  "shitmuststop.com",
+  "lesartsvoisins.com",
+  "lesartsvoisins.org"
 ]
 
 def allowed_hosts():
