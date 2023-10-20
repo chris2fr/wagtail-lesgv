@@ -12,10 +12,10 @@
 {% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/faire-ma-page.css' %}" />
 <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/burger.css' %}" />
 <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/breadcrumbs.css' %}" />
 <link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/blog-post-card.css' %}" />
+<link rel="stylesheet" type="text/css"  href="{% static 'css/lesgv/faire-ma-page.css' %}" />
 <link rel="stylesheet" type="text/css"  href="{% with 'css/lesgv/themes/'|add:theme|add:'.css' as css_static %}{% static css_static %}{% endwith %}" />
 {% block faire_ma_page_extra_css %}
 {% endblock faire_ma_page_extra_css %}

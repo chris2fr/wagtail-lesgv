@@ -253,9 +253,10 @@ div.enclosing-grid iframe {
   body {
     margin-left: 5rem;
   }
-  .CT {
+  /* .CT {
     grid-area: 4 / 3 / 5 / 7;
-  }
+  } */
+  .CT,
   div.CT {
     grid-area: 4 / 1 / 5 / 7;
   }
@@ -273,5 +274,6 @@ div.enclosing-grid iframe {
   div.MR {
     display: none;
   }
+
 }
 
