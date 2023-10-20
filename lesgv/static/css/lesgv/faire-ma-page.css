@@ -300,7 +300,9 @@ div.enclosing-grid iframe {
   div.menu-toggle,
   div.w-userbar,
   nav.navigation,
-  #menu {
+  #menu,
+  div.card,
+  div.breadcrumb-content {
     display: none;
   }
 }
