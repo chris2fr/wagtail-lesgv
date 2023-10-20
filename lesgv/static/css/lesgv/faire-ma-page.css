@@ -250,8 +250,10 @@ div.enclosing-grid iframe {
     left: unset;
     right: unset;
   }
-  body {
-    margin-left: 5rem;
+  body, p, h1, h2, h3, h4, h5, a {
+    /* margin-left: 5rem; */
+    color:black;
+    background-color: #ffffff00;
   }
   /* .CT {
     grid-area: 4 / 3 / 5 / 7;
@@ -259,6 +261,7 @@ div.enclosing-grid iframe {
   .CT,
   div.CT {
     grid-area: 4 / 1 / 5 / 7;
+    background-color: #ffffff00;
   }
   .FL {
     grid-area: 5 / 2 / 6 / 7;
