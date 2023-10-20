@@ -244,7 +244,7 @@ div.enclosing-grid iframe {
 
 @media print {
   div.enclosing-grid {
-    margin: 1rem auto;
+    margin: 0 auto;
   }
   img {
     left: unset;
@@ -265,7 +265,7 @@ div.enclosing-grid iframe {
     margin: 1rem auto;
   }
   .FL {
-    grid-area: 5 / 1 / 6 / 4;
+    grid-area: 5 / 1 / 7 / 4;
     margin-left: 0;
     background: unset;
   }
@@ -274,7 +274,7 @@ div.enclosing-grid iframe {
     background-color: white;
   }
   .FR {
-    grid-area: 5 / 4 / 6 / 8;  
+    grid-area: 5 / 4 / 7 / 8;  
     background: unset;
   }
   /* .BC {
@@ -287,9 +287,9 @@ div.enclosing-grid iframe {
     grid-area: 1 / 1 / 2 / 4;
     /* margin-left: -4rem; */
   }
-  div.TR a img{
+  /* div.TR a img{
     margin-right: -4rem;
-  }
+  } */
   div.ML, 
   div.MR {
     display: none;
