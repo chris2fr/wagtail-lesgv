@@ -262,6 +262,7 @@ div.enclosing-grid iframe {
   div.CT {
     grid-area: 4 / 1 / 5 / 7;
     background-color: #ffffff00;
+    margin: 1rem auto;
   }
   .FL {
     grid-area: 5 / 2 / 6 / 7;
