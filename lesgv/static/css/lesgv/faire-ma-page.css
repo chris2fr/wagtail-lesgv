@@ -260,7 +260,7 @@ div.enclosing-grid iframe {
   } */
   .CT,
   div.CT {
-    grid-area: 4 / 1 / 5 / 7;
+    grid-area: 4 / 1 / 5 / 8;
     background-color: #ffffff00;
     margin: 1rem auto;
   }
@@ -274,7 +274,7 @@ div.enclosing-grid iframe {
     background-color: white;
   }
   .FR {
-    grid-area: 5 / 4 / 6 / 7;  
+    grid-area: 5 / 4 / 6 / 8;  
     background: unset;
   }
   /* .BC {
@@ -293,6 +293,9 @@ div.enclosing-grid iframe {
   div.ML, 
   div.MR {
     display: none;
+  }
+  div.HH {
+    grid-area: 2 / 1 / 3 / 8;
   }
 }
 
