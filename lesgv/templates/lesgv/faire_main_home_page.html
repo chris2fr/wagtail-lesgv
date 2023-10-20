@@ -32,6 +32,7 @@
     </div>
   </div>
 </div>
+{% if related_agenda %}
 <div class="agendas">
   <div class="card agenda">
     <div class="card-body">
@@ -77,6 +78,7 @@
     </div>
   </div>
 </div>
+{% endif %}
 {% include "lesgv/fragments/blog_posts.html" with posts=posts %}
 </main>
 

@@ -28,8 +28,10 @@
         {% if p.children %}
         <li><a href="#">{{ p.title }}</a>
         <ul class="submenu">
-          <li><a href="{{ p.url }}">{{ p.title }}</a>
+          
+          <li>{% comment %}<a href="{{ p.url }}">{{ p.title }}</a>{% endcomment %}
             <ul class="submenu">
+              
           {% for c in p.children %}
           <li><a href="{{ c.url }}">{{ c.title }}</a></li>
           {% endfor %}
