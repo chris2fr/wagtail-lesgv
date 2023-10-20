@@ -26,7 +26,7 @@
     <ul id="menu">
       {% for p in breadcrumbs %}
         {% if p.children %}
-        <li><a href="#">{{ p.title }}</a>
+        <li><a href="{{ p.url }}">{{ p.title }}</a>
         <ul class="submenu">
           
           {% comment %}<li><a href="{{ p.url }}">{{ p.title }}</a>
@@ -46,7 +46,7 @@
       <li class="active">{{ self.title }}</li>
       {% for item in menuitems %}
       {% if item.get_children %}
-      <li>&nbsp&lt;&nbsp;<a href="#">{{ item.title }}</a>
+      <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{ item.title }}</a>
         <ul class="submenu">{% comment %}
           <li><a href="{{  item.url }}">{{ item.title }}</a>
             <ul class="submenu">{% endcomment %}
@@ -78,7 +78,7 @@
         {% endif %}
       {% endfor %}
       {% for item in menu %}
-      <li>&nbsp&lt;&nbsp;<a href="#">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
+      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
           class="submenu">
           {% comment %}<li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
             <ul
