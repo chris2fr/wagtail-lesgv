@@ -279,7 +279,10 @@ div.enclosing-grid iframe {
   }
   div.TL {
     grid-area: 1 / 1 / 2 / 3;
-    margin-left: -6rem;
+    margin-left: -4rem;
+  }
+  div.TR a {
+    margin-right: -4rem;
   }
   div.ML, 
   div.MR {
