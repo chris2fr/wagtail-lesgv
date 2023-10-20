@@ -298,7 +298,9 @@ div.enclosing-grid iframe {
     grid-area: 2 / 1 / 3 / 8;
   }
   div.menu-toggle,
-  div.w-userbar {
+  div.w-userbar,
+  nav.navigation,
+  #menu {
     display: none;
   }
 }
