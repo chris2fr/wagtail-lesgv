@@ -29,14 +29,13 @@
         <li><a href="#">{{ p.title }}</a>
         <ul class="submenu">
           
-          <li>{% comment %}<a href="{{ p.url }}">{{ p.title }}</a>{% endcomment %}
-            <ul class="submenu">
+          {% comment %}<li><a href="{{ p.url }}">{{ p.title }}</a>
+            <ul class="submenu">{% endcomment %}
               
           {% for c in p.children %}
           <li><a href="{{ c.url }}">{{ c.title }}</a></li>
           {% endfor %}
-        </ul>
-        </li>
+          {% comment %}</ul></li>{% endcomment %}
         </ul>
         {% else %}
         <li><a href="{{ p.url }}">{{ p.title }}</a>
@@ -48,16 +47,15 @@
       {% for item in menuitems %}
       {% if item.get_children %}
       <li>&nbsp&lt;&nbsp;<a href="#">{{ item.title }}</a>
-        <ul class="submenu">
+        <ul class="submenu">{% comment %}
           <li><a href="{{  item.url }}">{{ item.title }}</a>
-            <ul class="submenu">
+            <ul class="submenu">{% endcomment %}
             {% for subitem in item.get_children.specific %}
             {% if subitem.live and subitem.show_in_menus %}
           <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
           {% endif %}
           {% endfor %}
-              </ul>
-          </li>
+          {% comment %}</ul></li>{% endcomment %}
         </ul>
       </li>
       {% else %}
@@ -67,14 +65,13 @@
       {% for item in extramenu %}
       {% if item.value.submenu %}
       <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a><ul
-          class="submenu">
+          class="submenu">{% comment %}
           <li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
-          <ul class="submenu">
+          <ul class="submenu">{% endcomment %}
           {% for subitem in item.value.submenu %}
           <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
           {% endfor %}
-          </ul>
-          </li>
+          <{% comment %}</ul></li>{% endcomment %}
         </ul></li>
         {% else %}
         <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a></li>
@@ -83,13 +80,13 @@
       {% for item in menu %}
       <li>&nbsp&lt;&nbsp;<a href="#">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
           class="submenu">
-          <li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
+          {% comment %}<li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
             <ul
-          class="submenu">
+          class="submenu">{% endcomment %}
           {% for subitem in item.value.submenu %}
           <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
           {% endfor %}
-            </ul></li>
+          {% comment %}</ul></li>{% endcomment %}
         </ul></li>
         {% else %}
         <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a></li>
