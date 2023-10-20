@@ -265,20 +265,26 @@ div.enclosing-grid iframe {
     margin: 1rem auto;
   }
   .FL {
-    grid-area: 5 / 2 / 6 / 7;
-    margin-left: unset;
+    grid-area: 5 / 1 / 6 / 4;
+    margin-left: 0;
+    background: unset;
+  }
+  .FL p, 
+  .FR p {
+    background-color: white;
   }
   .FR {
-    grid-area: 6 / 3 / 7 / 7;  
+    grid-area: 5 / 4 / 6 / 7;  
+    background: unset;
   }
-  .BC {
+  /* .BC {
     grid-area: 7 / 4 / 9 / 5;
-  }
+  } */
   div.TR {
-    grid-area: 1 / 4 / 2 / 8;
+    grid-area: 1 / 5 / 2 / 8;
   }
   div.TL {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 4;
     /* margin-left: -4rem; */
   }
   div.TR a img{
@@ -288,6 +294,5 @@ div.enclosing-grid iframe {
   div.MR {
     display: none;
   }
-
 }
 
