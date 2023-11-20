@@ -66,7 +66,12 @@ domains = [
   "shitmuststop.org",
   "shitmuststop.com",
   "lesartsvoisins.com",
-  "lesartsvoisins.org"
+  "lesartsvoisins.org",
+  "biglibre.org",
+  "biglibre.com",
+  "warfur.biglibre.org",
+  "warfur.lesgrandsvoisins.com",
+  "warfur.org",
 ]
 
 def allowed_hosts():
