@@ -124,7 +124,8 @@ div.enclosing-grid img {
 
 .darkmode div.cadre img,
 .darkmode div.HH img {
-  filter: sepia(0.25) brightness(1.25) contrast(0.75);
+  /* filter: sepia(0.25) brightness(1.25) contrast(0.75); */
+  filter: invert(1);
 }
 div.block-ghost_index_blog {
   display: grid;
