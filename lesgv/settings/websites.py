@@ -73,7 +73,7 @@ domains = [
   "warfur.lesgrandsvoisins.com",
   "warfur.org",
   "partagemoi.lesgrandsvoisins.com",
-  "desgrandsvoisins.org"
+  "desgrandsvoisins.org",
   "www.desgrandsvoisins.org"
 ]
 
