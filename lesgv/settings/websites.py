@@ -72,6 +72,7 @@ domains = [
   "warfur.biglibre.org",
   "warfur.lesgrandsvoisins.com",
   "warfur.org",
+  "partagemoi.lesgrandsvoisins.com",
 ]
 
 def allowed_hosts():
