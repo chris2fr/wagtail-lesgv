@@ -76,7 +76,8 @@ domains = [
   "desgrandsvoisins.org",
   "www.desgrandsvoisins.org",
   "desgrandsvoisins.com",
-  "www.desgrandsvoisins.com"
+  "www.desgrandsvoisins.com",
+  "francemali.lesgrandsvoisins.com",
 ]
 
 def allowed_hosts():
