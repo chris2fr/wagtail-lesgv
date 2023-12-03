@@ -71,8 +71,17 @@
 }
 
 #menuToggle div.burger {
-  float: left;
-  margin-left: 3rem;
+  /* float: left;
+  margin-left: 3rem; */
+  display: block;
+  /* width: 40px;
+  height: 32px; */
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  /* cursor: pointer;
+  opacity: 0;
+  z-index: 800; */
 }
 
 /*
@@ -90,8 +99,8 @@
   z-index: 1;
   /* transform-origin: -4px 0px; */
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
-  right: 1rem;
-  top: 1rem;
+  /* right: 1rem;
+  top: 1rem; */
   /* display: block;
   width: 33px;
   height: 4px;
@@ -193,7 +202,8 @@
   top: -1rem;
   display: flex;
   /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
   /* flex-wrap: wrap; */
   flex-direction: column;
 }
@@ -222,7 +232,7 @@
   #menu
   {
     /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -231,9 +241,27 @@
   {
     /* grid-template-columns: 1fr 1fr 1fr; */
     grid-template-columns: 1fr;
+    margin-left: 2.5rem;
+    width: fit-content;
   }
   .HH a {
     margin-left: 25rem;
+  }
+  #menuToggle {
+    position: unset;
+  }
+  .HH a {
+    margin-left: unset;
+  }
+  #menu {
+    display: none;
+  }
+  #menuToggle input:checked ~ ul
+  {
+    visibility: visible;
+    display: block;
+    opacity: 0.9;
+    transition: visibility 0s linear 0s, opacity 300ms;
   }
 }
 

@@ -171,6 +171,7 @@ div.posts div.card:nth-child(6) img {
     border-width: 1px;
     padding: 0 0.5rem;
   } */
+
 }
 
 div.mission {
@@ -190,4 +191,10 @@ footer {
   padding-top: 6rem;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+@media(max-width: 1000px) {
+  div.mission, div.agendas, div.card {
+    float: unset;
+  }
 }

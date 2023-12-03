@@ -5,6 +5,7 @@ window.addEventListener(
       if (document.getElementById('menu-checkbox').checked) {
         localStorage.setItem('menuopen', true);
         localStorage.removeItem('menuclosed');
+        window.scrollTo(0, 0);
       } else {
         localStorage.setItem('menuclosed', true);
         localStorage.removeItem('menuopen');
