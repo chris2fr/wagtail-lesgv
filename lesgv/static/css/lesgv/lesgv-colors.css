@@ -69,7 +69,7 @@
     --color-link-inverted: var(--color-primary-light);
     --color-link-hover: var(--maximum-yellow-red);
     --color-active-menuitem: var(--color-whiteish);
-    --color-secondary: var(var(--mountain-meadow));
+    --color-secondary: var(--mountain-meadow);
 }
 
 
