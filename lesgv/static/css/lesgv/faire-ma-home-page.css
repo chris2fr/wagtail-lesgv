@@ -196,5 +196,7 @@ footer {
 @media(max-width: 1000px) {
   div.mission, div.agendas, div.card {
     float: unset;
+    max-width: unset;
+    width: unset;
   }
 }
