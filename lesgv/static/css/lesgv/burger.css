@@ -229,21 +229,22 @@
 }
 
 li.subitem {
-  list-style: inside;
+  list-style-type: " > ";
+  list-style-position: inside;
+}
+li.breadcrumb {
+  list-style-type: " < ";
+  list-style-position: inside;
+}
+li.active {
+  list-style-type: " <> ";
+  list-style-position: inside;
+}
+li.extramenu {
+  width: 100%;
+  text-align: right;
 }
 
-li.breadcrumb::after {
-  content: " <";
-}
-li.active::after {
-  content: " <";
-}
-li.active::before {
-  content: "> ";
-}
-li.extra::before {
-  content: "> ";
-}
 
 @media (max-width: 1500px) {
   #menu

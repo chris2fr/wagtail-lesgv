@@ -44,6 +44,7 @@
       </li>
       {% endfor %}
       <li class="active">{{ self.title }}</li>
+      <ul class="activesubmenu">
       {% for item in menuitems %}
       {% if item.get_children %}
       <li class="subitem"><a class="subitem" href="{{  item.url }}">{{ item.title }}</a>
@@ -62,6 +63,7 @@
       <li class="subitem"><a  class="subitem" href="{{  item.url }}">{{ item.title }}</a></li>
       {% endif %}
       {% endfor %}
+      </ul>
       {% for item in extramenu %}
       {% if item.value.submenu %}
       <li class="extramenu"><a class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a><ul
