@@ -204,6 +204,9 @@
   font-size-adjust: 130%;
   /* text-align: center; */
 }
+#menu li.active {
+  color: var(--color-active-menuitem);
+}
 
 /*
  * And let's slide it in from the left
