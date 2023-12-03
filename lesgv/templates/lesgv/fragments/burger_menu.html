@@ -63,22 +63,22 @@
       <li class="subitem"><a  class="subitem" href="{{  item.url }}">{{ item.title }}</a></li>
       {% endif %}
       {% endfor %}
-      </ul>
       {% for item in extramenu %}
       {% if item.value.submenu %}
-      <li class="extramenu"><a class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a><ul
+      <li class="subitem"><a class="subitem" href="{{  item.value.url }}">{{ item.value.label }}</a><ul
           class="submenu">{% comment %}
           <li class="extramenu subitem"><a href="{{  item.value.url }}" class="extramenu subitem">{{ item.value.label }}</a>
           <ul class="submenu">{% endcomment %}
           {% for subitem in item.value.submenu %}
-          <li class="extramenu subitem"><a class="extramenu subitem" href="{{  subitem.url }}">{{ subitem.label }}</a></li>
+          <li class="subitem"><a class="extramenu subitem" href="{{  subitem.url }}">{{ subitem.label }}</a></li>
           {% endfor %}
           <{% comment %}</ul></li>{% endcomment %}
         </ul></li>
         {% else %}
-        <li class="extramenu"><a  class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
+        <li class="subitem"><a  class="subitem" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
         {% endif %}
       {% endfor %}
+    </ul>
       {% for item in menu %}
       <li class="extramenu"><a class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
           class="submenu">
