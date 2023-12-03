@@ -232,6 +232,19 @@ li.subitem {
   list-style: inside;
 }
 
+li.breadcrumb::after {
+  content: " <";
+}
+li.active::after {
+  content: " <";
+}
+li.active::before {
+  content: "> ";
+}
+li.extra::before {
+  content: "> ";
+}
+
 @media (max-width: 1500px) {
   #menu
   {
