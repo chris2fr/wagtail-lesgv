@@ -159,7 +159,7 @@ div.enclosing-grid iframe {
     grid-area: 2 / 6 / 10 / 8;
   }
 } 
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   div.block-ghost_index_blog{
     grid-template-columns: 1fr;
   }
@@ -168,6 +168,10 @@ div.enclosing-grid iframe {
   div.enclosing-grid iframe {
     padding-right: unset;
     padding-bottom: unset;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (max-width: 800px) {

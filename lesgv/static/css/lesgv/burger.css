@@ -228,6 +228,10 @@
   transition: visibility 0s linear 0s, opacity 300ms;
 }
 
+li.subitem {
+  list-style: inside;
+}
+
 @media (max-width: 1500px) {
   #menu
   {
@@ -241,7 +245,7 @@
   {
     /* grid-template-columns: 1fr 1fr 1fr; */
     grid-template-columns: 1fr;
-    margin-left: 2.5rem;
+    margin-left: 4rem;
     width: fit-content;
   }
   .HH a {

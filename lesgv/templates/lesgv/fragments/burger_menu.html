@@ -26,7 +26,7 @@
     <ul id="menu">
       {% for p in breadcrumbs %}
         {% if p.children %}
-        <li><a href="{{ p.url }}">{{ p.title }}</a>
+        <li class="breadcrumb"><a href="{{ p.url }}" class="breadcrumb">{{ p.title }}</a>
         <ul class="submenu">
           
           {% comment %}<li><a href="{{ p.url }}">{{ p.title }}</a>
@@ -36,9 +36,10 @@
           <li><a href="{{ c.url }}">{{ c.title }}</a></li>
           {% endfor %}
           {% comment %}</ul></li>{% endcomment %}
+
         </ul>
         {% else %}
-        <li><a href="{{ p.url }}">{{ p.title }}</a>
+        <li class="breadcrumb"><a href="{{ p.url }}" class="breadcrumb">{{ p.title }}</a>
         {% endif %}
         &nbsp&gt;&nbsp;
       </li>
@@ -46,7 +47,7 @@
       <li class="active">{{ self.title }}</li>
       {% for item in menuitems %}
       {% if item.get_children %}
-      <li>&nbsp&lt;&nbsp;<a href="{{  item.url }}">{{ item.title }}</a>
+      <li class="subitem">&nbsp&lt;&nbsp;<a class="subitem" href="{{  item.url }}">{{ item.title }}</a>
         <ul class="submenu">{% comment %}
           <li><a href="{{  item.url }}">{{ item.title }}</a>
             <ul class="submenu">{% endcomment %}
@@ -59,40 +60,40 @@
         </ul>
       </li>
       {% else %}
-      <li><a href="{{  item.url }}">{{ item.title }}</a></li>
+      <li class="breadcrumb"><a  class="breadcrumb" href="{{  item.url }}">{{ item.title }}</a></li>
       {% endif %}
       {% endfor %}
       {% for item in extramenu %}
       {% if item.value.submenu %}
-      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a><ul
+      <li class="extramenu">&nbsp&lt;&nbsp;<a class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a><ul
           class="submenu">{% comment %}
-          <li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
+          <li class="extramenu subitem"><a href="{{  item.value.url }}" class="extramenu subitem">{{ item.value.label }}</a>
           <ul class="submenu">{% endcomment %}
           {% for subitem in item.value.submenu %}
-          <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
+          <li class="extramenu subitem"><a class="extramenu subitem" href="{{  subitem.url }}">{{ subitem.label }}</a></li>
           {% endfor %}
           <{% comment %}</ul></li>{% endcomment %}
         </ul></li>
         {% else %}
-        <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a></li>
+        <li class="extramenu">&nbsp&lt;&nbsp;<a  class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
         {% endif %}
       {% endfor %}
       {% for item in menu %}
-      <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
+      <li class="extramenu">&nbsp&lt;&nbsp;<a class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}<ul
           class="submenu">
           {% comment %}<li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
             <ul
           class="submenu">{% endcomment %}
           {% for subitem in item.value.submenu %}
-          <li><a href="{{  subitem.url }}">{{ subitem.label }}</a></li>
+          <li class="extramenu subitem"><a class="extramenu subitem" href="{{  subitem.url }}">{{ subitem.label }}</a></li>
           {% endfor %}
           {% comment %}</ul></li>{% endcomment %}
         </ul></li>
         {% else %}
-        <li>&nbsp&lt;&nbsp;<a href="{{  item.value.url }}">{{ item.value.label }}</a></li>
+        <li class="extramenu">&nbsp&lt;&nbsp;<a class="extramenu" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
           {% endif %}
       {% endfor %}
-      <li> &nbsp;&lt;&nbsp;<a href="#" class="jour-nuit" id="jour-nuit">Jour et nuit</a></li>
+      <li class="extramenu"> &nbsp;&lt;&nbsp;<a href="#" class="jour-nuit extramenu" id="jour-nuit">Jour et nuit</a></li>
     </ul>
   </div>
 </nav>
