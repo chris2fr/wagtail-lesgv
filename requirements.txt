@@ -10,3 +10,4 @@ puput
 wagtail-markdown
 requests
 django-redis
+psycopg2-binary
