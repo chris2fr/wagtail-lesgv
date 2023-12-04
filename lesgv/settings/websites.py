@@ -82,6 +82,8 @@ domains = [
   "www.desgv.com",
   "francemali.org",
   "www.francemali.org",
+  "shitmuststop.com",
+  "www.shitmuststop.com",
 ]
 
 def allowed_hosts():
