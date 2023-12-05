@@ -268,11 +268,14 @@ ul.activesubmenu,
 } */
 li.extramenu {
   width: 100%;
-  text-align: right;
+  text-align: left;
+  font-style: italic;
+  margin-left: inherit;
+  text-emphasis-style: sesame;
 }
-li.extramenu a {
+/* li.extramenu a {
   margin-right: 1rem;
-}
+} */
 
 #menu li:first-of-type {
   border-radius: 1rem 1rem 0 0;
