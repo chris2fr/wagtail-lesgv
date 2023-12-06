@@ -11,4 +11,3 @@ wagtail-markdown
 requests
 django-redis
 psycopg2-binary
-django-oauth-toolkit

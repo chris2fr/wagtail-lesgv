@@ -24,7 +24,7 @@ urlpatterns = [
     path("search/", search_views.search, name="search"),
     path('wagtail-transfer/', include(wagtailtransfer_urls)),
     # path("__debug__/", include("debug_toolbar.urls")),
-    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    # path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
 
 if settings.DEBUG:
