@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     # "home",
     "search",
     "lesgv",
+    "wagtail.locales",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -127,6 +128,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ('fr-fr', "French"),
+    ('en-en', "English"),
+]
+
 
 LANGUAGE_CODE = "fr-fr"
 
