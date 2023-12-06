@@ -11,7 +11,10 @@ SECRET_KEY = lesgv.settings.secrets.lesecret.SECRET_KEY
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fairemain'
+        'NAME': 'desgv',
+        'PASSWORD': '894237hffaf9q0w84q97rqf',
+        'USER': 'wagtail',
+        'HOST': 'localhost',
     }
 }
 
