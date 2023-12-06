@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     # 'puput',
     'colorful',
     "wagtailmarkdown",
+    "oauth2_provider",
 ]
 
 MIDDLEWARE = [
