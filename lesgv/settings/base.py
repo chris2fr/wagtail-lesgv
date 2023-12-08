@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+# import ldap
+# from django_auth_ldap.config import LDAPSearch, GroupOfNamesType 
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -211,3 +213,10 @@ WAGTAILMARKDOWN = {
     "extension_configs": {},  # optional. a dictionary with the extension name as key, and its configuration as value
     "extensions_settings_mode": "extend",  # optional. Possible values: "extend" or "override". Defaults to "extend".
 }
+
+# SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
+# AUTHENTICATION_BACKENDS = [
+#     'django_auth_ldap.backend.LDAPBackend',
+#     'django.contrib.auth.backends.ModelBackend',
+# ]

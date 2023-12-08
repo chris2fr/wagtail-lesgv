@@ -8,10 +8,10 @@ import asyncio
 
 def get_blog_posts(params={}):
     # url = 'https://blog.lesgrandsvoisins.com/ghost/api/content/posts/?key=1c04bede3eb01bfb3fb106b902'
-    url = 'https://blog.gvois.in/ghost/api/content/posts/?key=2c45719752e391ac90cbab9b91'
+    url = 'https://blog.lesgrandsvoisins.com/ghost/api/content/posts/?key=2c45719752e391ac90cbab9b91'
     # print(url)
-    filenametime = "./cache/cache-blog.gvois.in-" +  time.strftime("%Y-%m-%d-%H")
-    filenamedate = "./cache/cache-blog.gvois.in-" +  time.strftime("%Y-%m-%d")
+    filenametime = "./cache/cache-blog.lesgrandsvoisins.com-" +  time.strftime("%Y-%m-%d-%H")
+    filenamedate = "./cache/cache-blog.lesgrandsvoisins.com-" +  time.strftime("%Y-%m-%d")
     for i in ["limit","order","filter","page","formats","include"]:
         if params.get("ghost_{}".format(i),False):
             filenametime += "-{}_{}".format(i,urllib.parse.quote("{}".format(params.get("ghost_{}".format(i)))))
