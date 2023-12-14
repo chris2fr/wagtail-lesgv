@@ -82,11 +82,10 @@ nav.navigation a {
   position: relative;
   /* top: calc(100% + 5px); */
   /* right: 0; */
-  margin-left: -5rem;
   display: none;
   max-width: 100%;
   min-width: 10em;
-  margin: 0;
+  /* margin: 0; */
   padding: 5px 0;
   border-radius: 5px;
   box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.15);
