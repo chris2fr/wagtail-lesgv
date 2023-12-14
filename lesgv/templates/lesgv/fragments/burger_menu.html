@@ -85,7 +85,7 @@
         <li class="breadcrumb subitem nav__item"><a  class="breadcrumb subitem nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
         {% endif %}
       {% endfor %}
-    </ul>
+      {% comment %}</ul>{% endcomment %}
       {% for item in menu %}
       <li class="breadcrumb extramenu nav__item"><a class="breadcrumb extramenu nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}
         {% comment %}<ul
