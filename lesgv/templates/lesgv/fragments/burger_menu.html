@@ -46,7 +46,7 @@
         {% endif %}
       </li>
       {% endfor %}
-      <li class="active nav__item">{{ self.title }}</li>
+      <li class="breadcrumb active nav__item"><a href="{{ p.url }}" class="breadcrumb active nav__list">{{ self.title }}</a></li>
 
      
       {% for item in menuitems %}
