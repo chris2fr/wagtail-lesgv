@@ -148,7 +148,7 @@ li.nav__list a {
 li.nav_bottom {
   border-top: 2px var(--color-text) double;
   border-left: 1px var(--color-text) dotted;
-  border-right: 1px var(--color-text) dotted;
+  border-right: none;
   border-radius: 0 1rem 0 0;
 }
 li.nav_end {
