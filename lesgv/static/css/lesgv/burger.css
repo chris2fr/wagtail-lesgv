@@ -158,9 +158,9 @@ li.nav_end {
   border-radius: 0 0 0 1rem;
 }
 li.nav_extra {
-  border: none;
-  border-bottom: 2px var(--color-text) solid;
-  border-radius: 0 0 0 0;
+  border: 1px var(--color-text) solid;
+  border-top:none;
+  border-radius: 0 0 1rem 1rem;
 }
 li.nav_before {
   border-bottom: 2px var(--color-text) solid;
@@ -176,7 +176,7 @@ a.nav__list {
   justify-content: center;
 }
 li.nav__item__more {
-  background-color: white;
+  background-color: var(--color-whiteish);
   border-radius: 1rem 1rem 0 0 ;
   text-align: center;
 }
