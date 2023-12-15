@@ -29,6 +29,10 @@ li.nav_self {
   background-color: var(--color-text);
   color: var(--color-text-inverted);
 }
+li.nav_self a, 
+li.nav_self a:hover {
+  color: var(--color-text-inverted);
+}
 li.nav_bottom {
   border-top: 2px var(--color-text) double;
   border-left: 1px var(--color-text) dotted;
