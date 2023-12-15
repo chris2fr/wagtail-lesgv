@@ -155,6 +155,8 @@ li.nav_end {
 li.nav_extra {
   border: none;
   border-bottom: 2px var(--color-text) solid;
+  border-left: 2px var(--color-text) solid;
+  border-radius: 0 0 0 1rem;;
 }
 li.nav_before {
   border-bottom: 2px var(--color-text) solid;
