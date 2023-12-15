@@ -12,40 +12,41 @@ nav.navigation  {
   justify-content: center;
   min-width: 350px;
   /* min-height: 80vh; */
-  max-width: 1140px;
+  /* max-width: 1140px; */
   margin: 0 auto;
   padding: 30 px;
   overflow-x: hidden;
-  border-bottom: none;
+  border: none;
+  min-width: 100%;
+}
+ul.nav__list {
+  min-width: 100%;
+}
+
+li.nav__item,
+li.nav__item___more {
+  background-color: var(--color-background);
 }
 
 li.nav_top {
   border-top: 2px var(--color-text) solid;
   border-left: 2px var(--color-text) solid;
 }
-li.nav_top:first {
-  border-radius: 1rem;
+ul.nav__list > li.nav_top:first-of-type {
+  border-radius: 1rem 0 0 0;
+  border-left: none;
 }
 li.nav_self {
   border-top: 2px var(--color-text) double;
   border-left: 2px var(--color-text) double;
   background-color: var(--color-text);
   color: var(--color-text-inverted);
-  border-radius: 1rem;
+  border-radius: 1rem 0 0 0;
 }
-li.nav__list {
+li.nav__list a {
   justify-content: center;
 }
-li.nav_self a, 
-li.nav_self a:hover {
-  color: var(--color-text-inverted);
-}
-li.nav_self a{
-  color: var(--color-link);
-}
-li.nav_self a:hover {
-  color: var(---color-link-hover);
-}
+
 li.nav_bottom {
   border-top: 2px var(--color-text) double;
   border-left: 1px var(--color-text) dotted;
@@ -53,20 +54,21 @@ li.nav_bottom {
 li.nav_end {
   border-top: 0px var(--color-text) none;
   border-left: 2px var(--color-text) solid;
-  border-radius: 1rem;
+  border-bottom: 2px var(--color-text) solid;
+  border-radius: 0 0 0 1rem;
 }
 li.nav_extra {
-  border: none
+  border: none;
+  border-bottom: 2px var(--color-text) solid;
 }
 li.nav_before {
-  border-top: 2px var(--color-text) solid;
-  border-right: 2px var(--color-text) solid;
-  border-radius: 1rem;
+  border-bottom: 2px var(--color-text) solid;
+  border-right: none;
+  border-radius: 0 0 1rem 0;
 }
 li.nav_after {
-  border-top: 2px var(--color-text) solid;
-  border-left: 2px var(--color-text) solid;
-  border-radius: 1rem;
+  border: none;
+  border-bottom: 2px var(--color-text) solid;
 }
 
 nav.navigation a {
@@ -102,13 +104,13 @@ nav.navigation a {
   white-space: nowrap;
 }
 .navigation .nav__list > li a {
-  color: #000;
+  color: var(--color-link);
   font-weight: 500;
   text-transform: uppercase;
   transition: 0.25s;
 }
 .navigation .nav__list > li a:hover {
-  color: #1d5af0;
+  color: var(--color-link-hover);
 }
 .navigation .nav__list .nav__item__more button {
   padding: 15px;
@@ -148,6 +150,20 @@ nav.navigation a {
 .navigation.nav__active .nav__list__more {
   display: block;
 }
+
+
+
+a.nav__list,
+a.nav__list__more{
+  color: var(--color-link);
+}
+a.nav__list:hover,
+a.nav__list__more:hover {
+  color: var(---color-link-hover);
+}
+
+
+
 
 @-webkit-keyframes nav-dropdown-animation {
   0% {
