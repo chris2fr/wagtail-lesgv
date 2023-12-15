@@ -18,7 +18,25 @@ nav.navigation  {
   overflow-x: hidden;
 }
 
+li.nav_top {
+  border-top: 2px var(--color-text) solid;
+  border-left: 2px var(--color-text) solid;
+}
 
+li.nav_self {
+  border-top: 2px var(--color-text) double;
+  border-left: 2px var(--color-text) double;
+  background-color: var(--color-text);
+  color: var(--color-text-inverted);
+}
+li.nav_bottom {
+  border-top: 2px var(--color-text) double;
+  border-left: 1px var(--color-text) dotted;
+}
+li.nav_end {
+  border-top: 0px var(--color-text) none;
+  border-left: 2px var(--color-text) solid;
+}
 
 nav.navigation a {
   text-decoration: none;

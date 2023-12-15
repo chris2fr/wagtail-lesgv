@@ -31,7 +31,7 @@
     <ul id="menu" class="nav__list">
       {% for p in breadcrumbs %}
         {% if p.children %}
-        <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}</a>  &gt;
+        <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
           {% comment %}
         <ul class="submenu">
           
@@ -46,16 +46,16 @@
         </ul>
         {% endcomment %}
         {% else %}
-        <li class="breadcrumb nav__item"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}</a>  &gt;
+        <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
         {% endif %}
       </li>
       {% endfor %}
-      <li class="active breadcrumb nav__item"><a href="{{ p.url }}" class="active breadcrumb nav__list">{{ self.title }}</a></li>
+      <li class="active breadcrumb nav__item nav_self"><a href="{{ p.url }}" class="active breadcrumb nav__list">{{ self.title }}</a></li>
 
      
       {% for item in menuitems %}
       {% if item.get_children %}
-      <li class="breadcrumb subitem nav__item"> &lt; <a class="breadcrumb subitem nav__list" href="{{  item.url }}">{{ item.title }}</a>
+      <li class="breadcrumb subitem nav__item nav_bottom"><a class="breadcrumb subitem nav__list" href="{{  item.url }}"> &lt; {{ item.title }}</a>
         {% comment %}
         <ul class="submenu">
           <li><a href="{{  item.url }}">{{ item.title }}</a>
@@ -69,13 +69,13 @@
         </ul>{% endcomment %}
       </li>
       {% else %}
-      <li class="breadcrumb subitem nav__item"> &lt; <a  class="breadcrumb subitem nav__list" href="{{  item.url }}">{{ item.title }}</a></li>
+      <li class="breadcrumb subitem nav__item"><a  class="breadcrumb subitem nav__list" href="{{  item.url }}"> &lt; {{ item.title }}</a></li>
       {% endif %}
       {% endfor %}
-      <li class="breadcrumb subitem nav__item">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li class="breadcrumb subitem nav__item nav_end">&nbsp;&nbsp;&nbsp;&nbsp;</li>
       {% for item in extramenu %}
       {% if item.value.submenu %}
-      <li class="breadcrumb subitem nav__item"><a class="breadcrumb subitem nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a>
+      <li class="breadcrumb subitem nav__item"><a class="breadcrumb subitem nav__list" href="{{  item.value.url }}">| <strong>{{ item.value.label }}</strong> |</a>
         {% comment %}<ul
           class="submenu">
           <li class="extramenu subitem"><a href="{{  item.value.url }}" class="extramenu subitem">{{ item.value.label }}</a>
@@ -87,13 +87,14 @@
         </ul>{% endcomment %}
       </li>
         {% else %}
-        <li class="breadcrumb subitem nav__item"><a  class="breadcrumb subitem nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
+        <li class="breadcrumb subitem nav__item"><a  class="breadcrumb subitem nav__list nav_extra" href="{{  item.value.url }}">| <strong>{{ item.value.label }}</strong> | </a></li>
         {% endif %}
       {% endfor %}
       {% comment %}</ul>{% endcomment %}
+      <li class="breadcrumb extramenu nav__item"> <a href="#" class="jour-nuit breadcrumb extramenu nav__list" id="jour-nuit">Jour et nuit</a></li>
       <li class="breadcrumb subitem nav__item">&nbsp;&nbsp;&nbsp;&nbsp;</li>
       {% for item in menu %}
-      <li class="breadcrumb extramenu nav__item"><a class="breadcrumb extramenu nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}
+      <li class="breadcrumb extramenu nav__item nav_extra"><a class="breadcrumb extramenu nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}
         {% comment %}<ul
           class="submenu">
           <li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
@@ -108,7 +109,7 @@
         <li class="breadcrumb extramenu nav__item"><a class="breadcrumb extramenu nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
           {% endif %}
       {% endfor %}
-      <li class="breadcrumb extramenu nav__item"> <a href="#" class="jour-nuit breadcrumb extramenu nav__list" id="jour-nuit">Jour et nuit</a></li>
+ 
     </ul>
 
 </nav>
