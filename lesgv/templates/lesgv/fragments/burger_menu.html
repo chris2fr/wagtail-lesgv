@@ -29,6 +29,7 @@
     but hey, it's pure CSS magic.
     -->
     <ul id="menu" class="nav__list">
+      <li class="breadcrumb nav__item nav_before">&nbsp;</li>
       {% for p in breadcrumbs %}
         {% if p.children %}
         <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
@@ -107,7 +108,8 @@
         <li class="breadcrumb extramenu nav__item"><a class="breadcrumb extramenu nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a></li>
           {% endif %}
       {% endfor %}
- 
+      <li class="breadcrumb nav__item nav_after">&nbsp;</li>
+
     </ul>
 
 </nav>

@@ -16,22 +16,35 @@ nav.navigation  {
   margin: 0 auto;
   padding: 30 px;
   overflow-x: hidden;
+  border-bottom: none;
 }
 
 li.nav_top {
   border-top: 2px var(--color-text) solid;
   border-left: 2px var(--color-text) solid;
 }
-
+li.nav_top:first {
+  border-radius: 1rem;
+}
 li.nav_self {
   border-top: 2px var(--color-text) double;
   border-left: 2px var(--color-text) double;
   background-color: var(--color-text);
   color: var(--color-text-inverted);
+  border-radius: 1rem;
+}
+li.nav__list {
+  justify-content: center;
 }
 li.nav_self a, 
 li.nav_self a:hover {
   color: var(--color-text-inverted);
+}
+li.nav_self a{
+  color: var(--color-link);
+}
+li.nav_self a:hover {
+  color: var(---color-link-hover);
 }
 li.nav_bottom {
   border-top: 2px var(--color-text) double;
@@ -40,6 +53,20 @@ li.nav_bottom {
 li.nav_end {
   border-top: 0px var(--color-text) none;
   border-left: 2px var(--color-text) solid;
+  border-radius: 1rem;
+}
+li.nav_extra {
+  border: none
+}
+li.nav_before {
+  border-top: 2px var(--color-text) solid;
+  border-right: 2px var(--color-text) solid;
+  border-radius: 1rem;
+}
+li.nav_after {
+  border-top: 2px var(--color-text) solid;
+  border-left: 2px var(--color-text) solid;
+  border-radius: 1rem;
 }
 
 nav.navigation a {
