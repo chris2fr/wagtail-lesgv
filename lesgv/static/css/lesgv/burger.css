@@ -19,57 +19,6 @@ nav.navigation  {
   border: none;
   min-width: 100%;
 }
-ul.nav__list {
-  min-width: 100%;
-}
-
-li.nav__item,
-li.nav__item___more {
-  background-color: var(--color-background);
-}
-
-li.nav_top {
-  border-top: 2px var(--color-text) solid;
-  border-left: 2px var(--color-text) solid;
-}
-ul.nav__list > li.nav_top:first-of-type {
-  border-radius: 1rem 0 0 0;
-  border-left: none;
-}
-li.nav_self {
-  border-top: 2px var(--color-text) double;
-  border-left: 2px var(--color-text) double;
-  background-color: var(--color-text);
-  color: var(--color-text-inverted);
-  border-radius: 1rem 0 0 0;
-}
-li.nav__list a {
-  justify-content: center;
-}
-
-li.nav_bottom {
-  border-top: 2px var(--color-text) double;
-  border-left: 1px var(--color-text) dotted;
-}
-li.nav_end {
-  border-top: 0px var(--color-text) none;
-  border-left: 2px var(--color-text) solid;
-  border-bottom: 2px var(--color-text) solid;
-  border-radius: 0 0 0 1rem;
-}
-li.nav_extra {
-  border: none;
-  border-bottom: 2px var(--color-text) solid;
-}
-li.nav_before {
-  border-bottom: 2px var(--color-text) solid;
-  border-right: none;
-  border-radius: 0 0 1rem 0;
-}
-li.nav_after {
-  border: none;
-  border-bottom: 2px var(--color-text) solid;
-}
 
 nav.navigation a {
   text-decoration: none;
@@ -160,6 +109,61 @@ a.nav__list__more{
 a.nav__list:hover,
 a.nav__list__more:hover {
   color: var(---color-link-hover);
+}
+
+
+ul.nav__list {
+  min-width: 100%;
+}
+
+li.nav__item,
+li.nav__item___more {
+  background-color: var(--color-background);
+}
+
+li.nav_top {
+  border-top: 2px var(--color-text) solid;
+  border-left: 2px var(--color-text) solid;
+  border-radius: 1rem 0 0 0;
+}
+ul.nav__list > li.nav_top:first-of-type {
+  border-radius: 1rem 0 0 0;
+  border-left: none;
+}
+li.nav_self {
+  border-top: 2px var(--color-background) solid;
+  border-left: 2px var(--color-background) solid;
+  background-color: var(--color-text);
+  color: var(--color-text-inverted);
+  border-radius: 1rem 0 0 0;
+}
+li.nav__list a {
+  justify-content: center;
+}
+
+li.nav_bottom {
+  border-top: 2px var(--color-text) double;
+  border-left: 1px var(--color-text) dotted;
+  border-radius: 0 1rem 0 0;
+}
+li.nav_end {
+  border-top: 0px var(--color-text) none;
+  border-left: 2px var(--color-text) solid;
+  border-bottom: 2px var(--color-text) solid;
+  border-radius: 0 0 0 1rem;
+}
+li.nav_extra {
+  border: none;
+  border-bottom: 2px var(--color-text) solid;
+}
+li.nav_before {
+  border-bottom: 2px var(--color-text) solid;
+  border-right: 2px var(--color-text) solid;
+  border-radius: 0 0 1rem 0;
+}
+li.nav_after {
+  border: none;
+  border-bottom: 2px var(--color-text) solid;
 }
 
 
