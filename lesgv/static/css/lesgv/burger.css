@@ -171,6 +171,11 @@ li.nav_after {
 a.nav__list {
   justify-content: center;
 }
+li.nav__item__more {
+  background-color: white;
+  border-radius: 1rem 1rem 0 0 ;
+  text-align: center;
+}
 
 
 
