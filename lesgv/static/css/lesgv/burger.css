@@ -137,6 +137,10 @@ li.nav_self {
   color: var(--color-text-inverted);
   border-radius: 1rem 0 0 0;
 }
+.navigation .nav__list > li.nav_self a,
+.navigation .nav__list > li.nav_self a:hover {
+  color: var(--color-text-inverted);
+}
 li.nav__list a {
   justify-content: center;
 }
@@ -176,6 +180,8 @@ li.nav__item__more {
   border-radius: 1rem 1rem 0 0 ;
   text-align: center;
 }
+
+/* .navigation .nav__list > li.nav_self a */
 
 
 
