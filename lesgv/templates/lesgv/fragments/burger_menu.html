@@ -91,8 +91,6 @@
         {% endif %}
       {% endfor %}
       {% comment %}</ul>{% endcomment %}
-      <li class="breadcrumb extramenu nav__item"> <a href="#" class="jour-nuit breadcrumb extramenu nav__list" id="jour-nuit">Jour et nuit</a></li>
-      <li class="breadcrumb subitem nav__item">&nbsp;&nbsp;&nbsp;&nbsp;</li>
       {% for item in menu %}
       <li class="breadcrumb extramenu nav__item nav_extra"><a class="breadcrumb extramenu nav__list" href="{{  item.value.url }}">{{ item.value.label }}</a>{% if item.value.submenu %}
         {% comment %}<ul
