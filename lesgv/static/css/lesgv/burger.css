@@ -156,7 +156,7 @@ li.nav_end {
 li.nav_extra {
   border: none;
   border-bottom: 2px var(--color-text) solid;
-  border-radius: 0 0 0 1rem;;
+  border-radius: 0 0 0 0;
 }
 li.nav_before {
   border-bottom: 2px var(--color-text) solid;
@@ -168,7 +168,9 @@ li.nav_after {
   border-bottom: 2px var(--color-text) solid;
   border-right: 1px var(--color-text) dotted;
 }
-
+a.nav__list {
+  justify-content: center;
+}
 
 
 
