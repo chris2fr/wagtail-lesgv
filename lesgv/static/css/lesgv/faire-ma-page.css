@@ -3,6 +3,10 @@ body {
   max-width: 1300px;
   overflow-x: hidden;
 }
+div.enclosing-grid  {
+  max-width: 1250 px;
+  left: auto;
+}
 h1 {
   text-align: center;
 } 
@@ -164,6 +168,10 @@ div.enclosing-grid iframe {
   }
 } 
 @media screen and (max-width: 1200px) {
+  div.enclosing-grid {
+    max-width: unset;
+    left: unset;
+  }
   div.block-ghost_index_blog{
     grid-template-columns: 1fr;
   }
@@ -256,7 +264,12 @@ div.enclosing-grid iframe {
 } 
 
 @media print {
+
   div.enclosing-grid {
+      position: relative;
+      top: unset;
+      max-width: unset;
+      left: unset;
     margin: 0 auto;
   }
   img {
