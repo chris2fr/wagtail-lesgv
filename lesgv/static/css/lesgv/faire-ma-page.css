@@ -268,7 +268,8 @@ div.enclosing-grid iframe {
   div.enclosing-grid {
       position: absolute;
       top: 0;
-      max-width: 90vh;
+      /* max-width: 90vh; */
+      width: 100%;
       left: 0;
   }
   img {
@@ -287,7 +288,8 @@ div.enclosing-grid iframe {
   div.CT {
     grid-area: 4 / 1 / 5 / 8;
     background-color: #ffffff00;
-    margin: 1rem auto;
+    /* margin: 1rem auto; */
+    margin: 0;
   }
   .FL {
     grid-area: 5 / 1 / 6 / 8;
