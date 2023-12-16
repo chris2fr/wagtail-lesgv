@@ -59,7 +59,7 @@ li.nav_bottom {
   transition: 0.25s;
 }
 .nav__list > li {
-  flex-grow: 1;
+  flex-grow: 0;
 }
 .nav__list > li > a {
   padding: 15px;
