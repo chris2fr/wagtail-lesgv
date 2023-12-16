@@ -266,11 +266,10 @@ div.enclosing-grid iframe {
 @media print {
 
   div.enclosing-grid {
-      position: relative;
-      top: unset;
-      max-width: unset;
-      left: unset;
-    margin: 0 auto;
+      position: absolute;
+      top: 0;
+      max-width: 90vh;
+      left: 0;
   }
   img {
     left: unset;
