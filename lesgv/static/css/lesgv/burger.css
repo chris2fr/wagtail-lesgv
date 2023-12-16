@@ -164,9 +164,9 @@ li.nav_extra {
   border-top:none;
   border-radius: 1rem;
   width: fit-content;
+  /* margin-left: 1rem; */
   margin: 0 0 0 auto;
   flex-grow: 0;
-  margin-left: 1rem;
   padding: inherit 1rem;
 }
 /* .nav_extra:last-of-type {
