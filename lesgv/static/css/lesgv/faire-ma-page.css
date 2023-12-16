@@ -15,6 +15,10 @@ div.enclosing-grid {
 div.enclosing-grid img {
   scale: 90%;
 }
+div.enclosing-grid {
+  position: absolute;
+  top: 0;
+}
 .TL {
   grid-area: 1 / 1 / 2 / 4;
   display: flex;
@@ -175,6 +179,10 @@ div.enclosing-grid iframe {
   }
 }
 @media  screen and (max-width: 1000px) {
+  div.enclosing-grid {
+    position: relative;
+    top: unset;
+  }
   body {
     overflow-x: hidden;
   }

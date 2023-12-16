@@ -4,6 +4,10 @@ nav.navigation *::after {
   box-sizing: border-box;
 }
 
+nav.navigation {
+  z-index: 99;
+}
+
 nav.navigation ul {
   border-top: 2px var(--color-text) solid;
   border-left: 2px var(--color-text) solid;
@@ -126,7 +130,7 @@ ul.nav__list {
 }
 
 li.nav__item,
-li.nav__item___more {
+li.nav__item__more {
   background-color: var(--color-background);
 }
 
@@ -146,7 +150,7 @@ li.nav__list a {
 li.nav_bottom {
   border: 2px var(--color-text) solid;
   border-radius: 1rem 1rem 0 0;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 li.nav_end {
   border-top: 0px var(--color-text) none;
@@ -177,6 +181,11 @@ li.nav__item__more {
   background-color: var(--color-whiteish);
   border-radius: 1rem 1rem 0 0 ;
   text-align: center;
+}
+ul.nav__list__more {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 /* .nav__list > li.nav_self a */
