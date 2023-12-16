@@ -4,7 +4,11 @@ nav.navigation *::after {
   box-sizing: border-box;
 }
 
-
+nav.navigation ul {
+  border-top: 2px var(--color-text) solid;
+  border-left: 2px var(--color-text) solid;
+  border-radius: 1rem 0 0 0;
+}
 
 nav.navigation  {
   display: flex;
@@ -122,11 +126,11 @@ li.nav__item___more {
 }
 
 li.nav_top {
-  border-top: 2px var(--color-text) solid;
-  border-left: 2px var(--color-text) solid;
+  /* border-top: 2px var(--color-text) solid;
+  border-left: 2px var(--color-text) solid; */
   border-radius: 1rem 0 0 0;
-}
-ul.nav__list > li.nav_top:first-of-type {
+} 
+ ul.nav__list > li.nav_top:first-of-type {
   border-radius: 1rem 0 0 0;
   border-left: none;
 }
@@ -136,6 +140,7 @@ li.nav_self {
   background-color: var(--color-text);
   color: var(--color-text-inverted);
   border-radius: 1rem 0 0 0;
+  margin-top: 0.5rem;
 }
 .navigation .nav__list > li.nav_self a,
 .navigation .nav__list > li.nav_self a:hover {
@@ -146,10 +151,11 @@ li.nav__list a {
 }
 
 li.nav_bottom {
-  border-top: 2px var(--color-text) double;
+  border-top: 1px var(--color-text) solid;
   border-left: 1px var(--color-text) dotted;
   border-right: none;
   border-radius: 0 1rem 0 0;
+  margin-top: 1rem;
 }
 li.nav_end {
   border-top: 0px var(--color-text) none;
@@ -182,6 +188,41 @@ li.nav__item__more {
 }
 
 /* .navigation .nav__list > li.nav_self a */
+
+ul.nav__list__less {
+  list-style: none;
+  position: block;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+}
+ul.nav__list__less li {
+  transition: 0.25s;
+}
+ul.nav__list__less > li {
+  flex-grow: 1;
+  border-left: 1px var(--color-background) solid;
+  border-top: 1px var(--color-background) solid;
+  border-radius: 1rem 1rem 0 0;
+}
+ul.nav__list__less > li > a {
+  padding: 15px;
+  white-space: nowrap;
+}
+ul.nav__list__less > li a {
+  color: var(--color-link);
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.25s;
+}
+ul.nav__list__less > li a:hover {
+  color: var(--color-link-hover);
+}
+
+
 
 
 

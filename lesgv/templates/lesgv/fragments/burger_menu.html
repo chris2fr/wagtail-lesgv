@@ -1,5 +1,33 @@
 {% load static wagtailcore_tags %}
 <div class="wrapper">
+  <ul class=" nav__list__less">
+  {% for p in breadcrumbs %}
+  
+  {% if p.children %}
+  <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
+    {% comment %}
+  <ul class="submenu">
+    
+    <li><a href="{{ p.url }}">{{ p.title }}</a>
+      <ul class="submenu">
+        
+    {% for c in p.children %}
+    <li><a href="{{ c.url }}">{{ c.title }}</a></li>
+    {% endfor %}
+    </ul></li>
+
+  </ul>
+  {% endcomment %}
+  {% else %}
+  <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
+  {% endif %}
+</li>
+
+{% endfor %}
+<li class="active breadcrumb nav__item nav_self"><a href="{{ p.url }}" class="active breadcrumb nav__list">{{ self.title }}</a></li>
+
+</ul>
+
 <nav role="navigation" class="navigation">
   <!-- 
     https://codepen.io/nguyenanhtuan/pen/xxMqoOp
@@ -29,28 +57,7 @@
     but hey, it's pure CSS magic.
     -->
     <ul id="menu" class="nav__list">
-      {% for p in breadcrumbs %}
-        {% if p.children %}
-        <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
-          {% comment %}
-        <ul class="submenu">
-          
-          <li><a href="{{ p.url }}">{{ p.title }}</a>
-            <ul class="submenu">
-              
-          {% for c in p.children %}
-          <li><a href="{{ c.url }}">{{ c.title }}</a></li>
-          {% endfor %}
-          </ul></li>
 
-        </ul>
-        {% endcomment %}
-        {% else %}
-        <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
-        {% endif %}
-      </li>
-      {% endfor %}
-      <li class="active breadcrumb nav__item nav_self"><a href="{{ p.url }}" class="active breadcrumb nav__list">{{ self.title }}</a></li>
 
      
       {% for item in menuitems %}
