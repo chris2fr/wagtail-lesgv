@@ -290,7 +290,7 @@ div.enclosing-grid iframe {
     margin: 1rem auto;
   }
   .FL {
-    grid-area: 5 / 1 / 7 / 4;
+    grid-area: 5 / 1 / 6 / 8;
     margin-left: 0;
     background: unset;
   }
@@ -299,7 +299,7 @@ div.enclosing-grid iframe {
     background-color: white;
   }
   .FR {
-    grid-area: 5 / 4 / 7 / 8;  
+    grid-area: 6 / 1 / 7 / 8;  
     background: unset;
   }
   /* .BC {
