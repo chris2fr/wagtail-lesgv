@@ -162,6 +162,10 @@ li.nav_extra {
   border: 1px var(--color-text) solid;
   border-right: 1px var(--color-background) solid;
   border-top:none;
+  border-radius: 1rem;
+  margin-left: 2rem;
+}
+.nav__item .nav_extra:last-of-type {
   border-radius: 1rem 0 0 1rem;
 }
 li.nav_before {

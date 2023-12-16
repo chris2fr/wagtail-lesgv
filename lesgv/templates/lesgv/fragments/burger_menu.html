@@ -94,12 +94,12 @@
         </ul>{% endcomment %}
       </li>
         {% else %}
-        <li class="breadcrumb subitem nav__item nav_extra"><a  class="breadcrumb subitem nav__list nav_extra" href="{{  item.value.url }}"> {{ item.value.label }}</a></li>
+        <li class="breadcrumb subitem nav__item nav_extra"><a  class="breadcrumb subitem nav__list" href="{{  item.value.url }}"> {{ item.value.label }}</a></li>
         {% endif %}
       {% endfor %}
       {% comment %}</ul>{% endcomment %}
       {% for item in menu %}
-      <li class="breadcrumb extramenu nav__item nav_extra"><a class="breadcrumb extramenu nav__list nav_extra" href="{{  item.value.url }}" target="_blank"> {{ item.value.label }}</a>{% if item.value.submenu %}
+      <li class="breadcrumb extramenu nav__item nav_extra"><a class="breadcrumb extramenu nav__list" href="{{  item.value.url }}" target="_blank"> {{ item.value.label }}</a>{% if item.value.submenu %}
         {% comment %}<ul
           class="submenu">
           <li><a href="{{  item.value.url }}">{{ item.value.label }}</a>
