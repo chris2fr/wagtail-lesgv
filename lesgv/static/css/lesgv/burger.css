@@ -201,6 +201,7 @@ ul.nav__list__less {
   background-color: var(--color-background);
   text-align: center;
   border-radius: 1rem 1rem 0 0;
+  border: 2px var(--color-text) solid;
 }
 /* ul.nav__list__less li {
   transition: 0.25s;
