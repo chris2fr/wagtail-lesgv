@@ -163,9 +163,11 @@ li.nav_extra {
   border-right: 1px var(--color-background) solid;
   border-top:none;
   border-radius: 1rem;
-  margin-left: 2rem;
   width: fit-content;
   margin: 0 0 0 auto;
+  flex-grow: 0;
+  margin-left: 1rem;
+  padding: inherit 1rem;
 }
 /* .nav_extra:last-of-type {
   border-radius: 1rem 0 0 1rem;
