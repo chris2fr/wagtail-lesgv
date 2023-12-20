@@ -23,7 +23,6 @@ button.toggle-darkmode {
   left:0;
   z-index: 300;
 }
-
 img.richtext-image.full-width {
   max-width: 100%;
   height: auto;
