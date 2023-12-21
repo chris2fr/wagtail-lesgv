@@ -235,9 +235,8 @@ class FaireMainHomePage(FaireMainPage):
     page_description = "Faire Main Home Page: Une page home "
     parent_page_types =['wagtailcore.Page']
     subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
-    content_panels = [
+    content_panels = FaireMainPage.content_panels + [
         InlinePanel('agenda_home',label="Items de l'agenda"),
-    ]  + FaireMainPage.content_panels + [
         FieldPanel('agenda'),
         FieldPanel('ghost_tag'),
         FieldPanel('ghost_filter'),
