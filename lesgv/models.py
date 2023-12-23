@@ -207,7 +207,9 @@ class FaireMainPage(Page):
         return context
     
 class FaireMainMenu(FaireMainPage):
-    pass
+    parent_page_types = ['wagtailcore.Page','lesgv.FaireMainHomePage','lesgv.FaireMainPage']
+    subpage_types = ['']
+    max_count_per_parent = 1
 
 
 class RelatedAgendaItemHomePage(Orderable):
