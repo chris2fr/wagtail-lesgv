@@ -104,6 +104,27 @@ def notanytest(val):
         val == '<p></p>',
     ]))
 
+def lesgvGetMenuItems(page):
+  menuitems = page.get_children().filter(live=True, show_in_menus=True)
+  return menuitems
+
+def lesgvGetBreadcrumbs(page):
+  breadcrumbs = []
+  for a in page.get_ancestors():
+      if (not a.is_root()):
+          breadcrumb = {
+              "url": a.url,
+              "title":a.title,
+              "children":[]
+          }
+          for c in a.get_children().filter(live=True, show_in_menus=True):
+              breadcrumb["children"] += [{
+                  "url": c.url,
+                  "title":c.title
+              }]
+          breadcrumbs += [breadcrumb]
+  return breadcrumbs
+
 class FaireMainPage(Page):
     body = RichTextField(blank=True, null=True)
     intro = RichTextField(blank=True, null=True)
@@ -181,21 +202,9 @@ class FaireMainPage(Page):
             context['extramenu'] = getattr(self,'extramenu')
         else:
             context['extramenu'] = []
-        context['menuitems'] = self.get_children().filter(live=True, show_in_menus=True)
-        context['breadcrumbs'] = []
-        for a in self.get_ancestors():
-            if (not a.is_root()):
-                breadcrumb = {
-                    "url": a.url,
-                    "title":a.title,
-                    "children":[]
-                }
-                for c in a.get_children().filter(live=True, show_in_menus=True):
-                    breadcrumb["children"] += [{
-                        "url": c.url,
-                        "title":c.title
-                    }]
-                context['breadcrumbs'] += [breadcrumb]
+        context['menuitems'] = lesgvGetMenuItems(self)
+        context['breadcrumbs'] = lesgvGetBreadcrumbs(self)
+        
         if (not context['theme']):
             context['theme'] = "generique"
         context['static_images'] = {}
@@ -210,7 +219,11 @@ class FaireMainMenu(FaireMainPage):
     parent_page_types = ['wagtailcore.Page','lesgv.FaireMainHomePage','lesgv.FaireMainPage']
     subpage_types = [ ]
     max_count_per_parent = 1
-
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['menuitems'] = lesgvGetMenuItems(self.get_parent())
+        context['breadcrumbs'] = lesgvGetBreadcrumbs(self.get_parent())
+        return context
 
 class RelatedAgendaItemHomePage(Orderable):
     home_page = ParentalKey(
