@@ -138,7 +138,7 @@ class FaireMainPage(Page):
         related_name='+'
     )
     page_description = "Faire Ma Page, Une page"
-    parent_page_types = ['wagtailcore.Page','lesgv.FaireMainHomePage','lesgv.FaireMainPage']
+    parent_page_types = ['wagtailcore.Page','lesgv.FaireMainHomePage','lesgv.FaireMainPage','lesgv.FaireMainMenu']
     subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
     content_panels = Page.content_panels + [
         FieldPanel('body'),
@@ -236,7 +236,7 @@ class FaireMainHomePage(FaireMainPage):
     ghost_include = models.CharField(blank=True, null=True, max_length=32)
     page_description = "Faire Main Home Page: Une page home "
     parent_page_types =['wagtailcore.Page']
-    subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage']
+    subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage','lesgv.FaireMainMenu']
     content_panels = FaireMainPage.content_panels + [
         InlinePanel('agenda_home',label="Items de l'agenda"),
         FieldPanel('agenda'),
