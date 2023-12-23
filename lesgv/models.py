@@ -205,6 +205,10 @@ class FaireMainPage(Page):
         if (self.ghost_post_tag):
             context['posts'] = lesgv.services.get_blog_posts(lesgv.services.ProcessGhostParams({"ghost_tag": self.ghost_post_tag,"ghost_limit":8}))
         return context
+    
+class FaireMainMenu(FaireMainPage):
+    pass
+
 
 class RelatedAgendaItemHomePage(Orderable):
     home_page = ParentalKey(
