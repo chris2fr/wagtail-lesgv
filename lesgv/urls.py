@@ -13,7 +13,7 @@ from wagtail_transfer import urls as wagtailtransfer_urls
 # from snotra_rss import urls as snotra_urls
 # from feedreader import urls as feedreader_urls
 # from puput import urls as puput_urls 
-# from lesgv import views as lesgv_views
+from lesgv import views as lesgv_views
 
 from search import views as search_views
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path('wagtail-transfer/', include(wagtailtransfer_urls)),
+    path('htmlmenu', lesgv_views.htmlmenu),
     # path("__debug__/", include("debug_toolbar.urls")),
     # path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]

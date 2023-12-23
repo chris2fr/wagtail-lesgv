@@ -1,5 +1,7 @@
 # from django.shortcuts import render
-# from django.http import HttpResponse
+from django.http import HttpResponse
+import datetime
+
 
 # import requests
 # import lesgv.services
@@ -18,3 +20,7 @@
 #     return render(request, "lesgv/fait_ma_home_page_blog.html", {'posts': lesgv.services.get_blog_posts()})
 
 
+def htmlmenu(request):
+    now = datetime.datetime.now()
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)

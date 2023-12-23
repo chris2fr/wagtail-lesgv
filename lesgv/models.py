@@ -130,7 +130,6 @@ class FaireMainPage(Page):
                                                     ('boule','boule'),
                                                     ('lesartsvoisins','lesartsvoisins'),]
                                                     ,blank=True,null=True,default='generique')
-
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -172,15 +171,12 @@ class FaireMainPage(Page):
             context[item] = getattr(context['website_settings'],item)
             if (notanytest(context[item])):
                 context[item] = getattr(context['wagtail_settings'],item)
-
-
         for item in ['site_logo','homepage_link','footer1','footer2','theme','menu']:
             context[item] = getattr(context['website_settings'],item)
             if (hasattr(self,item) and getattr(self,item) != ""):
                 context[item] = getattr(self,item)
             elif (notanytest(context[item])):
                 context[item] = getattr(context['wagtail_settings'],item)    
-
         if (hasattr(self,'extramenu') and getattr(self,'extramenu') != ""):
             context['extramenu'] = getattr(self,'extramenu')
         else:
