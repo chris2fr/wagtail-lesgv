@@ -208,7 +208,7 @@ class FaireMainPage(Page):
     
 class FaireMainMenu(FaireMainPage):
     parent_page_types = ['wagtailcore.Page','lesgv.FaireMainHomePage','lesgv.FaireMainPage']
-    subpage_types = ['']
+    subpage_types = [ ]
     max_count_per_parent = 1
 
 
