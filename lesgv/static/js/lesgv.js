@@ -10,7 +10,7 @@ function lesgvGoDark(toggle) {
   localStorage.removeItem('lightmode');
   localStorage.setItem('darkmode', true);
   // toggle.innerText = 'Nuit';
-  toogle.innerHTML = moon;
+  toggle.innerHTML = moon;
   document.body.classList.add('darkmode');
 }
 
@@ -18,7 +18,7 @@ function lesgvGoLight(toggle) {
   localStorage.removeItem('darkmode');
   localStorage.setItem('lightmode', true);
   // toggle.innerText = 'Jour';
-  toogle.innerHTML = sun;
+  toggle.innerHTML = sun;
   document.body.classList.remove('darkmode');
 }
 
