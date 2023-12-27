@@ -51,10 +51,10 @@ function toggleDarkmode() {
 // }
 
 toggle.addEventListener('click', function(e) {
-  if (document.body.classList.contains('lighmode')) {
-    lesgvGoDark(toggle);
-  } else {
+  if (document.body.classList.contains('darkmode')) {
     lesgvGoLight(toggle);
+  } else {
+    lesgvGoDark(toggle);
   }
 });
 
