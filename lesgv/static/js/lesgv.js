@@ -24,7 +24,7 @@ function lesgvGoLight(toggle) {
 
 function toggleDarkmode() {
   let toggle = document.querySelector('#jour-nuit');
-  if (document.body.classList.contains('darkmode')) {
+  if (document.body.classList.contains('lightmode')) {
     lesgvGoLight(toggle);
   } else {
     lesgvGoDark(toggle);
