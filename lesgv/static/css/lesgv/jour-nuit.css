@@ -1,16 +1,16 @@
 #jour-nuit {
-  position:absolute;
+  /* position:absolute; */
   width:3rem;
   height:auto;
-  top:95vh;
-  left:1rem;
+  /* top:95vh;
+  left:1rem; */
   color:var(--color-link);
   background-color:var(--color-link-inverted);
   border-radius: 50%;
 }
-@media  screen and (max-width: 1000px) {
+/* @media  screen and (max-width: 1000px) {
   #jour-nuit {
     width:2rem;
     left:0rem;
   }
-}
+} */
