@@ -65,8 +65,8 @@
     --color-background: var(--color-primary-dark);
     --color-text: var(--color-whiteish);
     --color-text-inverted: var(--color-primary-dark);
-    --color-link: var(--color-link-inverted);
-    --color-link-inverted: var(--color-primary-light);
+    --color-link: var(--color-primary-light);
+    --color-link-inverted: var(--color-secondary-dark);
     --color-link-hover: var(--maximum-yellow-red);
     --color-active-menuitem: var(--color-whiteish);
     --color-secondary: var(--mountain-meadow);
