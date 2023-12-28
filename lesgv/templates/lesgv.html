@@ -46,7 +46,7 @@
 
     <body class="{% block body_class %}{% endblock %} darkmode">
         {% wagtailuserbar %}
-        <a href="#" class="jour-nuit breadcrumb extramenu nav__list" id="jour-nuit" alt="Changer entre modes claire et sombre"><svg viewBox="0 0 16 16" style="position:absolute;width:3rem;height:auto;top:50vh;left:0"><path fill="currentColor" d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/></svg></a>
+        <a href="#" class="jour-nuit breadcrumb extramenu nav__list" id="jour-nuit" alt="Changer entre modes claire et sombre"  style="position:absolute;width:3rem;height:auto;top:50vh;left:1rem;"><svg viewBox="0 0 16 16"><path fill="currentColor" d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/></svg></a>
         {% include "lesgv/fragments/burger_menu.html" with menuitems=menuitems %}
         
         {% block content %}
