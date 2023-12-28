@@ -7,6 +7,7 @@
   color:var(--color-link);
   background-color:var(--color-link-inverted);
   border-radius: 50%;
+  z-index: 99999;
 }
 /* @media  screen and (max-width: 1000px) {
   #jour-nuit {
