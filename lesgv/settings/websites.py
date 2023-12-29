@@ -98,6 +98,7 @@ domains = [
   "www.lesgv.org",
   "interetpublic.org",
   "www.interetpublic.org"
+  "syprete.com",
 ]
 
 def allowed_hosts():

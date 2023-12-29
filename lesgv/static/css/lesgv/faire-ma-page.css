@@ -6,6 +6,7 @@ body {
 div.enclosing-grid  {
   max-width: 1250px;
   left: auto;
+  right: auto;
 }
 h1 {
   text-align: center;
