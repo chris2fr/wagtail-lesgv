@@ -100,6 +100,10 @@ domains = [
   "www.interetpublic.org"
   "syprete.com",
   "www.syprete.com",
+  "publicinter.org",
+  "www.publicinter.org",
+  "publicinter.net",
+  "www.publicinter.net",
 ]
 
 def allowed_hosts():
