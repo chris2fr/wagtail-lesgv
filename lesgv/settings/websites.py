@@ -104,6 +104,7 @@ domains = [
   "www.publicinter.org",
   "publicinter.net",
   "www.publicinter.net",
+  "wagtail.resdigita.com",
 ]
 
 def allowed_hosts():
