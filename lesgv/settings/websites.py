@@ -107,6 +107,7 @@ domains = [
   "wagtail.resdigita.com",
   "gv.coop",
   "www.gv.coop",
+  "wagtail.lesgv.org",
 ]
 
 def allowed_hosts():
