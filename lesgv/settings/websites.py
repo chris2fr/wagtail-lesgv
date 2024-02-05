@@ -108,6 +108,8 @@ domains = [
   "gv.coop",
   "www.gv.coop",
   "wagtail.lesgv.org",
+  "maelanc.com",
+  "www.maelanc.com",
 ]
 
 def allowed_hosts():
