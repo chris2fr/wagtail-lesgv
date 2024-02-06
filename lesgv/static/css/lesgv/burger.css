@@ -10,9 +10,9 @@ nav.navigation {
 
 nav.navigation ul {
   border-top: 2px var(--color-text) solid;
-  border-left: 2px var(--color-text) solid;
+  /* border-left: 2px var(--color-text) solid; */
   /* border-radius: 1rem 0 0 0; */
-  background-color: var(--color-text);
+  background-color: var(--color-text-inverted);
 
 }
 
@@ -152,7 +152,7 @@ li.nav__list a {
 
 li.nav_bottom {
   border: 2px var(--color-text) solid;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0 0 1rem 1rem;
   /* margin-top: 1rem; */
 }
 li.nav_end {
@@ -162,7 +162,7 @@ li.nav_end {
   border-radius: 0 0 0 1rem;
 }
 li.nav_extra {
-  border: 1px var(--color-text) solid;
+  border: 2px var(--color-text) solid;
   border-right: 1px var(--color-background) solid;
   border-top:none;
   border-radius: 1rem;
