@@ -110,6 +110,16 @@ domains = [
   "wagtail.lesgv.org",
   "maelanc.com",
   "www.maelanc.com",
+  "syprete.com",
+  "www.syprete.com",
+  "sympret.com",
+  "www.sympret.com",
+  "syprete.org",
+  "www.syprete.org",
+  "sympret.org",
+  "www.sympret.org",
+  "maelanc.com",
+  "www.maelanc.com",
 ]
 
 def allowed_hosts():
