@@ -126,7 +126,7 @@ def lesgvGetBreadcrumbs(page):
   return breadcrumbs
 
 class FaireMainPage(Page):
-    body = RichTextField(blank=True, null=True, features=["h2", "h3", "h4", "bold", "italic", "ol", "ul", "hr", "link", "document", "image", "embed", "code", "blockquote" ])
+    body = RichTextField(blank=True, null=True, features=["h2", "h3", "h4", "bold", "italic", "ol", "ul", "hr", "link", "document", "image", "embed", "code", "blockquote", "media" ])
     intro = RichTextField(blank=True, null=True)
     # posts_index = StreamField([
     #     ('ghost_index_blog',GhostIndexBlock(required=False))
