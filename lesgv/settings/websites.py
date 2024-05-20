@@ -120,6 +120,10 @@ domains = [
   "www.sympret.org",
   "maelanc.com",
   "www.maelanc.com",
+  "gvois.com",
+  "gvois.org",
+  "www.gvois.com",
+  "www.gvois.org",
 ]
 
 def allowed_hosts():
