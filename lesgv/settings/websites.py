@@ -93,6 +93,8 @@ domains = [
   "hopgv.org",
   "www.hopgv.org",
   "lesgv.com",
+  "meet.village.ngo",
+  "meet.village.ong",
   "www.lesgv.com",
   "lesgv.org",
   "www.lesgv.org",
