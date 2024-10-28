@@ -130,6 +130,7 @@ domains = [
   "2022.lesgrandsvoisins.com",
   "2021.lesgrandsvoisins.com",
   "2023.lesgrandsvoisins.com",
+  "8000.lesgrandsvoisins.com",
 ]
 
 def allowed_hosts():
