@@ -126,6 +126,10 @@ domains = [
   "gvois.org",
   "www.gvois.com",
   "www.gvois.org",
+  "lesgv.lesgrandsvoisins.com",
+  "2022.lesgrandsvoisins.com",
+  "2021.lesgrandsvoisins.com",
+  "2023.lesgrandsvoisins.com",
 ]
 
 def allowed_hosts():
